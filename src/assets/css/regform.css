@@ -1,0 +1,3458 @@
+@font-face {
+  font-family: "HPFormaDJROffice";
+  src: url("/fonts/HPFormaDJROffice.otf");
+  src: url("/fonts/HPFormaDJROffice.eot?#iefix") format("embedded-opentype"), 
+  url("/fonts/HPFormaDJROffice.woff2") format("woff2"), 
+  url("/fonts/HPFormaDJROffice.woff") format("woff"), 
+  url("/fonts/HPFormaDJROffice.ttf") format("truetype"), 
+  url("/fonts/HPFormaDJROffice.svg#FormaDJRMicro") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+html,body{font-family: "HPFormaDJROffice", Arial, sans-serif !important;
+  font-size: 16px !important;}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body {
+  font-weight: normal;
+  line-height: 22px;
+  color: #121212;
+  margin: 0;
+  background-color: #FFFFFF !important;
+  height: 100%;
+}
+
+p {
+  color: #121212;
+  line-height: 22px;
+  margin: 0 0 10px 0px;
+}
+.pt-right{
+    float: left;
+    padding-top: 10px;
+    font-style: italic;
+}
+
+
+.raisin {
+  color: #000000;
+  display: none;
+}
+
+img {
+  border: none;
+  max-width: 100%;
+}
+
+.hide {
+  display: none !important;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "HPFormaDJROffice", Arial, sans-serif;
+  line-height: 120%;
+}
+
+a {
+  color: #743DD4;
+  text-decoration: none;
+}
+a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+.body-content{
+  margin-top: 60px;
+}
+.bg-periwinkle {
+  background: #E9E8E8;
+  width: 100%;
+  max-width: 902px;
+  margin: 0px auto; 
+}
+.assist-title{
+  font-size: 24px;
+  line-height: 30px;
+  padding-top: 36px;
+  color: #024AD8;
+  font-family: "HPFormaDJROffice", Arial, sans-serif;
+}
+.mg-t-30 {
+  margin-top: 30px;
+}
+.res_title{  
+  font-size: 40px;
+  line-height: 42px;
+  font-weight: 500;
+  color: #121212;
+  padding: 40px 0px 0px 40px;
+}
+.res_subtitle{
+  color: #024AD8;
+  font-size: 24px;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+.res_subtitle1{
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+/*Pop up*/
+.popupwrap{
+  position: relative;
+}
+.popup{
+    background-color: #f6f3f3;
+    width: 700px;
+    max-width: 100%;
+    height: 280px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%,-106%);
+    left: 50%;
+    top: 50%;
+    border-radius: 0px;
+    display: none;
+    text-align: center;
+    box-shadow: 5px 5px 10px #0000004D;
+    border: 4px solid #B655F5;
+}
+.popup button{
+    display: block;
+    margin: 0 0 20px auto;
+    background-color: transparent;
+    font-size: 50px;
+    color: #c5c5c5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+.popup p{
+    font-size: 28px;
+    text-align: center;
+    margin: 20px 0;
+    line-height: 36px;
+    padding-top: 60px;
+}
+.mt-10{
+  margin-top: 10px;
+}
+.mt-20{
+  margin-top: 20px;
+}
+.mt-40{
+  margin-top: 40px;
+}
+.mt-60{
+  margin-top: 60px;
+}
+.mt-50{
+  margin-top: 50px;
+}
+.mb-40{
+  margin-bottom: 40px;
+}
+.mb-10{
+  margin-bottom: 10px;
+}
+.mb-20{
+  margin-bottom: 20px;
+}
+.mb-30{
+  margin-bottom: 30px;
+}
+.mb-60{
+  margin-bottom: 60px;
+}
+.hm-blue-link{
+  color: #024AD8;
+}
+/*.hm-blue-link:hover{
+  color: #333;
+}*/
+.label_top{
+  transform: translateY(0px)!important;
+}
+.link_text{
+  color: #024AD8;
+}
+.checklabel{
+  text-transform: inherit!important;
+}
+ul.download li{
+  line-height: 35px;
+  list-style: none;
+}
+ul.download li a{
+  color: #024AD8;
+  text-decoration: underline;
+}
+ul.download li a:hover{
+  color: #333;
+}
+ul.download li a i{
+  padding-right: 30px;
+}
+.row-center{
+  width: 50%;
+  margin: 0px auto;
+}
+@media (max-width: 768px){
+.row-center{
+  width: 100%;
+}
+}
+.download{
+  margin-bottom: 40px;
+}
+.download h3{
+  font-size: 14px;
+  height: 70px;
+  margin-bottom: 0px;
+  padding-top: 10px;
+}
+.download h4{
+  color: #000;
+  font-size: 16px;
+}
+.downloadcta{
+  background: #024AD8;
+  font-size: 16px;
+  color: #ffffff;
+  font-family: arial;
+  width: 200px;
+  height: 40px;
+  display: inline-block;
+  line-height: 38px;
+  text-align: center;
+  text-decoration: none;
+  font-family: inherit;
+  border: 0;
+  margin-bottom: 50px;
+  margin-left: 30px;
+  float: right;
+}
+.downloadcta a{
+  color: #fff;
+}
+.downloadcta1{
+/*  background: #024AD8;*/
+  font-size: 15px;
+  color: #024AD8;
+  font-family: arial;
+  /*width: 135px;
+  height: 40px;*/
+  display: inline-block;
+  line-height: 15px;
+  text-align: center;
+  text-decoration: underline;
+  font-family: inherit;
+  border: 0;
+  margin-top: 0px;
+}
+.downloadcta1 a{
+  color: #024AD8;
+}
+.col5{
+  width: 20%;
+  float: left;
+}
+@media (max-width: 768px){
+.col5{
+  width: 33%;
+  float: left;
+}
+}
+.loading {
+  position: absolute;
+  left: 0;
+  top: 0%;
+  pointer-events: none;
+  right: 0;
+  text-align: center;
+  display: none;
+}
+.logo-holder{
+  width: auto !important;
+  height:auto !important;
+  margin:18px 0 !important;
+}
+.menu_wapper{
+  width: auto;
+  margin-left: auto;
+  display: flex;
+}
+.main-menu{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  align-items: center;
+  padding: 0;
+   margin: 0;
+}
+.main-menu li{
+/*  padding-left:45px;*/
+background: #024AD8; padding: 11px 22px; color: #ffffff;
+margin-left: 20px; 
+}
+.main-menu li a{
+  font-size:16px; line-height: 19px;
+  color:#ffffff; text-decoration: none;
+}
+.KV{
+  background:url('regform/KV.png') no-repeat;
+  background-size:cover;
+  background-position:center center;
+  height:480px;
+  position: relative;
+}
+/*#masthead{
+  height:600px;
+}*/
+.w_902{
+  max-width:902px;
+  width: 100%;
+  margin:0 auto;
+}
+.event .hotel_img{
+  width: 100%;
+  max-width: 550px;
+  margin: 0px auto;
+  margin-bottom: 50px;
+}
+.border{
+  border: 1px solid #ddd !important;
+}
+.header{
+  font-size:40px;
+  line-height:50px;
+  color:#000000;
+  padding-bottom:8px;
+}
+.operation_time{
+  font-size:16px;
+  line-height:26px;
+  color:#000000;
+  padding:20px 0px;
+  margin-bottom:34px;
+}
+.loginright .hyperlink
+{ color: #ffffff; }
+.hyperlink,.hyperlink:hover{
+  color:#024AD8;
+  text-decoration:none;
+}
+.assistance_wapper{
+  padding: 35px 0px 35px;
+  /*background: url(../images/regform/footer_bg.png) no-repeat;
+  background-position: 0% bottom;
+  background-size: 100% 60%;*/
+  clear: both;
+  background: #FFF;
+}
+/*.partner_logos{
+  margin-bottom: 160px;
+}*/
+.partner-container {
+  padding: 30px 80px;
+}
+.home-link{
+  color: #024AD8;
+  font-size: 16px;
+  text-decoration: underline;
+  trasition: 0.5s ease;
+}
+.home-link:hover{
+  color:#333;
+  cursor: pointer;
+}
+.home-link i{
+  padding-left: 10px;
+}
+.pdf-text p{
+  float: right;
+  color: #6F6F6F;
+  padding-top: 5px;
+}
+.pdf-text p span{
+  color: #6F6F6F;
+}
+#checked{
+  float: left;
+}
+.jFiler-theme-default .jFiler-input{
+  height: 41px!important;
+  margin: 0px!important; 
+  border: 0px!important;
+  font-size: 16px!important;
+  font-family: inherit!important;
+  color: #333!important;
+  border-radius: 5px!important;
+}
+.jFiler-input-button{
+  display: none!important;
+}
+.jFiler-theme-default .jFiler-input-caption{
+  height: auto!important;
+  padding-top: 2px!important;
+  padding-left: 10px!important;
+  background: #CBCBCB!important;
+  padding-right: 10px!important;
+  margin: 8px 5px 5px 10px!important; 
+}
+/* .fa-trash:before{
+    font-family: 'FontAwesome';
+    font-style: normal;
+    color:red;
+} */
+a.icon-jfi-trash.jFiler-item-trash-action{
+  text-decoration: none;
+}
+a.icon-jfi-trash.jFiler-item-trash-action:after {
+  content: '\f1f8';
+  font-family: "FontAwesome";
+  font-style: normal;
+  color: red;
+  
+}
+.businessfield{
+  height: 50px;
+}
+.modal-dialog {
+    max-width: 700px!important;
+    margin: 1.75rem auto;
+}
+.red{
+  color: red;
+}
+.modal-title{
+  color: #024AD8;
+}
+.hm-registration .is-required{
+  width: 100%;
+}
+.error-msg, .error{
+    font-size: 12px;
+    left: 8px;
+    color: red;
+    margin-bottom: 0;
+}
+.hm-registration-btn .trigger--regno{
+  float: none; background: transparent; color: #ffffff;
+}
+.home-register .hm-registration-btn .trigger--regno:hover
+{ background: #ffffff; color: #000000; }
+.hm-center {
+    margin: 0px auto;
+    width: 100%;
+    max-width: 900px;
+}
+.hidden{
+  display: none;
+}
+.welcome p{
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 20px;
+}
+.welcome p:last-child{
+  margin-bottom: 0px;
+}
+.hotel-destop{
+  display: block;
+}
+.hotel-mobile{
+  display: none;
+}
+#extend_visit_check{
+  display: none;
+}
+.mb-agendatitle{
+  display: none;
+}
+.modal{
+  background: #3333334f;
+}
+/* Speakers css */
+.speaker-link a{
+  text-decoration: none;
+}
+.speaker-link a:hover .speaker-wrap{
+  transform: translate3D(0,-1px,0) scale(1.03); /* move up slightly and zoom in */
+  box-shadow: 8px 28px 50px rgba(39,44,49,.07), 1px 6px 12px rgba(39,44,49,.04);
+  transition: all .4s ease; /* zoom in */
+  cursor: pointer;
+}
+.speaker-wrap{
+  background: #FFFFFF;
+  box-shadow: 0px 3px 16px #0000001A;
+  border: 2px solid #024AD8;
+  border-radius: 4px;
+  text-align: center;
+  padding: 35px 25px;
+  margin-bottom: 20px;
+  min-height: 350px;
+}
+.speaker-title{
+  padding-top: 25px;
+  color: #024AD8;
+  font-size: 24px;
+}
+.speaker-detail-left{
+  text-align: center;
+}
+.speaker-detail-right p{
+  line-height: 26px;
+  padding-right: 12px;
+}
+.speaker-detail-right .speaker_backlink{
+  color: #024AD8;
+  margin-top: 20px;
+}
+.speaker-detail-right .speaker_backlink a{
+  color: #024AD8;
+}
+.agendapills li a{
+  border-bottom: 4px solid #000000;
+  padding: 25px 25px 10px 25px;
+  font-size: 24px;
+  color: #121212;
+  display: block;
+}
+.agendapills li a:hover{
+  text-decoration: none;
+}
+.agendapills li.active a{
+  border-bottom: 4px solid #024AD8;
+  color: #024AD8;
+}
+.agendatab-content{
+  padding-top: 50px;
+}
+.agendatab-content .firstrowborder{
+  border-top: 1px solid #000;
+}
+.agendatab-content tr{
+  border-bottom: 1px solid #000;
+}
+.agendatab-content .all{
+  background: #F5F5F5;
+}
+.agendatab-content table td{
+  padding: 15px 10px 12px;
+}
+.agendatab-content .splink{
+  color: #024AD8;
+}
+.agenda-fttitle{
+  margin-top: 30px;
+}
+/* Count Down css */
+#canvas-days .kineticjs-content,#canvas-days canvas,
+#canvas-hours .kineticjs-content,#canvas-hours canvas,
+#canvas-minutes .kineticjs-content,#canvas-minutes canvas,
+#canvas-seconds .kineticjs-content,#canvas-seconds canvas{
+  width: 168px!important;
+  height: 168px!important;
+}
+.countdown-container {
+background-position: center;
+background-repeat: repeat;
+}
+.clock-item .inner {
+height: 0px;
+padding-bottom: 100%;
+position: relative;
+width: 100%;
+}
+.clock-canvas {
+/*background-color: rgba(255, 255, 255, .1);*/
+background: url('../images/regform/circle.png') rgba(255, 255, 255, .1) no-repeat;
+/*border-radius: 50%;*/
+height: 0px;
+padding-bottom: 100%;
+}
+.text {
+color: #fff;
+font-size: 30px;
+font-weight: bold;
+margin-top: -30px;
+position: absolute;
+top: 50%;
+text-align: center;
+width: 80%;
+}
+.text .val {
+font-size: 50px;
+color: #024AD8;
+}
+.type-time {
+  font-size: 20px;
+  margin-top: -20px;
+  width: 80%;
+  text-align: center;
+  color: #1A1A1A;
+}
+ @media (min-width: 768px) and (max-width: 991px) {
+.clock-item {
+margin-bottom: 30px;
+}
+}
+ @media (max-width: 767px) {
+.clock-item {
+margin: 0px 30px 30px 30px;
+}
+}
+
+/*Humburger Menu*/
+.mobile-container{
+    display: none;
+}
+.center{
+  text-align: center;
+}
+.thankyou-title p{
+  font-size: 20px;
+}
+@media (max-width: 800px){
+.location .left{
+  width: 100%!important;
+}
+.location .right{
+  width: 100%!important;
+  padding: 0px 25px;
+}
+.location .right .hotel_img {
+    margin-bottom: 25px!important;
+}
+.home-register label{
+  transform: translateY(0px)!important;
+}
+}
+@media (max-width: 768px) {
+.desktop-menu{
+  display: none;
+}
+.mobile-container{
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 0px;
+}
+.menu-button-container {
+    display: flex;
+    float: right;
+    position: absolute;
+    right: 50px;
+    top: 0px;
+}
+.top-nav {
+  color: #FFF;
+  height: 50px;
+  padding: 1em;
+
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+}
+
+/* .menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #333;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+
+.menu-button-container {
+display: flex;
+float: right;
+}
+  .menu {
+    position: absolute;
+    top: 26px;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    border-bottom: 1px solid #ddd;
+    height: 45px;
+    background: #121212;
+    text-align: center;
+    padding: 10px;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: #222;
+  }
+  .menu li a{
+    color: #fff;
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+} */
+/*End of Humburger */
+
+/* .hm-agenda .w_902{
+  background: url(../images/regform/agenda_bg.png)no-repeat;
+  background-size: 100% 100%;
+    display: block;
+    padding: 70px 0px 100px;
+}
+.hm-agenda .borderless td{
+    border: none;
+    border-top: 0px!important;
+    font-size: 19px;
+    line-height: 27px;
+}
+.hm-agenda .borderless td.first-col{
+    width: 30%;
+    border-right: 2px solid #ddd;
+}
+.hm-agenda .borderless td.sec-col{
+    padding-left: 50px;
+}
+.hm-agenda .inner-wrap-border{
+    width: 100%;
+    max-width: 60%;
+    margin: 0px 40px 0px auto;
+}
+.hm-agenda .hm-save{
+    position: absolute;
+    margin-top: 47px;
+    left: 44%;
+}
+.hm-agenda .hm-save .primary-btn{
+  background: #000000;
+}
+.hm-agenda .hm-save .primary-btn:hover{
+  background: #024AD8;
+  color: #fff;
+  border: 0px;
+}
+.hm-agenda .subheader{
+  font-size: 24px;
+    padding-bottom: 30px;
+    padding-left: 8px;
+} */
+@media (max-width: 1600px) {
+  .container-fluid{
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media (min-width: 1400px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1088px;
+  }
+}
+@media (max-width: 1024px){
+.KV{
+  height: 400px;
+}
+.register-form .loginform{
+ max-width: 90%!important;
+}
+.faq_container button.accordion:after{
+  top: 25px;
+}
+.location .right .hotel_img{
+  margin-bottom: 30px!important;
+}
+}
+@media (max-width: 992px) {
+.KV{
+  height: 370px;
+}
+.partner-container {
+  padding: 30px 15px;
+}
+.register-form label{
+  transform: translateY(0px)!important;
+}
+.clock-canvas{
+  width: 50%;
+    margin: 0px auto;
+    padding-bottom: 65%;
+}
+.text{
+    top: 43%;
+    left: 10%;
+}
+.clock-item .inner {
+    height: 0px;
+    padding-bottom: 70%;
+}
+.type-time {
+    width: 100%;
+    text-align: center;
+    color: #1A1A1A;
+}
+.w_902_second{
+  margin-left: 0;
+}
+.event{
+  width: 80%;
+}
+}
+.partner-container .centerit {
+  width: 100%;
+  text-align: center;
+  margin: 50px 0;
+}
+@media (max-width: 800px){
+.event,.agenda-left,.agenda_wapper {
+    width: 87%;
+}
+}
+@media (max-width: 768px){
+.event,.agenda-left,.agenda_wapper {
+    width: 90%;
+}
+.KV{
+  height: 340px;
+}
+.menu-button-container{
+  right: 40px;
+}
+.home-register .submit-btn{
+  float: none;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.assistance_wapper {
+    background-size: 100% 45%;
+    clear: both;
+}
+.footer{
+    margin-top: 0px!important;
+}
+.event .header{
+  margin-top: 20px!important;
+}
+.header-container .logo-holder {
+    margin: 30px 0;
+    z-index: 999;
+}
+.masthead-holder {
+  background-size: cover;
+  height: 280px;
+  background-position: 19% 50%;
+  padding-bottom: 30px;
+}
+.partner-container .centerit {
+  margin: 25px 0;
+}
+.register-form h2 {
+  margin: 10px 0;
+}
+}
+@media (max-width: 767px){
+.event,.agenda-left,.agenda_wapper {
+    width: 68%;
+}
+.menu-button-container{
+    right: 100px;
+}
+.clock-item {
+  margin: 0px 0px 30px 0px;
+}
+.clock-canvas{
+  width: 168px;
+  margin: 0px auto;
+}
+.clock-item .inner {
+    padding-bottom: 100%;
+}
+.clock-canvas {
+    padding-bottom: 85%;
+}
+.text {
+    left: 8%;
+}
+.type-time {
+    width: 100%;
+}
+}
+@media (max-width: 700px){
+.event,.agenda-left,.agenda_wapper {
+    width: 68%;
+}
+}
+@media (max-width: 600px){
+.pt-right{
+  text-align: right;
+  padding-top: 0px;
+  float: none;
+}
+.menu-button-container{
+  right: 35px;
+}
+.res_title{
+  padding: 30px 0px 0px 25px;
+  font-size: 35px;
+}
+.register-form label{
+  font-size: 15px!important;
+}
+.clock-canvas {
+    padding-bottom: 100%;
+}
+.event, .agenda-left, .agenda_wapper {
+    width: 88%;
+}
+.hm-agenda .w_902{
+  background: url(../images/regform/agenda_bg_mobile.png)no-repeat;
+  background-size: 100% 100%;
+}
+.hm-agenda .inner-wrap-border {
+    width: 100%;
+    max-width: 85%;
+    margin: 0px 40px 0px auto;
+}
+.hm-agenda .hm-save {
+    left: 33%;
+    margin-top: 40px;
+}
+.mb-agendatitle{
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.agendapills li a{
+  padding: 15px 10px 10px 0px;
+  font-size: 16px;
+}
+.KV {
+    height: 280px;
+}
+}
+@media (max-width: 560px) {
+.event, .agenda-left, .agenda_wapper {
+    width: 90%;
+}
+.KV {
+    height: 245px;
+}
+.register-form h2 {
+  font-size: 30px;
+  line-height: 26px;
+}
+.mobile-container{
+  right: 0px;
+}
+.header{
+  font-size: 30px;
+}
+.operation_time{
+  margin-bottom: 0px;
+}
+.assistance_wapper {
+    background-size: 100% 35%;
+    clear: both;
+}
+}
+@media only screen and (max-width: 450px){
+.menu-button-container {
+    right: 20px!important;
+}
+.res_subtitle{
+  font-size: 22px;
+}
+.KV {
+    height: 200px;
+}
+.text {
+    left: 5%;
+    top: 55%;
+}
+.type-time {
+    width: 100%;
+    margin-top: -9px;
+}
+.hm-agenda .hm-save {
+    left: 28%;
+    margin-top: 38px;
+}
+.hm-agenda .subheader {
+    font-size: 22px;
+}
+.event{
+  margin-top: 20px;
+}
+.hm-agenda,.countdown-container{
+  margin-top: 30px;
+}
+.hm-agenda .borderless td.sec-col {
+    padding-left: 20px;
+}
+.hm-agenda .borderless td{
+    font-size: 17px;
+}
+.header {
+    font-size: 27px;
+}
+.agendatab-content table td:first-child{
+  width: 30%;
+}
+.speaker-wrap{
+  min-height: auto;
+}
+.speaker-detail-right p,.speaker-detail-right .speaker_backlink{
+  padding-left: 10px;
+}
+.faq_container button.accordion:after {
+    top: 13px!important;
+}
+}
+@media only screen and (max-width: 400px){
+.submit-btn{
+  float: none!important;
+}
+.res_title{
+  padding: 30px 0px 0px 18px;
+}
+.link_text{
+  word-break: break-word;
+}
+.countdown-container{
+  margin-top: 30px!important;
+}
+.text {
+  left: 9%;
+  top: 65%;
+}
+.type-time {
+    width: 100%;
+    margin-top: 5px;
+}
+.KV {
+    height: 170px;
+}
+.clock-canvas {
+    padding-bottom: 107%;
+    width: 150px;
+    background-size: 100%;
+}
+#canvas-days .kineticjs-content, #canvas-days canvas, 
+#canvas-hours .kineticjs-content, #canvas-hours canvas, 
+#canvas-minutes .kineticjs-content, #canvas-minutes canvas, 
+#canvas-seconds .kineticjs-content, #canvas-seconds canvas{
+    width: 150px!important;
+    height: 150px!important;
+}
+.clock-item {
+    margin: 0px 0px 55px 0px;
+}
+}
+@media only screen and (max-width: 345px){
+.KV {
+    height: 150px;
+} 
+.clock-canvas {
+    padding-bottom: 107%;
+    width: 140px;
+    background-size: 100%;
+} 
+#canvas-days .kineticjs-content, #canvas-days canvas, 
+#canvas-hours .kineticjs-content, #canvas-hours canvas, 
+#canvas-minutes .kineticjs-content, #canvas-minutes canvas, 
+#canvas-seconds .kineticjs-content, #canvas-seconds canvas{
+    width: 140px!important;
+    height: 140px!important;
+}
+}
+
+.register-form .moveUp {
+  transform: translateY(-2px);
+}
+.register-form .w-750 {
+  max-width: 750px;
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.register-form .loginform {
+  padding: 0px 0 30px;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 820px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block;
+}
+.register-form select {
+  word-wrap: normal;
+}
+.register-form button,
+.register-form select {
+  text-transform: none;
+}
+.register-form button,
+.register-form input,
+.register-form optgroup,
+.register-form select,
+.register-form textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.register-form .field {
+  padding-top: 15px;
+  /*display: flex;
+  flex-direction: column;*/
+  position: relative;
+  border: 1px sold red;
+}
+.register-form label {
+  transition: all 0.3s ease-in;
+  /*transform: translateY(10px);*/
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  padding: 0px;
+  /*text-transform: uppercase;*/
+}
+.register-form .genderradio label
+{  transform: translateY(0px); margin-left: 5px;}
+.register-form.survey-form .form-input {
+  margin-left: 20px;
+}
+.register-form.survey-form select {
+  margin-left: 20px;
+}
+.home-register label{
+  transform: translateY(5px);
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  padding: 0px;
+}
+.register-form .datepicker,.register-form #visa_passportissuedate,.register-form #visa_passportexpirydate{
+  width: 100%;
+  border: 0px;
+  padding: 8px 8px 8px 10px;
+  background: #fff url(../images/regform/calendar.svg) no-repeat 98% 8px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.register-form .datepicker1{
+  width: 100%;
+  border: 0px;
+  padding: 8px 8px 8px 10px;
+  background: #fff url(../images/regform/calendar.svg) no-repeat 98% 8px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.register-form .datepicker:focus,.register-form .datepicker1:focus,.register-form #visa_passportissuedate:focus,
+.register-form #visa_passportexpirydate:focus{
+  outline: 0px;
+}
+.register-form .datepicker td,th{
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+.register-form .form-input,.home-register .form-input{
+  font-size: 16px;
+  font-weight: 300;
+  display: block;
+  border: 0px;
+  border-radius: 5px;
+  width: 100%;
+  outline: none;
+  box-shadow: none;
+  padding: 8px;
+  background-color: #ffffff;
+  transition: all 0.3s;
+}
+.register-form .file-upload{
+  background-color: #ffffff;
+  width: 100%;
+  padding: 8px 8px 8px 10px;
+  border-radius: 5px;
+}
+.register-form select {
+  font-size: 16px;
+  font-weight: 300;
+  color: #000000;
+  width: 100%;
+  border: 0px;
+  border-radius: 5px;
+  padding: 8px 8px 8px 10px;
+  outline: 0;
+  background: #fff url(../images/regform/down.svg) no-repeat 98% 15px;
+  appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+}
+.register-form .formcheckbox .chk-labeltitle {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.register-form .formcheckbox .text_label {
+  display: block !important;
+  background-color: transparent !important;
+  border-top: 0px !important;
+  border-left: 0px !important;
+  border-right: 0px !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 0px !important;
+  font-size: 18px !important;
+  position: relative !important;
+  margin-bottom: 20px !important;
+  font-weight: bold;
+}
+.register-form .form-check {
+  width: 100% !important;
+  padding: 0px !important;
+  margin-bottom: 8px;
+}
+.register-form .form-check label {
+  width: calc(100% - 30px) !important;
+  display: inline-block !important;
+  vertical-align: top !important;
+  transform: translateY(0px);
+  line-height: 24px;
+}
+.register-form .inline-checkbox {
+  width: 20px;
+  height: 20px;
+  display: inline !important;
+  margin-top: 5px;
+}
+.button-holder {
+  margin: 45px 0 20px;
+  overflow: hidden;
+}
+.edit-btn{
+  width: 100px!important;
+}
+.register-form .submit-btn, .regsummary .submit-btn, .regsummary .edit-btn
+{ background:#024AD8; border: 1px solid #024AD8; color: #ffffff; 
+transition: color .2s linear, background-color .2s linear, border-color .2s linear, box-shadow .1s linear;}
+.primary-btn{
+  background: #024AD8;
+  border: 1px solid #024AD8;
+  color: #ffffff;
+  padding: 2px 32px !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  font-family: inherit !important;
+  border-radius: 0 !important;display: inline-block !important;
+  line-height: 38px !important;
+  text-align: center;
+  text-decoration: none;
+  transition: color .2s linear, background-color .2s linear, border-color .2s linear, box-shadow .1s linear;
+}
+
+.outline-btn {
+  background: transparent;
+  border: 1px solid #024AD8;
+  padding: 2px 32px !important;
+  font-size: 16px !important;
+  color: #024AD8 !important;
+  font-weight: bold !important;
+  font-family: inherit !important;
+  border-radius: 0 !important;
+  margin-right: 20px !important;
+ /* width: 160px;
+  height: 40px;*/
+  display: inline-block !important;
+  line-height: 38px !important;
+  text-align: center;
+  text-decoration: none;
+  transition: color .2s linear, background-color .2s linear, border-color .2s linear, box-shadow .1s linear;
+}
+.outline-btn:hover {
+  color: #FFF !important;
+}
+.primary-btn:hover,.outline-btn:hover{
+  background: #013bac;
+}
+@media only screen and (max-width: 576px) {
+  .button-holder {
+    text-align: center;
+  }
+  .outline-btn {
+    margin-left: 0px;
+    margin-bottom: 20px !important;
+    margin-right: 0;
+  }
+}
+.apex_intro {
+  border-top: 8px solid #67899A;
+  border-bottom: 8px solid #67899A;
+}
+.apex_intro .intro_wapper {
+  max-width: 1076px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 36px;
+  padding-bottom: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 20px;
+  line-height: 28px;
+}
+.apex_intro .intro_wapper .title {
+  font-size: 38px;
+  padding-bottom: 36px;
+}
+
+.stayintouchbox {
+  padding-top: 50px;
+}
+
+.partnership {
+  padding-top: 40px;
+}
+.partnership .title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #612CB0;
+}
+.partnership .logo {
+  margin: 50px auto;
+}
+
+.liner {
+  font-size: 16px;
+  color: #444444;
+  padding: 20px 10px;
+}
+.small{
+  font-size: 14px;
+}
+.footer {
+  background: #FFFFFF;
+  color:#000000;
+  font-size: 16px;
+  line-height: 21px;
+  /*padding: 22px;
+  margin-top: 100px;*/
+}
+/* faq */
+/*.faq_page{
+  padding-top: 55px;
+}*/
+.infotext{
+  font-size: 22px !important;
+  line-height: 32px !important;
+  padding-top: 15px !important;
+  margin-bottom: 0;
+}
+.faq_container h1 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+}
+.faq_container p,.faq_container ul li {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 300;
+  color: #707070;
+}
+.bold{
+  font-weight: bold!important;
+}
+.faq_container p.subtitle {
+  text-align: center;
+}
+.faq_container .faq_header {
+  display: block;
+  position: relative;
+  font-size: 24px;
+  line-height: 30px;
+  padding-top: 36px;
+  color: #024AD8;
+  font-family: "HPFormaDJROffice", Arial, sans-serif;
+}
+@media only screen and (max-width: 576px) {
+  .faq_container .faq_header {
+    padding-right: 90px;
+  }
+}
+.faq_container .faq_header h5, .faq_container .faq_header .expand_all {
+  display: inline-block;
+}
+.faq_container .faq_header h5{
+  font-size: 24px;
+}
+.faq_container .faq_header .expand_all {
+  color: #1A1A1A;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+  position: absolute;
+  right: 0px;
+  margin: 20px 0;
+}
+.faq_container .faq_header .expand_all::before {
+  content: "˄";
+  width: 12px;
+  height: auto;
+  position: absolute;
+  top: 12px;
+  left: -16px;
+  transform: translateY(-50%);
+  transition: all 0.55s;
+}
+.faq_container .faq_header .expand_all.is_close::before {
+  content: "˅";
+}
+.faq_container .faq_items {
+  margin: 0 0 0px 0;
+}
+.faq_container .faq_items.last {
+  margin-bottom: 0px;
+}
+.faq_container button.accordion {
+  width: 100%;
+  background-color: #ffffff;
+  color: #1A1A1A;
+  font-size: 20px;
+  line-height: 35px;
+  border: none;
+  outline: none;
+/*  border-bottom: 1px solid #1A1A1A;*/
+  text-align: left;
+  padding: 15px 30px 0px 0px;
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+  position: relative;
+}
+.faq_container button.accordion:after {
+  font-family: FontAwesome;
+   content: "\f078";
+   color: #024AD8;
+/*  font-family: Font Awesome; */
+  /*background: url('../images/regform/down_arrow.svg') no-repeat;
+  background-size: contain;*/
+  width: 12px;
+  height: 18px;
+  position: absolute;
+  right: 12px;
+  top: 18px;
+  border-width:.4em 0 .4em .4em;
+  transition: all 0.55s;
+}
+.faq_container button.is-open:after {
+  transform: translateY(50%) translateX(38%) rotate(180deg);
+}
+.faq_container .accordion_content {
+  width: 100%;
+  padding: 0 0px;
+  font-weight: 300;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+  border-bottom: 1px solid #333;
+  padding-top: 10px;
+}
+.faq_container .accordion_content p{
+  color: #707070;
+}
+.faq_container .accordion_content .overflow {
+  overflow-x: auto;
+}
+@media only screen and (max-width: 576px) {
+  .faq_container .accordion_content {
+    padding: 0 20px 0 0px;
+  }
+  .faq_container button.accordion{
+    padding: 15px 30px 10px 0px;
+  }
+  
+}
+.faq_container .desktop-break {
+  display: block;
+}
+@media screen and (max-width: 560px) {
+  .faq_container .desktop-break {
+    display: inline;
+  }
+}
+.faq_container .list_decimal {
+  margin: 0px 0px 20px 0px;
+}
+.faq_container .list_decimal li {
+  list-style-type: decimal;
+  padding: 5px 0 5px 5px;
+}
+.faq_container .list_disc {
+  margin: 0px 0px 20px 16px;
+}
+.faq_container .list_disc li {
+  list-style-type: disc;
+  padding: 5px 0 5px 5px;
+}
+.faq_container .list_disc.no-margin-b {
+  margin-bottom: 0;
+}
+.faq_container .list_asterisk {
+  margin: 0px 0px 20px 16px;
+}
+.faq_container .list_asterisk li {
+  list-style-type: "*";
+  padding: 5px 0 5px 5px;
+}
+.faq_container .table_style {
+  width: 30%;
+  border-collapse: collapse;
+}
+.faq_container .table_style td {
+  border: 1px solid #cccccc;
+  padding: 7px;
+  font-size: 16px;
+  line-height: 22px;
+}
+.faq_container .table_style td.wid70 {
+  width: 70%;
+}
+.faq_container .table_style td.wid30 {
+  width: 30%;
+}
+.faq_container .table_style td.wid40 {
+  width: 40%;
+}
+@media only screen and (max-width: 576px) {
+  .faq_container .table_style {
+    min-width: 700px;
+  }
+}
+/* Home */
+/*.home_page{
+  margin-top:60px;
+}*/
+.bg-gray{
+  background:#23274C;
+  padding: 40px 0px;
+}
+.bg-gray .header{
+  color: #fff;
+}
+.event_date{
+  padding: 15px 0px;
+  font-size:24px;
+  line-height: 30px;
+}
+.agenda_tbl{
+  border-top:1px solid #000000;
+  border-left:1px solid #000000;
+  width: 100%;
+  margin: 22px 0px;
+}
+.agenda_tbl td{
+  border-bottom:1px solid #000000;
+  border-right:1px solid #000000;
+  color:#1A1A1A;
+  font-size:16px;
+  line-height:26px;
+}
+.agenda_tbl td:nth-child(1){
+  width: 20%;
+  text-align:center;
+  padding: 16px 0px;
+}
+.agenda_tbl td:nth-child(2){
+  width: 80%;
+  padding: 16px 40px;
+}
+.agenda_tbl td.purple{
+  background:#B655F5;
+}
+.agenda_tbl td.light_purple{
+  background:#CB87F8;
+}
+.join_text{
+  padding: 22px 0px 0;
+}
+/*.event_location{
+  margin:48px 0px 54px;
+  border:1px solid #080808;
+  
+}*/
+.event_location .header{
+  padding-bottom:16px;
+  padding: 17px 0px 17px 22px;
+  border-bottom:1px solid #080808;
+}
+.event_location .title{
+  font-size:24px;
+  line-height:32px;
+}
+.event_location .address{
+  font-size:16px;
+  line-height:24px;
+}
+.location .right{
+  display: inline-block;
+  width:394.6px;
+}
+.location .right .hotel_img{
+  margin-bottom:50px;
+}
+.color-purple{
+  color:#B655F5;
+}
+.jFiler-items-default .jFiler-item .jFiler-item-others{display: none;}
+.chaticon
+{ position: fixed; bottom: 50px; right:50px; background: #024AD8; border-radius: 50%;
+  -ms-border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%;
+  padding: 20px; cursor: pointer;
+}
+#passportfile-error,
+#passportfile2-error,
+#passportfile3-error,
+#passportfile4-error{
+        color:red !important;
+        font-size:14px !important;
+        text-transform: none !important;
+        margin-bottom:10px;
+    }
+#submit_continue:disabled{
+        background: #ccc;
+        pointer-events: none;
+    }
+/*.btn-chat
+{ background:white; border-radius:36px;}
+.btn-chat-popup,.dilogue-btn-end-chat
+{ background:#024AD8; color:white; border-radius:36px;}*/
+.regtitle
+{ position:relative; display:table; width:100%; }
+.regtitle .regtitleleft
+{ float:left; }
+.regtitle .regtitleright
+{ float:right; text-align:right;}
+.regtitle .regtitleright .steptitle
+{ color:#707070; font-size:20px; line-height:24px; padding-top: 10px; margin-bottom: 0px;}
+.footertitle, .operation_time
+{ text-align:center; }
+.copyrightsection {
+    padding: 60px 0px 60px;
+    background: #ffffff;
+    -webkit-box-shadow: 0px -3px 8px rgba(0,0,0,0.49);
+    -moz-box-shadow: 0px -3px 8px rgba(0,0,0,0.49);
+    box-shadow: 0px -3px 8px rgba(0,0,0,0.49);
+    position: relative;
+    display: table;
+    width: 100%;
+}
+.copyrightext
+{ float:left; width:50%; text-align: left;}
+.footerlogo
+{ float:right; width:50%; text-align: right;}
+.copyrightp
+{ font-size:13px; line-height:16px; color:#000000; }
+.row.aboutusrow, .row.loginrow,.row.locationrow, .row.speakersrow, .row.sponsorsrow
+{ position:relative; display:table;width:100%; }
+.loginrow .loginright img
+{ margin-bottom:15px; }
+.loginleft .logintitle
+{ text-align: center; }
+.loginleft .home-register .form-input
+{ border-radius:0px; }
+.loginleft .home-register label,
+.hm-center.hm-registration .label--group.mb-10
+{ text-align:left; }
+.loginleft .home-register label,
+.loginleft .home-register .raisin
+{ color:#ffffff; }
+.locationdiv .locationleft
+{ width:40%; float: left; 
+  background: #ffffff; padding: 40px 30px; 
+-webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 60%;
+    left: 10%;
+}
+.locationdiv .locationright
+{  width:60%; float: right;}
+.locationrow .locationdiv 
+{ position:relative; display:table; width:100%; margin: 5% 0% 37.5% 0%;}
+.sponsorsrow .sponsorsdiv
+{ text-align:center; padding: 50px 0px; }
+.sponsorsrow .sponsorsdiv .logintitle
+{ margin-bottom: 70px; }
+.aboutusrow .aboutright
+{ width:40%; float: right; 
+  background: #ffffff; padding: 40px 30px; 
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 25%;
+    right: 9%;
+}
+.aboutusrow .aboutleft
+{  width:60%; float: left;}
+.aboutusrow .aboutdiv 
+{ position:relative; display:table; width:100%; margin: 0% 0% 37.5% 0%;}
+.speakersrow .speakersdiv
+{ position:relative; display:table; width:100%; margin: 70px 0px 50px 0px; text-align: center;}
+.speakersrow .speakersdiv .logintitle
+{ margin-bottom: 50px; }
+h2.h2title
+{ color: #000000;}
+p.paratext
+{ color: #000000; font-size: 20px; line-height:32px; }
+section.section1
+{ background: #FFF; padding: 60px 0px 20px 0px; position: relative;}
+section.section2
+{ background: #FFF; padding: 20px 0px 60px 0px; position: relative;}
+section.section3
+{ background: #000000; padding: 0px 0px; position: relative;}
+h3.h3title
+{ color:#FFFFFF;}
+.loginright
+{ text-align:center; }
+.loginright .paratext
+{ color:#ffffff; }
+.loginleft h3.h3title
+{ margin-bottom: 20px; text-align: center;}
+.home-register .submit-btn
+{ float:none; margin-right: 20px; 
+  transition: color .2s linear, background-color .2s linear, border-color .2s linear, box-shadow .1s linear;}
+section.kvsection
+{ position:relative;display:table;width:100%; }
+.kvsection .kvbanner
+{ width:100%; max-width: 100%; text-align: right; background: #FFFFFF;}
+.kvbanner img.img-fluid
+{ width:auto; }
+.agendarow .agendacol .agendainfocontent
+{ margin-bottom:30px; }
+.agendarow .agendainfocontent
+{ display:flex; background: transparent;}
+.agendainfocontent .agendainfocol.left
+{ text-align:center; background: #0b50d9; transform: skew(-20deg);}
+.agendainfocontent .agendainfocol.right
+{ background: #EEF2F4;}
+.agendainfocol.right .paratext
+{ margin-bottom:0px; }
+.agendainfocol.left .paratext
+{ margin-bottom: 0px; color: #fff; transform: skew(20deg);}
+.agendainfocol.left .eventmonth
+{ font-size:26px; color:#000000; }
+.agendainfocol.left .eventdate
+{ font-size:40px; color:#000000; }
+.row.agendarow
+{ margin-top:20px; margin-bottom: 40px;}
+.body-content.registerpage2, section.regsummary, section.thankyoucontent
+{ margin-bottom: 60px; position: relative;}
+/*path animation css*/
+svg.squiggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 200vw;
+/*  z-index: 1;*/
+z-index: -9;
+}
+svg.squiggle path {
+  stroke-width: 0.5rem;
+}
+.date_font{
+  font-size: 18px;
+}
+.home-register .row
+{ --bs-gutter-x: 0px; }
+/*path animation css*/
+.group_checkbox input.control.error
+{ outline: 1px solid red; }
+.group_checkbox .custom-holder.inputbox
+{ display:flex; }
+.register-form.bg-periwinkle.registerpage1
+{ margin-bottom:40px; }
+.row.agendarow3
+{ position:relative; display:table; text-align:center; margin-top: 40px; width: 100%;}
+.row.agendarow3 a
+{ color:#fff; background: #024AD8; padding: 10px 30px; text-decoration:none;transition: all 300ms linear;}
+.row.agendarow3 a:hover
+{ opacity:0.8; }
+.row.agendarow2, .row.agendarow3
+{ --bs-gutter-x: 0px; }
+.kvsection .kvsectioninfo
+{ position:absolute; }
+.kvsectiontitle
+{ color: #000; }
+.kvsectiontitle p
+{ margin-bottom:0px; }
+/*.bodymain::before
+{ content:""; background: url('../images/regform/bodypath.png') no-repeat; position: absolute; }*/
+.kvsection::before
+{ content:""; background: url('../images/regform/bodypath.png') no-repeat; position: absolute; }
+.body-content #form
+{ position:relative; }
+section.section4
+{ display:none; }
+.infotitle
+{ font-size: 40px; line-height: 44px; color: #fff;}
+.inforow .infocol.infocol1
+{ background:#024AD8; }
+.inforow .infocol.infocol2
+{ background:#568393; }
+.inforow .infocol.infocol3
+{ background:#FF5050; }
+.inforow p.paratext
+{ color: #fff; }
+.row.inforow
+{ margin-top: 25px; padding-left: 13px; margin-bottom: 30px;}
+.inforow .infocol .infocontent
+{ padding: 60px 4px 40px 5px;}
+.infocol .infocontent .paratext
+{ margin-top: 0px;}
+#regphoto_file-error.error
+{ color:#FF0000; }
+.regphotoupload .fa-trash:before
+{ display:none; }
+.register-form .file-upload.error
+{ border-bottom:1px solid red; }
+.container.agendacontainer
+{ position:relative;}
+.kvagendasec h2
+{ font-size: 44px; line-height:60px;}
+.agendadate
+{ font-size: 32px; line-height:36px; margin-bottom: 5px;}
+.agendacontent
+{ font-size: 20px; line-height:24px; }
+.kvagendablock .kvagendacol
+{ display: flex;}
+.agendablock
+{ margin-bottom: 12px; }
+.kvsection.mobile
+{ padding-bottom: 0px; }
+.kvsection.mobile .kvsectioninfo
+{ position:relative; left: 0px; }
+.kvsection.mobile .kvsectioninfo .kvbanner img
+{ width: 100%; height: auto;}
+.kvsection.mobile .kvsectioninfo .kvlogo img 
+{ width: 195px; margin-top: 25px;}
+.kvsection.mobile .kvsectioninfo .kvlogo img.hplogoimg
+{ width: auto; height: 54px;}
+.kvsection.mobile .kvagendasec h2
+{ margin-top: 30px; margin-bottom: 30px; }
+.kvsection.mobile .kvagendablock .kvagendacol
+{ display: block; }
+.kvsection.mobile .kvbanner
+{ margin-top: 20px; }
+.amdkvsec .agendacontent,
+.hpseasthpsg .agendacontent
+{ font-size: 18px; }
+.kvsection.indexkv::before
+{ display:block; }
+p.kvagendanote
+{ width: 55%; font-size: 15px; font-style: italic;}
+.mobile p.kvagendanote
+{ width: 100%; font-style: italic;  }
+span.optionalkey
+{ color: #000000; font-style: italic; margin-left: 3px; font-size: 15px;}
+.register-form input.radiobtn.error
+{ outline: 1px solid red; }
+@media screen and (min-width: 320px) 
+{
+  p.accommonote
+  { padding-right: 0px; }
+  p.accommonote.accommonotelong
+  { padding-right: 0%; }
+  .regtitle .regtitleright
+  { padding: 40px 10px 0px 0px; }
+  .body-content 
+  { margin-top: 30px; }
+  .mobile p.kvagendanote
+  { font-size: 10px; line-height: 18px; padding: 10px 10px 0px 10px;}
+  .kvsection::before
+  { display:none; }
+  .kvsection.Register::before,
+  .kvsection.Register2::before,
+  .kvsection.Register3::before,
+  .kvsection.RegSummary::before,
+  .kvsection.RegThankyou::before,
+  .kvsection.Register1_AMD::before,
+  .kvsection.Register2_AMD::before,
+  .kvsection.RegSummary_AMD::before,
+  .kvsection.Thankyou_AMD::before,
+  .kvsection.Register1_NoAcc::before,
+  .kvsection.Register2_NoAcc::before,
+  .kvsection.RegSummary_NoAcc::before,
+  .kvsection.Thankyou_NoAcc::before,
+  .kvsection.Register1_WW::before,
+  .kvsection.Register2_WW::before,
+  .kvsection.RegSummary_WW::before,
+  .kvsection.Thankyou_WW::before,
+  .kvsection.Register1_Intel::before,
+  .kvsection.Register2_Intel::before,
+  .kvsection.RegSummary_Intel::before,
+  .kvsection.Thankyou_Intel::before,
+  .kvsection.Register1_HPSGNoFlight::before,
+  .kvsection.Register2_HPSGNoFlight::before,
+  .kvsection.RegSummary_HPSGNoFlight::before,
+  .kvsection.Thankyou_HPSGNoFlight::before 
+  { display:none; } 
+  .kvsection.mobile .kvsectioninfo .kvlogo
+  { padding-left: 10px; }
+  .kvsection.mobile .kvagendacol.kvagendacol1
+  { margin-right: 0px; }
+  .kvsection.mobile .kvagendablock
+  { display:block; }
+  .kvsection.mobile .kvsectioninfo::before
+  { content:""; background: url('../images/regform/mobiletoppattern.png') no-repeat; position: absolute; right: 0px; top: 0px;
+    width: 102px; height: 53px;}
+  .kvsection.mobile::after
+  { content:""; background: url('../images/regform/mobilebottompattern.png') no-repeat; position: absolute; right:0px; bottom: 0px;
+    width: 137px; height: 486px; display: none;}
+  .kvsection.desktop
+  { display: none; }
+  .kvsection.mobile
+  { display: block; }
+  .container.agendacontainer
+  { padding-left: 0%; }
+  .inforow .infocol
+  { width: 96%; margin-right: 14px; margin-bottom: 15px;}
+  .agendainfocontent1 .agendainfocol.right .paratext,
+  .agendainfocontent .agendainfocol.right .paratext
+  { font-size: 18px;}
+  .agendarow .agendainfocontent
+  { margin-left:20px; }
+  .agendainfocol.left.secblock .paratext
+  { padding-top: 60%; }
+  .agendainfocol.left .paratext
+  { font-size: 22px;line-height:18px; padding-top: 40%; padding-right: 10px;}
+  .agendainfocontent .agendainfocol.left
+  { width: 30%; }
+  .agendainfocontent .agendainfocol.right
+  { width: 80%; margin-left: -8%;}
+  .kvsectioninfo img 
+  { width: 120px; }
+  .kvsectioninfo img.hplogoimg
+  { width: auto; height:33px; }
+  .kvsectiontitle h2
+  { font-size: 14px; line-height:16px;}
+  .kvsectiontitle .kveventdate
+  { font-size: 14px; line-height:14px; }
+  .kvsectiontitle .kveventplace
+  { font-size: 12px; line-height:12px; }
+  .kvsectiontitle
+  { margin-top: 20%; }
+  .hpamdlogo .kvsectiontitle
+  { margin-top: 20%; }
+  .kvsection .kvsectioninfo
+  { top: 8%; left: 20px; }
+  .kvsection::before
+  { top: 86%; width: 215px; height: 639px; left: 0%; background-size: 25%;}
+  /*.bodymain::before
+  { top: 4.8%; width: 215px; height: 639px; left: 0%; background-size: 22%;}
+  .bodymain.regpage1::before
+  { top: 4.8%; left: -3%;}
+  .bodymain.regpage2::before
+  { top: 3.5%; left: -3%;}
+  .bodymain.regsummarypage::before
+  { top: 3.2%; left: -3%;}
+  .bodymain.typage::before
+  { top: 3.3%; left: -3%;}*/
+  .kvbanner img.img-fluid
+  { height:175px; }
+  .loginright.RegAssistancediv .paratext
+  { font-size:16px; }
+  .loginrow .loginleft.registerformdiv
+  { width:100%; text-align:center; float: none; border-right: 0px;padding: 35px 0px 30px 0px;border-bottom: 0px solid #FFFFFF;
+  margin:0px auto;}
+  .loginrow .loginright.RegAssistancediv
+  { width:100%; text-align:center; float: none; padding: 50px 0px 30px 0px;
+  margin:0px auto; }
+  table .fontsizetd
+  { font-size: 14px !important; line-height: 19px!important;}
+  .register-form .group_checkbox label
+  { line-height: 25px; text-transform: capitalize;}
+  .agendainfocontent2 .agendainfocol.right .paratext
+  { padding-top: 10px; }
+  .agendainfocontent1 .agendainfocol.right .paratext
+  { padding: 10px 10px 10px 40px; }
+  .agendainfocol.right .paratext
+  { padding: 10px 10px 10px 40px;}
+  h3.h3title
+  { font-size:26px; line-height:32px; }
+  h2.h2title
+  { font-size:34px; line-height:38px; }
+  .welcomecontent p.paratext
+  { padding-right: 0%; }
+  .welcomecontent h2.h2title
+  { padding-right: 0%; } 
+  div.flightmin
+  { padding-top:15px; }
+  .loginrow .loginleft
+  { float:none; width:95%; padding:30px 0% 30px 0px; border-right: 0px solid #FFFFFF; border-bottom: 1px solid #FFFFFF;}
+  .loginrow .loginright
+  { float:none; width:95%; padding:30px 0px 30px 0px;}
+  .row.aboutusrow, .row.loginrow, .row.locationrow, .row.speakersrow, .row.sponsorsrow
+  { --bs-gutter-x: 0rem; }
+}
+@media screen and (min-width: 374px) 
+{
+  .regtitle .regtitleright
+  { padding: 40px 20px 0px 0px; }
+  .agendainfocol.left.secblock .paratext
+  { padding-top: 45%; }
+  .agendainfocol.left .paratext
+  { font-size: 26px;line-height:26px; padding-top: 30%; padding-right: 10px;}
+  .agendainfocontent .agendainfocol.left
+  { width: 30%; }
+  .agendainfocontent .agendainfocol.right
+  { width: 70%; margin-left: -6%;}
+  .kvsectioninfo img 
+  { width: 120px; }
+  .kvsectioninfo img.hplogoimg
+  { width: auto; height:33px; }
+  .kvsectiontitle h2
+  { font-size: 18px; line-height:20px;}
+  .kvsectiontitle .kveventdate
+  { font-size: 14px; line-height:14px; }
+  .kvsectiontitle .kveventplace
+  { font-size: 12px; line-height:12px; }
+  .kvsectiontitle
+  { margin-top: 19%; }
+  .hpamdlogo .kvsectiontitle
+  { margin-top: 19%; }
+  .kvsection .kvsectioninfo
+  { top: 8%; left: 20px; }
+  .kvsection::before
+  { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 28%;}
+  /*.bodymain::before
+  { top: 5.8%; width: 215px; height: 639px; left: 0%; background-size: 28%;}  
+  .bodymain.regpage1::before
+  { top: 4.8%; left: -3%;}
+  .bodymain.regpage2::before
+  { top: 4.3%; left: -3%;}
+  .bodymain.regsummarypage::before
+  { top: 4.3%; left: -3%;}
+  .bodymain.typage::before
+  { top: 4.3%; left: -3%;}*/
+  .kvbanner img.img-fluid
+  { height:200px; }
+}
+@media only screen and (max-width:375px){
+  .mw-100{
+    width: 150px;
+  }
+  .mw-180{
+    width: 300px;
+  }
+  .mw-150{
+    width: 200px;
+  }
+  .mw-200{
+    width: 250px;
+  }
+  td{
+    font-size: 16px !important;
+    line-height: 24px !important;
+  }
+ 
+}
+@media screen and (min-width: 430px) 
+{
+  .kvsection::before
+  { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 30%;}
+  /*.bodymain::before
+  { top: 6%; width: 215px; height: 639px; left: -3%; background-size: 28%;}
+  .bodymain.regpage1::before
+  { top: 4.8%; left: -3%;}
+  .bodymain.regpage2::before
+  { top: 4.5%; left: -3%;}
+  .bodymain.regsummarypage::before
+  { top: 4.5%; left: -3%;}
+  .bodymain.typage::before
+  { top: 4.5%; left: -3%;}*/
+}
+@media screen and (min-width: 667px) 
+{
+  .regtitle .regtitleright
+  { padding: 40px 40px 0px 0px; }
+  .kvsection.mobile .kvsectioninfo .kvlogo
+  { padding-left: 36px; }
+  .kvsection.mobile .kvagendacol.kvagendacol1
+  { margin-right: 80px; }
+  .kvsection.mobile .kvagendablock
+  { display:flex; }
+  .inforow .infocol
+  { width: 96%; margin-right: 14px; margin-bottom: 15px;}
+  .agendainfocontent1 .agendainfocol.right .paratext
+  { padding: 10px 10px 10px 60px; }
+  .agendainfocol.right .paratext
+  { padding: 10px 10px 10px 60px;}
+  .agendainfocontent1 .agendainfocol.right .paratext,
+  .agendainfocontent .agendainfocol.right .paratext
+  { font-size: 20px;}
+  .agendarow .agendainfocontent
+  { margin-left:20px; }
+  .agendainfocol.left.secblock .paratext
+  { padding-top: 32%; }
+  .agendainfocol.left .paratext
+  { font-size: 26px;line-height:26px; padding-top: 22%; padding-right: 10px;}
+  .agendainfocontent .agendainfocol.left
+  { width: 27%; }
+  .agendainfocontent .agendainfocol.right
+  { width: 65%; margin-left: -4%;}
+  .kvsectioninfo img 
+  { width: 180px; }
+  .kvsectioninfo img.hplogoimg
+  { width: auto; height:50px; }
+  .kvsectiontitle h2
+  { font-size: 30px; line-height:36px;}
+  .kvsectiontitle .kveventdate
+  { font-size: 22px; line-height:24px; }
+  .kvsectiontitle .kveventplace
+  { font-size: 20px; line-height:24px; }
+  .kvsectiontitle
+  { margin-top: 18%; }
+  .hpamdlogo .kvsectiontitle
+  { margin-top: 18%; }
+  .kvsection .kvsectioninfo
+  { top: 5%; left: 20px; }
+  .kvsection::before
+  { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 50%;}
+  /*.bodymain::before
+  { top: 13.5%; width: 215px; height: 639px; left: -5%; background-size: 50%;}
+  .bodymain.regpage1::before
+  { top: 13.5%; left: -5%;}
+  .bodymain.regpage2::before
+  { top: 8%; left: -5%;}
+  .bodymain.regsummarypage::before
+  { top: 7%; left: -5%;}
+  .bodymain.typage::before
+  { top: 7.5%; left: -5%;}*/
+  .kvbanner img.img-fluid
+  { height:350px; }
+  .loginright.RegAssistancediv .paratext
+  { font-size:20px; }
+  .date_font{
+    font-size: 19px;
+  }
+}
+@media screen and (min-width: 690px) 
+{
+  .kvsectiontitle h2
+  { font-size: 38px; line-height:38px;}
+  .kvsectiontitle .kveventdate
+  { font-size: 22px; line-height:24px; }
+  .kvsectiontitle .kveventplace
+  { font-size: 20px; line-height:24px; }
+  .kvsectiontitle
+  { margin-top: 8%; }
+  .hpamdlogo .kvsectiontitle
+  { margin-top: 8%; }
+  .kvsection::before
+  { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 50%;}
+  /*.bodymain::before
+  { top: 14.5%; width: 215px; height: 639px; left: -5%; background-size: 50%;}
+  .bodymain.regpage1::before
+  { top: 13.5%; left: -5%;}
+  .bodymain.regpage2::before
+  { top: 7.5%; left: -5%;}
+  .bodymain.regsummarypage::before
+  { top: 7.5%; left: -5%;}
+  .bodymain.typage::before
+  { top: 7%; left: -5%;}*/
+}
+@media screen and (min-width: 768px) 
+{
+  .regtitle .regtitleright
+  { padding: 40px 40px 0px 0px; }
+  .mobile p.kvagendanote
+  { font-size: 14px; line-height: 22px; padding: 10px 10px 0px 25px;}
+  .kvsection.mobile .kvsectioninfo .kvlogo
+  { padding-left: 36px; }
+  .kvsection.mobile .kvagendacol.kvagendacol1
+  { margin-right: 80px; }
+  .kvsection.mobile .kvagendablock
+  { display:flex; }
+  .kvsection.desktop
+  { display: none; }
+  .kvsection.mobile
+  { display: block; }
+  .container.agendacontainer
+  { padding-left: 0%; }
+  .inforow .infocol
+  { width: 31%; margin-right: 14px; margin-bottom: 0;}
+  .agendainfocontent1 .agendainfocol.right .paratext,
+  .agendainfocontent .agendainfocol.right .paratext
+  { font-size: 19px;}
+  .agendarow .agendainfocontent
+  { margin-left:20px; }
+  .agendainfocol.left.secblock .paratext
+  { padding-top: 58%; }
+  .agendainfocol.left .paratext
+  { font-size: 26px;line-height:26px; padding-top: 40%; padding-right: 10px;}
+  .agendainfocontent .agendainfocol.left
+  { width: 30%; }
+  .agendainfocontent .agendainfocol.right
+  { width: 70%; margin-left: -5%;}
+  .kvsectioninfo img 
+  { width: 272px; }
+  .kvsectioninfo img.hplogoimg
+  { width: auto; height:75px; }
+  .kvsectiontitle h2
+  { font-size: 35px; line-height:35px;}
+  .kvsectiontitle .kveventdate
+  { font-size: 30px; line-height:36px; }
+  .kvsectiontitle .kveventplace
+  { font-size: 24px; line-height:30px; }
+  .kvsectiontitle
+  { margin-top: 16%; }
+  .hpamdlogo .kvsectiontitle
+  { margin-top: 16%; }
+  .kvsection .kvsectioninfo
+  { top: 5%; left: 60px; }
+  .kvsection::before
+  { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 55%;}
+  /*.bodymain::before
+  { top: 14%; width: 215px; height: 639px; left: -2%; background-size: 55%;}
+  .bodymain.regpage1::before
+  { top: 13.5%; left: -2%;}
+  .bodymain.regpage2::before
+  { top: 9%; left: -2%;}
+  .bodymain.regsummarypage::before
+  { top: 9%; left: -2%;}
+  .bodymain.typage::before
+  { top: 9.5%; left: -2%;}*/
+  .kvbanner img.img-fluid
+  { height:370px; }
+  .loginright.RegAssistancediv .paratext
+  { font-size:20px; }
+  .loginrow .loginleft.registerformdiv
+  { width:62%; text-align:center; float: none; border-right: 0px;padding: 35px 0px 30px 0px;border-bottom: 0px solid #FFFFFF;
+  margin:0px auto;}
+  .loginrow .loginright.RegAssistancediv
+  { width:100%; text-align:center; float: none; padding: 50px 0px 30px 0px;
+  margin:0px auto; }
+  table .fontsizetd
+  { font-size: 20px !important; line-height: 28px!important;}
+  .register-form .group_checkbox label
+  { line-height: 25px; text-transform: capitalize;}
+  .agendainfocontent2 .agendainfocol.right .paratext
+  { padding-top: 20px; }
+  .agendainfocontent1 .agendainfocol.right .paratext
+  { padding: 20px 10px 20px 40px; }
+  .agendainfocol.right .paratext
+  { padding: 20px 10px 20px 40px;}
+  h3.h3title
+  { font-size:28px; line-height:40px; }
+  h2.h2title
+  { font-size:44px; line-height:53px; }
+  .welcomecontent p.paratext
+  { padding-right: 1%; }
+  .welcomecontent h2.h2title
+  { padding-right: 0%; }
+  div.flightmin
+  { padding-top:0px; }
+  .loginrow .loginleft
+  { float:left; width:50%; padding:30px 3% 30px 0px; border-right: 1px solid #FFFFFF; border-bottom: 0px solid #FFFFFF;}
+  .loginrow .loginright
+  { float:right; width:50%; padding:30px 0px 30px 0px;}
+  .row.aboutusrow, .row.loginrow, .row.locationrow, .row.speakersrow, .row.sponsorsrow
+  { --bs-gutter-x: 1.5rem; }
+}
+@media screen and (min-width: 1024px) 
+{
+  .mobile p.kvagendanote
+  { font-size: 16px; line-height: 22px; padding: 10px 10px 0px 25px;}
+  .searickyhpsg .kvagendablock2 .kvagendacol .agendablock.agendablock2
+  { width: 200px; }
+  .amdkvsec .kvagendablock2 .kvagendacol .agendablock 
+  { width: 240px; }
+  .amdkvsec .kvagendablock2 .kvagendacol .agendablock.agendablock4,
+  .amdkvsec .kvagendablock2 .kvagendacol .agendablock.agendablock1 
+  { width: 280px; }
+  .kvagendablock3 .kvagendacol .agendablock
+  { width: 163px;}
+  .kvagendablock3.hpsg .kvagendacol .agendablock
+  { width: 180px;}
+  .kvagendablock3.hpseast .kvagendacol.customcol .agendablock
+  { width: 210px;}
+  .kvagendablock2 .kvagendacol .agendablock
+  { width: 240px;}
+  .kvagendasec h2
+  {  margin-top: 20px; margin-bottom: 20px; }
+  .kvsection.desktop
+  { display: none; }
+  .kvsection.mobile
+  { display: block; }
+  .container.agendacontainer
+  { padding-left: 6%; }
+  .inforow .infocol
+  { width: 31%; margin-right: 14px; margin-bottom: 0;}
+  .agendainfocol.left.secblock .paratext
+  { padding-top: 40%; }
+  .agendainfocol.left .paratext
+  { font-size: 34px;line-height:36px; padding-top: 28%; padding-right: 10px;}
+  .agendainfocontent .agendainfocol.left
+  { width: 28%; }
+  .agendainfocontent .agendainfocol.right
+  { width: 62%; margin-left: -5%;}
+  .kvsectioninfo img 
+  { width: 272px; }
+  .kvsectioninfo img.hplogoimg
+  { width: auto; height:75px; }
+  .kvsectiontitle h2
+  { font-size: 48px; line-height:56px;}
+  .kvsectiontitle .kveventdate
+  { font-size: 36px; line-height:40px; }
+  .kvsectiontitle .kveventplace
+  { font-size: 30px; line-height:40px; }
+  .kvsectiontitle
+  { margin-top: 18%; }
+  .hpamdlogo .kvsectiontitle
+  { margin-top: 18%; }
+  .kvsection .kvsectioninfo
+  { top: 5%; left: 90px; }
+  .kvsection::before
+  { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 70%;}
+  /*.bodymain::before
+  { top: 19%; width: 215px; height: 639px; left: 0%; background-size: 70%;}
+  .bodymain.regpage1::before
+  { top: 13.5%; left: 0%;}
+  .bodymain.regpage2::before
+  { top: 12.2%; left: 0%;}
+  .bodymain.regsummarypage::before
+  { top: 12%; left: 0%;}
+  .bodymain.typage::before
+  { top: 12.7%; left: 0%;}*/
+  .kvbanner img.img-fluid
+  { height:480px; }
+  .loginright.RegAssistancediv .paratext
+  { font-size:20px; }
+  .loginrow .loginleft.registerformdiv
+  { width:50%; text-align:center; float: none; border-right: 0px;padding: 35px 0px 30px 0px;border-bottom: 0px solid #FFFFFF;
+  margin:0px auto;}
+  .loginrow .loginright.RegAssistancediv
+  { width:75%; text-align:center; float: none; padding: 50px 0px 30px 0px;
+  margin:0px auto; }
+  table .fontsizetd<div class="kvsectioninfo">
+  { font-size: 20px !important; line-height: 28px!important;}
+  .register-form .group_checkbox label
+  { line-height: 6px; text-transform: capitalize;}
+  .agendainfocontent2 .agendainfocol.right .paratext
+  { padding-top: 20px; }
+  .agendainfocontent1 .agendainfocol.right .paratext
+  { padding: 20px 15px 20px 60px;}
+  .agendainfocol.right .paratext
+  { padding: 20px 15px 20px 60px;}
+  h3.h3title
+  { font-size:28px; line-height:40px; }
+  h2.h2title
+  { font-size:44px; line-height:53px; }
+  .welcomecontent p.paratext
+  { padding-right: 2%; }
+  .welcomecontent h2.h2title
+  { padding-right: 7%; }
+  div.flightmin
+  { padding-top:0px; }
+  .loginrow .loginleft
+  { float:left; width:50%; padding:30px 4% 30px 0px; border-right: 1px solid #FFFFFF; border-bottom: 0px solid #FFFFFF;}
+  .loginrow .loginright
+  { float:right; width:50%; padding:30px 0px 30px 0px;}
+  .row.aboutusrow, .row.loginrow, .row.locationrow, .row.speakersrow, .row.sponsorsrow
+  { --bs-gutter-x: 1.5rem; }
+}
+@media screen and (min-width: 1280px) 
+{
+  p.accommonote
+  { padding-right: 0px; }
+  p.accommonote.accommonotelong
+  { padding-right: 11%; }
+  .body-content 
+  { margin-top: 60px; }
+  .searickyhpsg .kvagendablock2 .kvagendacol .agendablock.agendablock2
+  { width: 200px; }
+  .kvsection::before
+  { display:block; }
+  .amdkvsec .kvagendablock2 .kvagendacol .agendablock 
+  { width: 240px; }
+  .amdkvsec .kvagendablock2 .kvagendacol .agendablock.agendablock4,
+  .amdkvsec .kvagendablock2 .kvagendacol .agendablock.agendablock1 
+  { width: 360px; }
+  .kvagendablock3 .kvagendacol .agendablock
+  { width: 190px;}
+  .kvagendablock3.hpsg .kvagendacol .agendablock
+  { width: 215px;}
+  .kvagendablock3.hpseast .kvagendacol.customcol .agendablock
+  { width: 280px;}
+  .kvagendablock2 .kvagendacol .agendablock
+  { width: 280px;}
+  .kvsection.Register::before,
+  .kvsection.Register2::before,
+  .kvsection.Register3::before,
+  .kvsection.RegSummary::before,
+  .kvsection.RegThankyou::before,
+  .kvsection.Register1_AMD::before,
+  .kvsection.Register2_AMD::before,
+  .kvsection.RegSummary_AMD::before,
+  .kvsection.Thankyou_AMD::before,
+  .kvsection.Register1_NoAcc::before,
+  .kvsection.Register2_NoAcc::before,
+  .kvsection.RegSummary_NoAcc::before,
+  .kvsection.Thankyou_NoAcc::before,
+  .kvsection.Register1_WW::before,
+  .kvsection.Register2_WW::before,
+  .kvsection.RegSummary_WW::before,
+  .kvsection.Thankyou_WW::before,
+  .kvsection.Register1_Intel::before,
+  .kvsection.Register2_Intel::before,
+  .kvsection.RegSummary_Intel::before,
+  .kvsection.Thankyou_Intel::before,
+  .kvsection.Register1_HPSGNoFlight::before,
+  .kvsection.Register2_HPSGNoFlight::before,
+  .kvsection.RegSummary_HPSGNoFlight::before,
+  .kvsection.Thankyou_HPSGNoFlight::before   
+  { display:initial; }
+  .kvsection.Register::before,
+  .kvsection.Register2::before,
+  .kvsection.Register3::before,
+  .kvsection.RegSummary::before,
+  .kvsection.RegThankyou::before,
+  .kvsection.Register1_AMD::before,
+  .kvsection.Register2_AMD::before,
+  .kvsection.RegSummary_AMD::before,
+  .kvsection.Thankyou_AMD::before,
+  .kvsection.Register1_NoAcc::before,
+  .kvsection.Register2_NoAcc::before,
+  .kvsection.RegSummary_NoAcc::before,
+  .kvsection.Thankyou_NoAcc::before,
+  .kvsection.Register1_WW::before,
+  .kvsection.Register2_WW::before,
+  .kvsection.RegSummary_WW::before,
+  .kvsection.Thankyou_WW::before,
+  .kvsection.Register1_Intel::before,
+  .kvsection.Register2_Intel::before,
+  .kvsection.RegSummary_Intel::before,
+  .kvsection.Thankyou_Intel::before,
+  .kvsection.Register1_HPSGNoFlight::before,
+  .kvsection.Register2_HPSGNoFlight::before,
+  .kvsection.RegSummary_HPSGNoFlight::before,
+  .kvsection.Thankyou_HPSGNoFlight::before 
+  { top: 105%; }
+  .kvagendasec h2
+  {  margin-top: 30px; margin-bottom: 30px; }
+  .kvsection.desktop
+  { display: block; }
+  .kvsection.mobile
+  { display: none; }
+  .container.agendacontainer
+  { padding-left: 6%; }
+  .inforow .infocol
+  { width: 23%; margin-right: 14px; margin-bottom: 0;}
+  .agendainfocol.left.secblock .paratext
+  { padding-top: 35%; }
+  .agendainfocol.left .paratext
+  { font-size: 34px;line-height:36px; padding-top: 25%; padding-right: 10px;}
+  .agendainfocontent .agendainfocol.left
+  { width: 27%; }
+  .agendainfocontent .agendainfocol.right
+  { width: 65%; margin-left: -5%;}
+  .kvsectioninfo img 
+  { width: 272px; }
+  .kvsectioninfo img.hplogoimg
+  { width: auto; height:75px; }
+  .kvsectiontitle h2
+  { font-size: 56px; line-height:60px;}
+  .kvsectiontitle .kveventdate
+  { font-size: 36px; line-height:40px; }
+  .kvsectiontitle .kveventplace
+  { font-size: 30px; line-height:40px; }
+  .kvsectiontitle
+  { margin-top: 18%; }
+  .hpamdlogo .kvsectiontitle
+  { margin-top: 18%; }
+  .kvsection .kvsectioninfo
+  { top: 5%; left: 135px; }
+  .kvsection::before
+  { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 90%;}
+  /*.bodymain::before
+  { top: 21%; width: 215px; height: 639px; left: 0%; background-size: 100%;}
+  .bodymain.regpage1::before
+  { top: 27%; left: 0%;}
+  .bodymain.regpage2::before
+  { top: 15.5%; left: 0%;}
+  .bodymain.regsummarypage::before
+  { top: 15.5%; left: 0%;}
+  .bodymain.typage::before
+  { top: 24%; left: 0%;}*/
+  .kvbanner img.img-fluid
+  { height:610px; }
+  .loginright.RegAssistancediv .paratext
+  { font-size:20px; }
+  .loginrow .loginleft.registerformdiv
+  { width:50%; text-align:center; float: none; border-right: 0px;padding: 35px 0px 30px 0px;border-bottom: 0px solid #FFFFFF;
+  margin:0px auto;}
+  .loginrow .loginright.RegAssistancediv
+  { width:75%; text-align:center; float: none; padding: 50px 0px 30px 0px;
+  margin:0px auto; }
+  table .fontsizetd
+  { font-size: 20px !important; line-height: 28px!important;}
+  .register-form .group_checkbox label
+  { line-height: 6px; text-transform: capitalize;}
+  .agendainfocontent2 .agendainfocol.right .paratext
+  { padding-top: 20px; }
+  .agendainfocontent1 .agendainfocol.right .paratext
+  { padding: 20px 30px 20px 80px;}
+  .agendainfocol.right .paratext
+  { padding: 20px 30px 20px 80px;}
+  h3.h3title
+  { font-size:30px; line-height:42px; }
+  h2.h2title
+  { font-size:44px; line-height:53px; }
+  .welcomecontent p.paratext
+  { padding-right: 28%; }
+  .welcomecontent h2.h2title
+  { padding-right: 22%; }
+  div.flightmin
+  { padding-top:0px; }
+  .loginrow .loginleft
+  { float:left; width:50%; padding:30px 7% 30px 0px; border-right: 1px solid #FFFFFF; border-bottom: 0px solid #FFFFFF;}
+  .loginrow .loginright
+  { float:right; width:50%; padding:30px 0px 30px 0px;}
+  .row.aboutusrow, .row.loginrow, .row.locationrow, .row.speakersrow, .row.sponsorsrow
+  { --bs-gutter-x: 1.5rem; }
+}
+@media screen and (min-width: 1366px) 
+{
+  .kvsection.Register::before,
+  .kvsection.Register2::before,
+  .kvsection.Register3::before,
+  .kvsection.RegSummary::before,
+  .kvsection.RegThankyou::before,
+  .kvsection.Register1_AMD::before,
+  .kvsection.Register2_AMD::before,
+  .kvsection.RegSummary_AMD::before,
+  .kvsection.Thankyou_AMD::before,
+  .kvsection.Register1_NoAcc::before,
+  .kvsection.Register2_NoAcc::before,
+  .kvsection.RegSummary_NoAcc::before,
+  .kvsection.Thankyou_NoAcc::before,
+  .kvsection.Register1_WW::before,
+  .kvsection.Register2_WW::before,
+  .kvsection.RegSummary_WW::before,
+  .kvsection.Thankyou_WW::before,
+  .kvsection.Register1_Intel::before,
+  .kvsection.Register2_Intel::before,
+  .kvsection.RegSummary_Intel::before,
+  .kvsection.Thankyou_Intel::before,
+  .kvsection.Register1_HPSGNoFlight::before,
+  .kvsection.Register2_HPSGNoFlight::before,
+  .kvsection.RegSummary_HPSGNoFlight::before,
+  .kvsection.Thankyou_HPSGNoFlight::before 
+  { top: 105%; }
+  .kvagendasec h2
+  {  margin-top: 40px; margin-bottom: 40px; }
+  .container.agendacontainer
+  { padding-left: 6%; }
+  .agendainfocol.left.secblock .paratext
+  { padding-top: 35%; }
+  .agendainfocol.left .paratext
+  { font-size: 34px;line-height:36px; padding-top: 25%; padding-right: 10px;}
+  .agendainfocontent .agendainfocol.left
+  { width: 27%; }
+  .agendainfocontent .agendainfocol.right
+  { width: 65%; margin-left: -5%;}
+  .kvsection .kvsectioninfo
+  { top: 5%; left: 135px; }
+  .kvsectiontitle
+  { margin-top: 23%; }
+  .hpamdlogo .kvsectiontitle
+  { margin-top: 23%; }
+  .kvsection::before
+  { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 100%;}
+  /*.bodymain::before
+  { top: 23%; width: 215px; height: 639px; left: 0%; background-size: 100%;}
+  .bodymain.regpage1::before
+  { top: 29%; left: 0%;}
+  .bodymain.regpage2::before
+  { top: 17.3%; left: 0%;}
+  .bodymain.regsummarypage::before
+  { top: 17.3%; left: 0%;}
+  .bodymain.typage::before
+  { top: 25.7%; left: 0%;}*/
+  .kvbanner img.img-fluid
+  { height:690px; }
+  .welcomecontent p.paratext
+  { padding-right: 27%; }
+  .welcomecontent h2.h2title
+  { padding-right: 22%; }
+}
+@media screen and (min-width: 1410px) 
+{
+  .container.agendacontainer
+  { padding-left: 3%; }
+  .agendainfocontent .agendainfocol.left
+  { width: 27%; }
+  .agendainfocontent .agendainfocol.right
+  { width: 65%; margin-left: -5%;}
+  .kvsection .kvsectioninfo
+  { top: 5%; left: 135px; }
+  .kvsection::before
+  { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 100%;}
+  .welcomecontent p.paratext
+  { padding-right: 25%; }
+  .welcomecontent h2.h2title
+  { padding-right: 18%; }
+}
+@media screen and (min-width: 1560px) 
+{ 
+  .container.agendacontainer
+  { padding-left: 3%; }
+  .agendainfocontent .agendainfocol.left
+  { width: 27%; }
+  .agendainfocontent .agendainfocol.right
+  { width: 65%; margin-left: -5%;}
+  .kvsection .kvsectioninfo
+  { top: 5%; left: 135px; }
+  .kvsection::before
+  { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 100%;}
+  .kvsectiontitle
+  { margin-top: 23%; } 
+  .hpamdlogo .kvsectiontitle
+  { margin-top: 23%; }
+  .welcomecontent p.paratext
+  { padding-right: 33%; }
+  .welcomecontent h2.h2title
+  { padding-right: 25%; }
+}
+@media screen and (min-width: 1920px) 
+{
+  .container.agendacontainer
+  { padding-left: 3%; }
+  .loginright.RegAssistancediv .paratext
+  { font-size:20px; }
+  .loginrow .loginleft.registerformdiv
+  { width:50%; text-align:center; float: none; border-right: 0px;padding: 35px 0px 30px 0px;border-bottom: 0px solid #FFFFFF;
+  margin:0px auto;}
+  .loginrow .loginright.RegAssistancediv
+  { width:75%; text-align:center; float: none; padding: 50px 0px 30px 0px;
+  margin:0px auto; }
+  table .fontsizetd
+  { font-size: 20px !important; line-height: 28px !important; }
+  .register-form .group_checkbox label
+  { line-height: 6px; text-transform: capitalize;}
+  .agendainfocontent2 .agendainfocol.right .paratext
+  { padding-top: 20px; }
+  .agendainfocontent1 .agendainfocol.right .paratext
+  { padding: 20px 30px 20px 60px;}
+  .agendainfocol.right .paratext
+  { padding: 20px 30px 20px 60px; }
+  h3.h3title
+  { font-size:30px; line-height:42px; }
+  h2.h2title
+  { font-size:44px; line-height:53px; }
+  .welcomecontent p.paratext
+  { padding-right: 32%; }
+  .welcomecontent h2.h2title
+  { padding-right: 25%; }
+  div.flightmin
+  { padding-top:0px; }
+  .loginrow .loginleft
+  { float:left; width:50%; padding:30px 7% 30px 0px; border-right: 1px solid #FFFFFF; border-bottom: 0px solid #FFFFFF;}
+  .loginrow .loginright
+  { float:right; width:50%; padding:30px 0px 30px 0px;}
+  .row.aboutusrow, .row.loginrow, .row.locationrow, .row.speakersrow, .row.sponsorsrow
+  { --bs-gutter-x: 1.5rem; }
+}
+/*QRAgenda*/
+.kvsection.QRAgendakv.mobile .kvsectioninfo .kvlogo
+{ position:absolute; bottom: 2%;}
+.kvsection.QRAgendakv.mobile .kvsectioninfo::before
+{ display:none; }
+.kvname
+{ display:block;}
+.kvsection.QRAgendakv::before
+{ display:none; }
+.kvsection.QRAgendakv.mobile
+{ display: block; }
+.kvsection.QRAgendakv .kvsectioninfo .kvlogo img.hplogoimg
+{ display: inherit;}
+.kvsection.QRAgendakv .kvsectioninfo .kvlogo img.hpamdlogoimg
+{ display: none;}
+.kvsection.QRAgendakv.QRAgenda_NoAcc .kvsectioninfo .kvlogo img.hpamdlogoimg,
+.kvsection.QRAgendakv.QRAgenda_AMD .kvsectioninfo .kvlogo img.hpamdlogoimg
+{ display: inherit; }
+.kvsection.QRAgendakv.QRAgenda_NoAcc .kvsectioninfo .kvlogo img.hplogoimg,
+.kvsection.QRAgendakv.QRAgenda_AMD .kvsectioninfo .kvlogo img.hplogoimg
+{ display: none; }
+.QRAgendakv .agendakvbanner
+{ margin-top:0px; position: relative; }
+.agendakvinner
+{ display: flex; }
+.kvsectioninfo .agendakvinner .kvagendakvimgdiv 
+{ width: 47% }
+.kvsectioninfo .agendakvinner .kvagendakvimgdiv img
+{ width: 100%; }
+.kvagendakvtitlelogdiv
+{ width: 53%; position: relative;}
+.agendasection
+{ position:relative; margin-top:30px; }
+.agendacondiv h3.agendaday
+{  position:relative;font-size: 20px; line-height: 36px; color: #024AD8; }
+.agendacondiv h3.agendaday:before
+{ content:""; background:url('../images/regform/agendatitlebar.png') no-repeat left center; 
+  width: 10px; height: 28px; left: -12px; top: 5px; position: absolute;}
+.agendatablerow
+{ font-size: 16px; line-height:22px; display: flex; border-bottom: 1px solid #BBCDD4; padding:6px 0px;}
+.agendatablerow.last
+{ padding-bottom: 15px; margin-bottom: 20px; }
+.agendainnerdesc
+{ font-size: 13px; line-height: 18px; }
+.agendatime
+{ width: 40%; }
+.agendadesc
+{ width: 60%; }
+.agendadesc .venue,.agendadesc .agendaspeaker
+{position: relative;padding-left: 23px;padding-top: 5px;display: block;font-size: 13px;
+    line-height: 18px; }
+.agendadesc .venue:before{
+  content: "";
+  position: absolute;
+  left: 0;
+  background: url(../images/regform/location.svg) no-repeat;
+  width: 16px;
+  height: 20px;
+  background-size: contain;
+}
+.agendafilterrow .nav-link.active, .agendafilterrow .show>.nav-link{
+    background:#024AD8 !important;
+    border:1px solid #024AD8;
+}
+.agendafilterrow .nav-link{
+    border:1px solid #024AD8;
+    border-radius:4px;
+    color: #000;
+}
+.agendafilterrow{
+    overflow-x:auto;
+    flex-wrap:unset;
+    width: 100%;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.agendafilterrow li{ margin-right:10px; white-space:nowrap;}
+.agendaspeaker{ position: relative;}
+.agendadesc .agendaspeaker:before{
+    content: "";
+  position: absolute;
+  left: 0;
+  background: url(../images/regform/speaker_avatar.svg) no-repeat;
+  width: 16px;
+  height: 20px;
+  background-size: contain;
+} 
+.agendapage .footer
+{ font-size: 13px; padding:0px 12px;}
+
+@media (min-width: 320px) 
+{
+  .kvsection.QRAgendakv.mobile .kvsectioninfo .kvlogo img.hplogoimg,
+  .kvsection.QRAgendakv.mobile .kvsectioninfo .kvlogo img.hpamdlogoimg
+  { width: auto; height: 54px;}
+  .agendakvbanner h2 
+  { font-size: 32px; line-height: 42px; margin-top: 30%; padding-left: 10%; margin-bottom: 0.5rem;}
+  .kvname
+  { font-size: 14px; line-height: 18px; }
+}
+@media (min-width: 375px) 
+{
+  .agendakvbanner h2 
+  { font-size: 32px; line-height: 42px; margin-top: 32%; padding-left: 10%; margin-bottom: 0.5rem}
+  .kvname
+  { font-size: 17px; line-height: 21px; }
+}
+@media (min-width: 667px) 
+{
+  .agendakvbanner h2 
+  { font-size: 32px; line-height: 42px; margin-top: 32%; padding-left: 10%; margin-bottom: 5.5rem}
+  .kvname
+  { font-size: 20px; line-height: 26px; }
+}
+@media (min-width: 768px) 
+{
+  .kvsection.QRAgendakv.mobile .kvsectioninfo .kvlogo img.hplogoimg,
+  .kvsection.QRAgendakv.mobile .kvsectioninfo .kvlogo img.hpamdlogoimg
+  { width: auto; height: 75px;}
+  .agendakvbanner h2 
+  { font-size: 52px; line-height: 72px; margin-top: 32%; padding-left: 10%; margin-bottom: 4.5rem}
+  .kvname
+  { font-size: 32px; line-height: 36px; }
+}
+@media (min-width: 1024px) 
+{
+  .agendakvbanner h2 
+  { margin-bottom: 10.5rem}
+  
+}
+/*End QRAgenda*/
+
+/* Otp Page */
+.authen-content { padding-top: 60px;padding-bottom: 80px;}
+.authen-content h2 {
+    margin-bottom: 20px;
+}
+.authen-content .resend-otp {
+  text-align: right;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.authen-content .group {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.authen-content .group input:first-child:focus {
+  caret-color: #549ef7;
+}
+.authen-content .group .otp-digit {
+  text-align: center;
+}
+.authen-content .primary-btn{
+  border-radius: 0;
+  margin-top: 40px;
+}
+/* // register form new code */
+.registerform-wrapper .main{
+  padding-top: 0px;
+}
+.react-date-picker__wrapper{ border: none;}
+.react-datepicker__close-icon {
+  display: none !important;
+}
+.react-date-picker__calendar {
+  max-height: 300px;height: 100%;
+}
+.react-date-picker input {
+ padding-left: 0 !important;
+}
+
+/* flight css */
+.flight-content .subtitle {
+  font-size: 24px;
+}
+.flight-content .intro {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.flight-content .flightdate {
+  font-size: 16px;
+}
+.flight-content .flight_details {
+  font-size: 14px;
+  line-height: 22px;
+  padding-top: 10px;
+}
+.flight-content .flight_details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 10px;
+}
+.flight-content .flight_details ul li {
+  padding: 0;
+  margin: 0;
+}
+.flight-content .arrival-flight-group-accordion {
+  width: 80%;
+}
+.flight-content .arrival-flight-group-accordion .group {
+  position: relative;
+  margin: 10px 0;
+}
+.flight-content .arrival-flight-group-accordion .group input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+.flight-content .arrival-flight-group-accordion .group input[type=radio]:checked ~ .flightinfo_wrapper {
+  border: 2px solid #549ef7;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper {
+  width: 100%;
+  padding: 12px 22px 0px 16px;
+  box-sizing: border-box;
+  font-size: 18px;
+  color: #121212;
+  cursor: pointer;
+  border: 2px solid #dadada;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo {
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+  line-height: 22px;
+  padding-bottom: 10px;
+  flex-direction: column;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo .upper {
+  width: 100%;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  display: flex;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo .upper .airlinlogo {
+  width: 46px;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo .upper .flybox {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  width: 65%;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo .upper .flybox .time {
+  font-size: 20px;
+  line-height: 26px;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo .upper .flybox .flyfrom {
+  width: 80px;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo .upper .flybox .duration {
+  width: 150px;
+  text-align: center;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo .upper .flybox .duration .line {
+  margin: 0.2rem 0;
+  background: #121212;
+  height: 1px;
+  width: 90%;
+  position: relative;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo .upper .flybox .duration .line:after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: -15%;
+  width: 12px;
+  height: 12px;
+  background: url(../images/airline/flight.svg) no-repeat;
+  background-size: contain;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo .upper .flybox .flyto {
+  padding-left: 10px;
+  width: 100px;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .arrow {
+  margin-left: auto;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 20px;
+  top: 35px;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .arrow:hover {
+  background: #F5F5F5;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .arrow::before {
+  content: "";
+  background: url(../images/down.svg) no-repeat;
+  width: 36px;
+  height: 36px;
+  display: inline-block;
+  transform: rotate(0deg);
+  transition: 0.3s;
+  background-size: cover;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .arrow.open::before {
+  transform: rotate(-180deg);
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 12px;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper.show {
+  max-height: 900px;
+  padding-bottom: 15px;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .departure {
+  margin: 0 0px 10px 0;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card {
+  z-index: -1;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-header {
+  padding: 5px 20px;
+  border-bottom: 1px solid #707070;
+  display: flex;
+  justify-content: space-between;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-header .direction-status {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-header .direction-status span {
+  margin-left: 12px;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header .airline-logo {
+  width: 28px;
+  height: 28px;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header .flight-number {
+  font-size: 16px;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header .aircraft {
+  padding: 0px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  border: 1px solid #707070;
+  color: #333;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content {
+  display: flex;
+  gap: 16px;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 24px;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline .dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #dadada;
+  border-radius: 50%;
+  background: #fff;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline .line {
+  flex: 1;
+  width: 2px;
+  background: #dadada;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline .plane-icon {
+  width: 18px;
+  transform: rotate(325deg);
+  margin: 6px 0;
+  display: flex;
+  height: 18px;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule {
+  flex: 1;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .direction {
+  display: flex;
+  gap: 16px;
+  flex-direction: row;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .time {
+  font-size: 19px;
+  width: 140px;
+  font-weight: normal;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .location {
+  font-size: 16px;
+  color: #121212;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .duration {
+  display: flex;
+  flex-direction: row;
+  margin: 8px 0;
+  font-size: 14px;
+  gap: 16px;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .duration-time {
+  font-size: 14px;
+  width: 140px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .overnight-message {
+  font-weight: bold;
+  background: #F5F5F5;
+  padding: 0px 7px;
+  border-radius: 5px;
+}
+.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .addition-message {
+  color: red;
+  font-weight: bold;
+  margin-left: 194px;
+  font-size: 16px;
+}
+.flight-content .arrival-flight-group {
+  width: 80%;
+}
+.flight-content .arrival-flight-group .group {
+  position: relative;
+  margin: 10px 0;
+}
+.flight-content .arrival-flight-group .group input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+.flight-content .arrival-flight-group .group input[type=radio]:checked ~ .flightinfo_wrapper {
+  border: 2px solid #549ef7;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper {
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  color: #121212;
+  cursor: pointer;
+  border: 2px solid #dadada;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo {
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+  line-height: 22px;
+  flex-direction: column;
+  border-bottom: 1px solid #dadada !important;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo:nth-child(odd) {
+  border-bottom: none;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card {
+  z-index: -1;
+  border-radius: 0;
+  border: 0;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-header {
+  padding: 5px 20px;
+  border-bottom: 1px solid #dadada;
+  display: flex;
+  justify-content: space-between;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-header .direction-status {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-header .direction-status span {
+  margin-left: 12px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment {
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  width: 100%;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .airline-logo {
+  width: 40px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .flight-no {
+  font-size: 16px;
+  padding: 0px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .flight-name, .flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .flight-no {
+  font-size: 16px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .aircraft {
+  padding: 1px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  border: 1px solid #707070;
+  color: #333;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox {
+  margin-left: 50px;
+  display: flex;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  width: calc(100% - 50px);
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .time {
+  font-size: 20px;
+  line-height: 26px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .flyfrom {
+  width: 160px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .duration {
+  width: 150px;
+  text-align: center;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .duration .line {
+  margin: 0.2rem 0;
+  background: #121212;
+  height: 1px;
+  width: 90%;
+  position: relative;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .duration .line:after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: -15%;
+  width: 12px;
+  height: 12px;
+  background: url(../images/airline/flight.svg) no-repeat;
+  background-size: contain;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .flyto {
+  padding-left: 10px;
+  width: auto;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .addition-message {
+  color: red;
+  font-weight: bold;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 12px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper.show {
+  max-height: 900px;
+  padding-bottom: 15px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .departure {
+  margin: 0 0px 10px 0;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card {
+  z-index: -1;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-header {
+  padding: 5px 20px;
+  border-bottom: 1px solid #dadada;
+  display: flex;
+  justify-content: space-between;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-header .direction-status {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-header .direction-status span {
+  margin-left: 12px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header .airline-logo {
+  width: 28px;
+  height: 28px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header .flight-number {
+  font-size: 16px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header .aircraft {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  border: 1px solid #707070;
+  color: #333;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content {
+  display: flex;
+  gap: 16px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 24px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline .dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #888;
+  border-radius: 50%;
+  background: #fff;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline .line {
+  flex: 1;
+  width: 2px;
+  background: #cfd3d8;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline .plane-icon {
+  width: 22px;
+  transform: rotate(318deg);
+  margin: 6px 0;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule {
+  flex: 1;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .direction {
+  display: flex;
+  gap: 16px;
+  flex-direction: row;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .time {
+  font-size: 20px;
+  width: 140px;
+  font-weight: bold;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .location {
+  font-size: 16px;
+  color: #2a2a2a;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .location .addition-message {
+  color: red;
+  font-weight: bold;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .duration {
+  display: flex;
+  gap: 16px;
+  flex-direction: row;
+  margin: 12px 0;
+  font-size: 14px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .duration-time {
+  font-size: 14px;
+  width: 140px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .overnight-message {
+  font-weight: bold;
+  background: #F5F5F5;
+  padding: 0px 7px;
+  border-radius: 5px;
+}
+/* end flight css */

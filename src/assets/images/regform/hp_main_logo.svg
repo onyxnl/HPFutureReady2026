@@ -1,0 +1,11 @@
+<svg id="hp_logo" data-name="hp logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="57" height="57" viewBox="0 0 57 57">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_15592" data-name="Rectangle 15592" width="57" height="57" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_15409" data-name="Group 15409" transform="translate(0 0)" clip-path="url(#clip-path)">
+    <path id="Path_2568" data-name="Path 2568" d="M28.837,0A28.837,28.837,0,1,0,57.673,28.837,28.837,28.837,0,0,0,28.837,0" transform="translate(0 -0.25)" fill="#fff"/>
+    <path id="Path_2569" data-name="Path 2569" d="M56.238,82.946c-.266,0-.532,0-.794-.012l5.458-15h7.511a3.682,3.682,0,0,0,3.216-2.252l5.922-16.267c.968-2.661-.557-4.842-3.391-4.842H63.743L55,68.6h0l-4.96,13.619A26.716,26.716,0,0,1,29.53,56.238a26.4,26.4,0,0,1,19.5-25.722L43.911,44.573h0l-8.5,23.358h5.658L48.3,48.085H52.55L45.323,67.932h5.658l6.736-18.518c.97-2.661-.557-4.842-3.387-4.842H49.573l5.464-15.014c.4-.017.8-.028,1.2-.028a26.708,26.708,0,1,1,0,53.416M72.394,48.07H68.145L62.189,64.41h4.254L72.4,48.069Z" transform="translate(-27.4 -27.651)" fill="#024ad8"/>
+  </g>
+</svg>
