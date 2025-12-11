@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect  } from 'react';
 import axios from "axios";
 import {Container ,Button, Col, Form,InputGroup,Row} from 'react-bootstrap';
 import Select, { components } from "react-select";
@@ -6,13 +6,18 @@ import { useNavigate,useLocation,useOutletContext} from 'react-router-dom';
 import { useForm,Controller} from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-// import { Last } from 'react-bootstrap/esm/PageItem';
+// import Countrycodelist from '../assets/json/country_code.json';
+// import Countrylist from '../assets/json/country.json';
+// import RegisterData from '../assets/json/register1.json';
 
 
 function Register1() {
    const { email } = useOutletContext(); // automatically gets email from Home.jsx
    //console.log("Register1 email:", email);
     const navigate = useNavigate();
+    const [countrycode,setCountrycode] = useState([]);
+    const [country,setCountry] = useState([]);
+
     const schema = yup.object({
         firstName: yup.string().required("Required field"),
         lastName: yup.string().required("Required field"),
@@ -90,7 +95,7 @@ function Register1() {
             foodallergies:"",
             nameonbadge:"",
             emergency_firstName:"",
-            emergency_lastname:"",
+            emergency_lastName:"",
             emergency_relationship:"",
             emergency_countrycode:"",
             emergency_contactno:"",
@@ -111,10 +116,6 @@ function Register1() {
         {label : 'Dr.', value:'Dr.'}
     ]
 
-    const countrycodeOption = [
-        {label : '+65 Singapore', value:'+65 Singapore'},
-        {label : '+60 Malaysia', value:'+60 Malaysia'},
-    ]
 
     const countryOption =[
         {label : 'Singapore', value:'Singapore'},
@@ -157,9 +158,60 @@ function Register1() {
         {label : 'Marketing', value:'Marketing'},
         {label : 'Others (please specify)', value:'Others'},
     ]
+    const url = `${import.meta.env.BASE_URL}assets/json/country_code.json`;
+    const url1 = `${import.meta.env.BASE_URL}assets/json/country.json`;
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setCountrycode(data));
+        }, []);
+    useEffect(() => {
+        fetch(url1)
+            .then(res => res.json())
+            .then(data => setCountry(data));
+        }, []);
+
+    
+
+    // useEffect(() => {
+    //     // setCountrycode(Countrycodelist);
+    //     // setCountry(Countrylist);
+    //     // if(RegisterData.length > 0){
+    //     //     setValue("firstName",RegisterData[0].firstName);
+    //     //     setValue("lastName",RegisterData[0].lastName);
+    //     //     setValue("salutation",RegisterData[0].salutation);
+    //     //     setValue("gender",RegisterData[0].gender);
+    //     //     setValue("countrycode",RegisterData[0].countrycode);
+    //     //     setValue("mobilephone",RegisterData[0].mobilephone);
+    //     //     setValue("businessphone",RegisterData[0].businessphone);
+    //     //     setValue("company",RegisterData[0].company);
+    //     //     setValue("jobtitle",RegisterData[0].jobtitle);
+    //     //     setValue("companyaddress",RegisterData[0].companyaddress);
+    //     //     setValue("companywebsite",RegisterData[0].companywebsite);
+    //     //     setValue("dietary",RegisterData[0].dietary);
+    //     //     setValue("dietary_other",RegisterData[0].dietary_other);
+    //     //     setValue("foodallergies",RegisterData[0].foodallergies);
+    //     //     setValue("nameonbadge",RegisterData[0].nameonbadge);
+    //     //     setValue("emergency_firstName",RegisterData[0].emergency_firstName);
+    //     //     setValue("emergency_lastName",RegisterData[0].emergency_lastName);
+    //     //     setValue("emergency_relationship",RegisterData[0].emergency_relationship);
+    //     //     setValue("emergency_countrycode",RegisterData[0].emergency_countrycode);
+    //     //     setValue("emergency_contactno",RegisterData[0].emergency_contactno);
+    //     //     setValue("companysize",RegisterData[0].companysize);
+    //     //     setValue("businesscategory",RegisterData[0].businesscategory);
+    //     //     setValue("business_description",RegisterData[0].business_description);
+    //     //     setValue("country",RegisterData[0].country);
+    //     //     setValue("development_opportunity",RegisterData[0].development_opportunity);
+    //     //     setValue("budget",RegisterData[0].budget);
+    //     // }
+    // },[Countrycodelist,Countrylist]);
+
+    
 
     const dietaryval = watch("dietary");
     const businesscategoryval = watch("businesscategory");
+
+
 
     const onSubmit = async (data) => {
         console.log(data);
@@ -259,9 +311,9 @@ function Register1() {
                                     render={({ field }) => (
                                         <Select
                                             {...field}
-                                            options={countrycodeOption}
+                                            options={countrycode}
                                             placeholder='--Choose--'
-                                            value={countrycodeOption.find(option => option.value === field.value)}
+                                            value={countrycode.find(option => option.value === field.value)}
                                             onChange={(selectedOption) => field.onChange(selectedOption?.value)}
                                         />
                                     )}
@@ -415,9 +467,9 @@ function Register1() {
                                     render={({ field }) => (
                                         <Select
                                             {...field}
-                                            options={countrycodeOption}
+                                            options={countrycode}
                                             placeholder='--Choose--'
-                                            value={countrycodeOption.find(option => option.value === field.value)}
+                                            value={countrycode.find(option => option.value === field.value)}
                                             onChange={(selectedOption) => field.onChange(selectedOption?.value)}
                                         />
                                     )}
@@ -514,9 +566,9 @@ function Register1() {
                                     render={({ field }) => (
                                         <Select
                                             {...field}
-                                            options={countryOption}
+                                            options={country}
                                             placeholder='--Choose--'
-                                            value={countryOption.find(option => option.value === field.value)}
+                                            value={country.find(option => option.value === field.value)}
                                             onChange={(selectedOption) =>{
                                                 field.onChange(selectedOption?.value);
                                             }}

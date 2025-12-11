@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import axios from "axios";
 import {Container ,Button, Col, Form,InputGroup,Row} from 'react-bootstrap';
 import Select, { components } from "react-select";
-import { useNavigate,useLocation,useOutletContext} from 'react-router-dom';
+import { useNavigate,useLocation,useOutletContext,Link} from 'react-router-dom';
 import { useForm,Controller} from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -11,15 +11,13 @@ import moment from 'moment';
 import 'react-date-picker/dist/DatePicker.css';
 import 'react-calendar/dist/Calendar.css';
 import calendarIcon from '../assets/images/calendar.svg';
-// import { Last } from 'react-bootstrap/esm/PageItem';
 
 
-function Register4() {
+function Visa() {
    const { email } = useOutletContext(); // automatically gets email from Home.jsx
    //console.log("Register1 email:", email);
     const navigate = useNavigate();
-//    const [isOther,setIsOther] = useState(false);
-//    const [isBusinessCatOther,setIsBusinessCatOther] = useState(false);
+     const [country,setCountry] = useState([]);
 
 
     const schema = yup.object({
@@ -143,10 +141,12 @@ function Register4() {
        }
   });
   
-    const countryOption =[
-        {label : 'Singapore', value:'Singapore'},
-        {label : 'Malaysia', value:'Malaysia'},
-    ]
+    const url = `${import.meta.env.BASE_URL}assets/json/country.json`;
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setCountry(data));
+        }, []);
 
     const visaVal =  watch("visa");
     const visachecked = visaVal === 'Yes';
@@ -169,36 +169,27 @@ function Register4() {
     }, [visaVal, setValue]);  
 
     const onSubmit = (data) => {
-        console.log("Form submitted:", data);
-        const dob = data.dob
-            ? moment(data.dob).format('DD/MM/yyyy')
-            : null;
-        const dateofissue = data.dateofissue
-            ? moment(data.dateofissue).format('DD/MM/yyyy')
-            : null;
-        
-        const expirydate = data.expirydate
-            ? moment(data.expirydate).format('DD/MM/yyyy')
-            : null;
+        const formatDate = (date) => {
+            return date && moment(date, moment.ISO_8601, true).isValid()
+                ? moment(date).format('DD/MM/yyyy')
+                : null;
+        };
+        const dob = formatDate(data.dob); 
+        const dateofissue = formatDate(data.dob); 
+        const expirydate = formatDate(data.expirydate); 
+        const arrivaldate = formatDate(data.arrivaldate); 
+        const departuredate = formatDate(data.departuredate); 
 
-        const arrivaldate = data.arrivaldate
-            ? moment(data.arrivaldate).format('DD/MM/yyyy')
-            : null;
-
-        const departuredate = data.departuredate
-            ? moment(data.departuredate).format('DD/MM/yyyy')
-            : null;
-
-        const projectInfo = {
+        const registerinfo = {
             ...data,
             dob: dob,
             dateofissue: dateofissue,
-             expirydate: expirydate,
+            expirydate: expirydate,
             arrivaldate: arrivaldate,
-             departuredate: departuredate,
+            departuredate: departuredate,
         };
 
-        console.log(projectInfo);
+        console.log(registerinfo);
         navigate('/summary')
     };
 
@@ -252,9 +243,9 @@ function Register4() {
                                             render={({ field }) => (
                                                 <Select
                                                     {...field}
-                                                    options={countryOption}
+                                                    options={country}
                                                     placeholder='--Choose--'
-                                                    value={countryOption.find(option => option.value === field.value)}
+                                                    value={country.find(option => option.value === field.value)}
                                                     onChange={(selectedOption) =>{
                                                         field.onChange(selectedOption?.value);
                                                     }}
@@ -417,9 +408,9 @@ function Register4() {
                                             render={({ field }) => (
                                                 <Select
                                                     {...field}
-                                                    options={countryOption}
+                                                    options={country}
                                                     placeholder='--Choose--'
-                                                    value={countryOption.find(option => option.value === field.value)}
+                                                    value={country.find(option => option.value === field.value)}
                                                     onChange={(selectedOption) =>{
                                                         field.onChange(selectedOption?.value);
                                                     }}
@@ -443,6 +434,7 @@ function Register4() {
                             <Row className='field mt-5'>
                                 <Col md={12}>
                                     <div className='d-flex justify-content-md-between'>
+                                        <Link to="/register3" className="back-btn">Back</Link>
                                         <button type="submit" className="outline-btn">Save & exit</button>
                                         <button type="submit" className="primary-btn">Submit</button>
                                     </div>
@@ -460,4 +452,4 @@ function Register4() {
   );
 }
 
-export default Register4;
+export default Visa;

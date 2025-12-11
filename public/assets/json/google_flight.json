@@ -1,0 +1,87 @@
+{
+  "roundtrips": [
+    {
+      "id": 1,
+      "depart": {
+        "airlinename": "Singapore Airlines",
+        "airline": "assets/images/airline/SQ.png",
+        "flight": "SQ 608",
+        "aircraft": "Airbus A325",
+        "date": "Mon, 20 Apr",
+        "duration": "6h 25m",
+        "from": {
+          "time": "02:25",
+          "code": "SIN",
+          "airport": "Singapore Changi Airport"
+        },
+        "to": {
+          "time": "09:50",
+          "code": "ICN",
+          "airport": "Incheon Intl Airport"
+        },
+        "direct": true
+      },
+      "return": {
+        "airlinename": "Singapore Airlines",
+        "airline": "assets/images/airline/SQ.png",
+        "flight": "SQ 607",
+        "aircraft": "Airbus A325",
+        "date": "Fri, 24 Apr",
+        "duration": "6h 20m",
+        "from": {
+          "time": "09:00",
+          "code": "ICN",
+          "airport": "Incheon Intl Airport"
+        },
+        "to": {
+          "time": "02:20",
+          "code": "SIN",
+          "airport": "Singapore Changi Airport"
+        },
+        "direct": true
+      }
+    },
+    {
+      "id": 2,
+      "depart": {
+        "airlinename": "Korean Air",
+        "airline": "assets/images/airline/KE_v4.png",
+        "flight": "KE 678",
+        "aircraft": "Boeing 779",
+        "date": "Mon, 20 Apr",
+        "duration": "6h 30m",
+        "from": {
+          "time": "07:30",
+          "code": "SIN",
+          "airport": "Singapore Changi Airport"
+        },
+        "to": {
+          "time": "15:00",
+          "code": "ICN",
+          "airport": "Incheon Intl Airport"
+        },
+        "direct": true
+      },
+      "return": {
+        "airlinename": "Korean Air",
+        "airline": "assets/images/airline/KE_v4.png",
+        "flight": "KE 679",
+        "aircraft": "Boeing 777",
+        "date": "Fri, 24 Apr",
+        "duration": "6h 25m",
+        "from": {
+          "time": "23:35",
+          "code": "ICN",
+          "airport": "Incheon Intl Airport"
+        },
+        "to": {
+          "time": "05:00",
+          "code": "SIN",
+          "airport": "Singapore Changi Airport",
+          "arrival_day": "Sat, 25 Apr"
+        },
+        "direct": true
+      }
+    }
+  ]
+}

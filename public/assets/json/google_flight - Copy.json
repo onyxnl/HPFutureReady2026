@@ -1,0 +1,113 @@
+[
+  {
+    "id": 1,
+    "airline": "Singapore Airlines",
+    "airlineLogo": "SQicon",
+    "segments": [
+      {
+        "airline":"src/assets/images/airline/SQ.png",
+        "fromTime": "02:25",
+        "fromLocation": "SIN",
+        "duration": "6h 25m",
+        "stops": "Direct",
+        "toTime": "09:50",
+        "toLocation": "ICN"
+      },
+      {
+        "airline":"src/assets/images/airline/SQ.png",
+        "fromTime": "09:00",
+        "fromLocation": "ICN",
+        "duration": "6h 20m",
+        "stops": "Direct",
+        "toTime": "02:20",
+        "toLocation": "SIN"
+      }
+    ],
+    "details": {
+      "departure": {
+        "airlinename": "Singapore Airlines",
+        "airline":"src/assets/images/airline/SQ.png",
+        "date": "Mon, 20 Apr",
+        "duration": "6h 25m",
+        "flightNumber": "SQ 608",
+        "aircraft": "Airbus A325",
+        "schedule": {
+          "fromTime": "02:25",
+          "fromAirport": "Singapore Changi (SIN)",
+          "toTime": "09:50",
+          "toAirport": "Incheon Intl (ICN)"
+        }
+      },
+      "return": {
+        "airlinename": "Singapore Airlines",
+        "airline":"src/assets/images/airline/SQ.png",
+        "date": "Fri, 24 Apr",
+        "duration": "6h 20m",
+        "flightNumber": "SQ 607",
+        "aircraft": "Airbus A350",
+        "schedule": {
+          "fromTime": "09:00",
+          "fromAirport": "Incheon Intl (ICN)",
+          "toTime": "02:20",
+          "toAirport": "Singapore Changi (SIN)"
+        }
+      }
+    }
+  },
+  {
+    "id": 2,
+    "airline": "Korean Air",
+    "airlineLogo": "KRicon",
+    "segments": [
+      {
+        "airline":"src/assets/images/airline/KE_v4.png",
+        "fromTime": "07:30",
+        "fromLocation": "SIN",
+        "duration": "6h 30m",
+        "stops": "Direct",
+        "toTime": "15:00",
+        "toLocation": "ICN"
+      },
+      {
+         "airline":"src/assets/images/airline/KE_v4.png",
+        "fromTime": "23:35",
+        "fromLocation": "ICN",
+        "duration": "6h 25m",
+        "stops": "Direct",
+        "toTime": "05:00+1",
+        "toLocation": "SIN"
+      }
+    ],
+    "details": {
+      "departure": {
+        "airlinename": "Korean Air",
+         "airline":"src/assets/images/airline/KE_v4.png",
+        "date": "Mon, 20 Apr",
+        "duration": "6h 30m",
+        "flightNumber": "KE 679",
+        "aircraft": "Boeing 777",
+        "schedule": {
+          "fromTime": "07:30",
+          "fromAirport": "Singapore Changi (SIN)",
+          "toTime": "15:00",
+          "toAirport": "Incheon Intl (ICN)"
+        }
+      },
+      "return": {
+        "airlinename": "Korean Air",
+        "airline":"src/assets/images/airline/KE_v4.png",
+        "date": "Fri, 24 Apr",
+        "duration": "6h 25m",
+        "flightNumber": "KE 643",
+        "aircraft": "Boeing 778",
+        "schedule": {
+          "fromTime": "23:35",
+          "fromAirport": "Incheon Intl (ICN)",
+          "toTime": "05:00",
+          "toAirport": "Singapore Changi (SIN)"
+        },
+        "extra": "Arrives Sat, 25 Apr"
+      }
+    }
+  }
+]

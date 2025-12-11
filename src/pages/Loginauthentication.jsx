@@ -7,12 +7,14 @@ import Footer from '../components/Footer';
 import { useForm} from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEmail } from "../context/AuthContext";
+//import { useAuth } from "../context/AuthContext";
 import * as yup from "yup";
 
 function Loginauthentication() {
     const navigate = useNavigate();
     
     const { email } = useEmail(); 
+    //const { user } = useAuth();
     console.log("Loginauthentication email:", email);
     const inputRefs = [
         useRef(null),

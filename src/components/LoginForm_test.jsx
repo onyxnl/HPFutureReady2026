@@ -1,16 +1,18 @@
 
     import axios from "axios";
+    import React, {useState } from 'react';
     import {Container ,Button, Col, Form,InputGroup,Row} from 'react-bootstrap';
     import { useNavigate,useLocation} from 'react-router-dom';
-    import { useEmail } from "../context/AuthContext";
-
+    import { useAuth } from "../context/AuthContext";
     import { useForm} from "react-hook-form";
     import { yupResolver } from "@hookform/resolvers/yup";
     import * as yup from "yup";
     const LoginForm = () => {
 
         const navigate = useNavigate();
-        const { setEmail } = useEmail();
+        const { login } = useAuth();
+        const [email, setEmail] = useState("");
+        const [error, setError] = useState("");
         const schema = yup.object().shape({
             email: yup.string().email('Invalid email').required('Required field'),
         });
@@ -27,18 +29,18 @@
             }
         });
 
-        const onSubmit = async (data) => {
+        const onSubmit = async (e) => {
+           // e.preventDefault();
+
             try {
-                const response = await axios.post("https://jsonplaceholder.typicode.com/posts", data);
-                
-                if(response.status === 201){
-                    setEmail(data.email);
-                    navigate('loginauthentication')
-                }
-                
-            } catch (error) {
-                console.log("Error:", error);
+                await login(email);
+                window.location.href = "/";
+            } catch (err) {
+                setError("Invalid credentials");
             }
+           // e.preventDefault();
+            // const success = await login(email, password);
+            // if (!success) setError('Invalid email or password');
         }
 
         
@@ -74,7 +76,7 @@
 
                                             {/* Submit Button */}
                                             <div className="hm-registration-btn">
-                                                <button type="submit" className="mt-3 primary-btn">Login</button>
+                                                <Button type="submit" className="mt-3">Login</Button>
                                             </div>
 
                                             </div>

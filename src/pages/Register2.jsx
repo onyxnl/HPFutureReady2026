@@ -2,25 +2,45 @@ import React, { useState,useEffect} from 'react';
 import axios from "axios";
 import {Container ,Button, Col, Form,InputGroup,Row} from 'react-bootstrap';
 import Select, { components } from "react-select";
-import { useNavigate,useLocation,useOutletContext} from 'react-router-dom';
+import { useNavigate,useLocation,useOutletContext,Link} from 'react-router-dom';
 import { useForm,Controller} from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import DatePicker from 'react-date-picker';
 import moment from 'moment';
+import {useDropzone} from 'react-dropzone'
 import 'react-date-picker/dist/DatePicker.css';
 import 'react-calendar/dist/Calendar.css';
+// import Countrylist from '../assets/json/country.json';
 import calendarIcon from '../assets/images/calendar.svg';
-// import { Last } from 'react-bootstrap/esm/PageItem';
+//import RegisterData from '../assets/json/register2.json';
 
 
 function Register2() {
-   const { email } = useOutletContext(); // automatically gets email from Home.jsx
+    const { email } = useOutletContext(); // automatically gets email from Home.jsx
    //console.log("Register1 email:", email);
-   const navigate = useNavigate();
+    const navigate = useNavigate();
+    const { hash } = useLocation();
+    const [files, setFiles] = useState([]);
+    const [country,setCountry] = useState([]);
+    
+    const MAX_FILE_SIZE = 2 * 1024 * 1024;
+    const MAX_TOTAL_SIZE = 10 * 1024 * 1024;
 
     const schema = yup.object({
-        passportphoto: yup.string().required("Required field"),
+         passportphoto: yup.mixed()
+            .required("Required field")
+            .test("is-file", "File is required", (value) => {
+                return value && value instanceof File && value.size > 0;
+            })
+            .test("fileSize", "File is too large (max 5MB)", (value) => {
+                // Check the file size
+                return value && value.size <= MAX_FILE_SIZE;
+            })
+            .test("fileType", "Invalid file type. Only PNG and PDF allowed", (value) => {
+                // Check the file type
+                return value && (value.type === "image/png" || value.type === "application/pdf");
+            }),
         country:yup.string().required("Required field"),
         nationality: yup.string().required("Required field"),
         dob: yup.date()
@@ -38,23 +58,31 @@ function Register2() {
             .typeError('Date is required')
             .required("Required field"),
         extend:yup.string().required("Required field"),
-        prefer_chechindate:yup.date()
+        prefer_checkindate:yup.date()
             .nullable()
-            .typeError('Date is required')
+            .transform((value, originalValue) => {
+                // Treat empty string as null
+                return originalValue === '' ? null : value;
+            })
             .when('extend', {
-            is: 'Yes', 
-            then: (schema) => schema
-                .required("Required field"),
-                otherwise: (schema) => schema.nullable(),
+                is: 'Yes', 
+                then: (schema) => schema
+                    .typeError('Date is required')
+                    .required("Required field"),
+                    otherwise: (schema) => schema.nullable(),
             }),
         prefer_checkoutdate:yup.date()
             .nullable()
-            .typeError('Date is required')
+            .transform((value, originalValue) => {
+                // Treat empty string as null
+                return originalValue === '' ? null : value;
+            })
             .when('extend', {
-            is: 'Yes', 
-            then: (schema) => schema
-                .required("Required field"),
-                otherwise: (schema) => schema.nullable(),
+                is: 'Yes', 
+                then: (schema) => schema
+                    .typeError('Date is required')
+                    .required("Required field"),
+                    otherwise: (schema) => schema.nullable(),
             }),
         homecountry:yup.string().required("Required field"),
         homecity:yup.string().required("Required field"),
@@ -62,31 +90,41 @@ function Register2() {
         destinationcountry:yup.string().required("Required field"),
         destinationcity:yup.string().required("Required field"),
         destinationairport:yup.string().required("Required field"),
-        extend:yup.string().required("Required field"),
+        departuredate:yup.string().required("Required field"),
         flightmodifydate:yup.string().required("Required field"),
-        preferdeparturedate: yup.date()
+        prefer_departuredate: yup.date()
             .nullable()
-            .typeError('Date is required')
+            .transform((value, originalValue) => {
+                // Treat empty string as null
+                return originalValue === '' ? null : value;
+            })
             .when('flightmodifydate', {
             is: 'Yes', 
             then: (schema) => schema
+                .typeError('Date is required')
                 .required("Required field"),
                 otherwise: (schema) => schema.nullable(),
             }),
-        preferreturndate: yup.date()
+        prefer_returndate: yup.date()
             .nullable()
-            .typeError('Date is required')
+            .transform((value, originalValue) => {
+                // Treat empty string as null
+                return originalValue === '' ? null : value;
+            })
             .when('flightmodifydate', {
             is: 'Yes', 
             then: (schema) => schema
+                .typeError('Date is required')
                 .required("Required field"),
                 otherwise: (schema) => schema.nullable(),
             }),
 
-  })
-  const {
+    })
+    const {
     register,
     handleSubmit,
+    setError,
+    clearErrors,
     control,
     setValue, // to reset value - setValue(name, newValue)
     watch,
@@ -103,8 +141,8 @@ function Register2() {
             dateofissue: "",
             expirydate: "",
             hotel:"INSPIRE Entertainment Resort",
-            checkindate:moment("20/04/2026", "DD/MM/YYYY").toDate(),
-            checkoutdate:moment("23/04/2026", "DD/MM/YYYY").toDate(),
+            checkindate:moment("20/04/2026", "dd/MM/yyyy").toDate(),
+            checkoutdate:moment("23/04/2026", "dd/MM/yyyy").toDate(),
             extend:"",
             homecountry:"",
             homecity:"",
@@ -112,47 +150,145 @@ function Register2() {
             destinationcountry:"",
             destinationcity:"",
             destinationairport:"",
-            extend:"",
-            preferdeparturedate:"",
-            preferreturndate:"",
+            prefer_departuredate:"",
+            prefer_returndate:"",
             airline:"",
             flyerno:"",
             specialrequest:"",
             returndate:"",
             departuredate:"",
-            prefer_chechindate:"",
-            prefer_checkoutdate:""
+            prefer_checkindate:"",
+            prefer_checkoutdate:"",
+            flightmodifydate:""
        }
-  });
+    });
 
-    const salutationOption = [
-        {label : 'Mr.', value:'Mr.'},
-        {label : 'Mrs.', value:'Mrs.'},
-        {label : 'Ms.', value:'Ms.'},
-        {label : 'Mdm.', value:'Mdm.'},
-        {label : 'Dr.', value:'Dr.'}
-    ]
-
-    const countrycodeOption = [
-        {label : '+65 Singapore', value:'+65 Singapore'},
-        {label : '+60 Malaysia', value:'+60 Malaysia'},
-    ]
-
-    const countryOption =[
-        {label : 'Singapore', value:'Singapore'},
-        {label : 'Malaysia', value:'Malaysia'},
-    ]
+    useEffect(() => {
+        if (hash) {
+        const section = document.querySelector(hash);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+        }
+    }, [hash]);
+    const url = `${import.meta.env.BASE_URL}assets/json/country.json`;
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setCountry(data));
+        }, []);
 
     const extendval = watch("extend");
     const flightmodifydateval = watch("flightmodifydate");
+
+    // useEffect(() => {
+    //     console.log(RegisterData);
+    //    // if (!RegisterData || RegisterData.length === 0) return;
+
+    //     if (flightmodifydateval !== "Yes") {  // reset form
+    //         setValue("prefer_departuredate", null); 
+    //         setValue("prefer_returndate", null); 
+    //     }
+    //     if(RegisterData.length > 0){
+    //         const data = RegisterData?.[0];
+    //         setValue("passportphoto",data.passportphoto);
+    //         setValue("country",data.country);
+    //         setValue("nationality",data.nationality);
+    //         setValue("dob",moment(data.dob, "dd/MM/yyyy").toDate());
+    //         setValue("passportno",data.passportno);
+    //         setValue("placeofissue",data.placeofissue);
+    //         setValue("dateofissue",moment(data.dateofissue, "dd/MM/yyyy").toDate());
+    //         setValue("expirydate",moment(data.expirydate, "dd/MM/yyyy").toDate());
+    //         setValue("extend",data.extend);
+    //         setValue("homecountry",data.homecountry);
+    //         setValue("homecity",data.homecity);
+    //         setValue("homeairport",data.homeairport);
+    //         setValue("destinationcountry",data.destinationcountry);
+    //         setValue("destinationcity",data.destinationcity);
+    //         setValue("destinationairport",data.destinationairport);
+    //         setValue("prefer_departuredate",moment(data.prefer_departuredate, "DD/MM/YYYY").toDate());
+    //        // setValue("prefer_returndate",moment(data.prefer_returndate, "dd/MM/yyyy").toDate());
+    //         setValue("airline",data.airline || "");
+    //         setValue("flyerno",data.flyerno);
+    //         setValue("flightmodifydate",data.flightmodifydate);
+    //         setValue("specialrequest",data.specialrequest);
+    //         setValue("returndate",moment(data.returndate, "dd/MM/yyyy").toDate());
+    //         setValue("departuredate",moment(data.departuredate, "dd/MM/yyyy").toDate());
+    //         setValue("prefer_checkindate",moment(data.prefer_checkindate, "dd/MM/yyyy").toDate());
+    //         setValue("prefer_checkoutdate",moment(data.prefer_checkoutdate, "dd/MM/yyyy").toDate());
+    //     }
+    //  }, [flightmodifydateval,RegisterData, setValue])
+
     useEffect(() => {
         if (flightmodifydateval !== "Yes") {  // reset form
-            setValue("preferdeparturedate", null); 
-            setValue("preferreturndate", null); 
+            setValue("prefer_departuredate", null); 
+            setValue("prefer_returndate", null); 
         }
     }, [flightmodifydateval, setValue]);  
+    // start react-dropzone
+        const { getRootProps, getInputProps } = useDropzone({
+            accept: {'image/png': [], 'application/pdf': []},
+            multiple: false, // Only allow one file
+            maxSize: MAX_FILE_SIZE, // File size limit
+            onDrop: (acceptedFiles, fileRejections) => {
+                setFiles(acceptedFiles); // Update files in the UI
+                setValue("passportphoto", acceptedFiles[0]);
+                if (fileRejections.length > 0) {
+                    fileRejections.forEach(({ file, errors }) => {
+                        errors.forEach((error) => {
+                            if (error.code === "file-too-large") {
+                                setError("passportphoto", { type: "manual", message: `File is too large (max ${MAX_FILE_SIZE / 1024 / 1024} MB)` });
+                            }
+                            if (error.code === "file-invalid-type") {
+                                setError("passportphoto", { type: "manual", message: "Invalid file type. Only PNG and PDF allowed." });
+                            }
+                        });
+                    });
+                } else {
+                    clearErrors("passportphoto"); // Clear errors when a valid file is selected
+                }
+        },
+        });
+
+    // end react-dropzone
+
     const onSubmit = async (data) => {
-        console.log(data);
+
+        const formatDate = (date) => {
+            if (!date) return null;
+            const m = moment(date); 
+            
+            return m.isValid() ? m.format('dd/MM/yyyy') : null;
+        };
+        const checkindate = formatDate(data.checkindate);
+        const checkoutdate = formatDate(data.checkoutdate); 
+        const departuredate = formatDate(data.departuredate);  
+        const dateofissue = formatDate(data.dateofissue);
+        const dob = formatDate(data.dob);
+        const expirydate = formatDate(data.expirydate);
+        const returndate = formatDate(data.returndate);
+        const prefer_checkindate = formatDate(data.prefer_checkindate);
+        const prefer_checkoutdate = formatDate(data.prefer_checkoutdate);
+        const prefer_departuredate = formatDate(data.prefer_departuredate);
+        const prefer_returndate = formatDate(data.prefer_returndate);
+
+        
+
+        const registerinfo = {
+            ...data,
+            dob: dob,
+            checkindate: checkindate,
+            checkoutdate: checkoutdate,
+            departuredate: departuredate,
+            dateofissue: dateofissue,
+            expirydate: expirydate,
+            returndate: returndate,
+            prefer_checkindate: prefer_checkindate,
+            prefer_checkoutdate: prefer_checkoutdate,
+            prefer_departuredate: prefer_departuredate,
+            prefer_returndate: prefer_returndate
+        };
+        console.log(registerinfo);
         navigate('/register3')
     }
 
@@ -183,16 +319,49 @@ function Register2() {
                                 </p>
                             </Col>
                         </Row>
+
                         <Row className="field">
                             <Col md={4}>
-                                <label>Please upload a copy of your passport (page with photo)<br/>
-                                    For hotel and flight booking purposes</label>
+                                <label>
+                                Please upload a copy of your passport (page with photo)<br/>
+                                For hotel and flight booking purposes
+                                </label>
                             </Col>
+
                             <Col md={8}>
-                                <input type="file" className="form-input" {...register("passportphoto")} />
-                                <p className='error'>{errors.passportphoto?.message}</p>
-                            </Col>  
+                                <Controller
+                                    name="passportphoto"
+                                    control={control}
+                                    defaultValue={null}
+                                    render={({ field: { onChange, value } }) => (
+                                        <>
+                                        <div {...getRootProps()} className="dropzone">
+                                            <input {...getInputProps()} />
+                                            <p>Drag & drop a PNG or PDF file here, or click to select</p>
+                                        </div>
+
+                                        {files.map((file, index) => (
+                                            <div key={index} className="dropzone-file-row">
+                                            <span>{file.name}</span>
+                                            <button
+                                                type="button"
+                                                className="delete-btn"
+                                                onClick={() => {
+                                                    setFiles([]); // Clear UI file
+                                                    onChange(null); // Set null value to pass required validation
+                                                }}
+                                            >
+                                                <img src="src/assets/images/delete.svg" className="img-fluid" alt="delete" />
+                                            </button>
+                                            </div>
+                                        ))}
+                                        {errors.passportphoto && <p className="error">{errors.passportphoto?.message}</p>}
+                                        </>
+                                    )}
+                                    />
+                            </Col>
                         </Row>
+
                         <Row className="row field">
                             <Col md={4}>
                                 <label>Country</label>
@@ -204,9 +373,9 @@ function Register2() {
                                     render={({ field }) => (
                                         <Select
                                             {...field}
-                                            options={countryOption}
+                                            options={country}
                                             placeholder='--Choose--'
-                                            value={countryOption.find(option => option.value === field.value)}
+                                            value={country.find(option => option.value === field.value)}
                                             onChange={(selectedOption) =>{
                                                 field.onChange(selectedOption?.value);
                                             }}
@@ -399,7 +568,7 @@ function Register2() {
                                     <Col md={8}>
                                         <Controller
                                             control={control}
-                                            name="prefer_chechindate"
+                                            name="prefer_checkindate"
                                             render={({ field }) => (
                                                 <DatePicker
                                                     onChange={field.onChange}
@@ -411,7 +580,7 @@ function Register2() {
                                                 />
                                             )}
                                         />
-                                        <p className='error'>{errors.prefer_chechindate?.message}</p>
+                                        <p className='error'>{errors.prefer_checkindate?.message}</p>
                                     </Col>  
                                 </Row>
                                 <Row className="field">
@@ -459,9 +628,9 @@ function Register2() {
                                     render={({ field }) => (
                                         <Select
                                             {...field}
-                                            options={countryOption}
+                                            options={country}
                                             placeholder='--Choose--'
-                                            value={countryOption.find(option => option.value === field.value)}
+                                            value={country.find(option => option.value === field.value)}
                                             onChange={(selectedOption) =>{
                                                 field.onChange(selectedOption?.value);
                                             }}
@@ -491,9 +660,9 @@ function Register2() {
                                     render={({ field }) => (
                                         <Select
                                             {...field}
-                                            options={countryOption}
+                                            options={country}
                                             placeholder='--Choose--'
-                                            value={countryOption.find(option => option.value === field.value)}
+                                            value={country.find(option => option.value === field.value)}
                                             onChange={(selectedOption) =>{
                                                 field.onChange(selectedOption?.value);
                                             }}
@@ -510,7 +679,7 @@ function Register2() {
                             <Col md={8}>
                                 <Controller
                                     control={control}
-                                    name="prefer_chechindate"
+                                    name="departuredate"
                                     render={({ field }) => (
                                         <DatePicker
                                             onChange={field.onChange}
@@ -522,7 +691,7 @@ function Register2() {
                                         />
                                     )}
                                 />
-                                <p className='error'>{errors.prefer_chechindate?.message}</p>
+                                <p className='error'>{errors.departuredate?.message}</p>
                             </Col>  
                         </Row>
                         <Row className="field">
@@ -541,9 +710,9 @@ function Register2() {
                                     render={({ field }) => (
                                         <Select
                                             {...field}
-                                            options={countryOption}
+                                            options={country}
                                             placeholder='--Choose--'
-                                            value={countryOption.find(option => option.value === field.value)}
+                                            value={country.find(option => option.value === field.value)}
                                             onChange={(selectedOption) =>{
                                                 field.onChange(selectedOption?.value);
                                             }}
@@ -573,9 +742,9 @@ function Register2() {
                                     render={({ field }) => (
                                         <Select
                                             {...field}
-                                            options={countryOption}
+                                            options={country}
                                             placeholder='--Choose--'
-                                            value={countryOption.find(option => option.value === field.value)}
+                                            value={country.find(option => option.value === field.value)}
                                             onChange={(selectedOption) =>{
                                                 field.onChange(selectedOption?.value);
                                             }}
@@ -607,14 +776,14 @@ function Register2() {
                                 <p className='error'>{errors.returndate?.message}</p>
                             </Col>  
                         </Row>
-                        <Row className="row field">
+                        <Row className="row field" id='modifydate'>
                             <Col md={4}>
-                                <label>I would like to modify the flight dates</label>
+                                <label>I would like to modify the flight dates<br/><small className='red'>Need to add something like EV sec will contact you….</small></label>
                             </Col>
                             <Col md={8} className="genderradio">
                                 <input type="radio" {...register("flightmodifydate")} value="Yes" className="radiobtn" id="flightmodifydate_Yes" /><label htmlFor="flightmodifydate_Yes">Yes <span style={{width: '10px', display: "inline-block"}}></span></label>
                                 <input type="radio" {...register("flightmodifydate")} value="No" className="radiobtn" id="flightmodifydate_no" /><label htmlFor="flightmodifydate_no">No</label>
-                                <p className='error'>{errors.extend?.message}</p>
+                                <p className='error'>{errors.flightmodifydate?.message}</p>
                                 
                             </Col>
                         </Row>
@@ -627,7 +796,7 @@ function Register2() {
                                     <Col md={8}>
                                         <Controller
                                             control={control}
-                                            name="preferdeparturedate"
+                                            name="prefer_departuredate"
                                             render={({ field }) => (
                                                 <DatePicker
                                                     onChange={field.onChange}
@@ -639,7 +808,7 @@ function Register2() {
                                                 />
                                             )}
                                         />
-                                        <p className='error'>{errors.preferdeparturedate?.message}</p>
+                                        <p className='error'>{errors.prefer_departuredate?.message}</p>
                                     </Col>  
                                 </Row>
                                 <Row className="field">
@@ -649,7 +818,7 @@ function Register2() {
                                     <Col md={8}>
                                         <Controller
                                             control={control}
-                                            name="preferreturndate"
+                                            name="prefer_returndate"
                                             render={({ field }) => (
                                                 <DatePicker
                                                     onChange={field.onChange}
@@ -661,7 +830,7 @@ function Register2() {
                                                 />
                                             )}
                                         />
-                                        <p className='error'>{errors.preferreturndate?.message}</p>
+                                        <p className='error'>{errors.prefer_returndate?.message}</p>
                                     </Col>  
                                 </Row>
                              </>
@@ -697,6 +866,7 @@ function Register2() {
                         <Row className='field mt-5'>
                             <Col md={12}>
                                 <div className='d-flex justify-content-md-between'>
+                                    <Link to="/register1" className="back-btn">Back</Link>
                                     <button type="submit" className="outline-btn">Save & exit</button>
                                     <button type="submit" className="primary-btn">Next</button>
                                 </div>
