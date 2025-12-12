@@ -6,8 +6,8 @@ import { useNavigate,useLocation,useOutletContext,Link} from 'react-router-dom';
 import { useForm,Controller} from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import flighticon from '../assets/images/airline/flight.svg'
-// import FlightData from '../assets/json/google_flight.json'
+import flighticon from '../assets/images/airline/flight.svg';
+import { getUrl } from "../utils";
 
 function Flight() {
    const { email } = useOutletContext(); // automatically gets email from Home.jsx
@@ -17,16 +17,13 @@ function Flight() {
     const [openIndex, setOpenIndex] = useState(null);
     const [roundtrips, setFlight] = useState(null);
 
-    const imgUrl = import.meta.env.BASE_URL; 
 
     const toggle = (index) => {
         setOpenIndex(prev => (prev === index ? null : index)); // open/close behavior
     };
 
-    // useEffect(() => {
-    //     setFlight(FlightData.roundtrips)
-    //   }, []);
-    const url = `${import.meta.env.BASE_URL}assets/json/google_flight.json`;
+
+    const url = getUrl("assets/json/google_flight.json");
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -37,7 +34,6 @@ function Flight() {
   const {
     register,
     handleSubmit,
-    control,
     setValue, // to reset value - setValue(name, newValue)
     watch,
     formState: { errors },
@@ -47,11 +43,6 @@ function Flight() {
            
        }
   });
-    
-    
-
-    
-
     
 
     const onSubmit = (data) => {
@@ -85,7 +76,6 @@ function Flight() {
                                         <div className="arrival-flight-group">
                                             {roundtrips && roundtrips.map((trip) => (
                                                 <div className="group" key={trip.id}>
-                                                    
                                                     <input type="radio" name="selectflight" />
 
                                                     <div className="flightinfo_wrapper">
@@ -102,9 +92,8 @@ function Flight() {
 
                                                         <div className="flight-segment">
                                                             <div className="header">
-                                                            
                                                             <img
-                                                            src={`${imgUrl}${trip.depart.airline}`}
+                                                            src={getUrl(trip.depart.airline)}
                                                             className="img-fluid airline-logo"
                                                             alt="" />
                                                             <span className="flight-name">{trip.depart.airlinename}</span>
@@ -147,7 +136,7 @@ function Flight() {
 
                                                         <div className="flight-segment">
                                                             <div className="header">
-                                                            <img src={`${imgUrl}${trip.depart.airline}`} className="img-fluid airline-logo" alt="" />
+                                                            <img src={getUrl(trip.depart.airline)} className="img-fluid airline-logo" alt="" />
                                                             <span className="flight-name">{trip.return.airlinename}</span>
                                                             <span className="flight-no">{trip.return.flight}</span>
                                                             <span className="aircraft">{trip.return.aircraft}</span>
@@ -188,15 +177,12 @@ function Flight() {
                                                 </div>
                                                 ))}
 
-
-
-
                                         </div>
                                     </Col>
                                 </Row>
                                 <Row className='field mt-5'>
                                     <Col md={12}>
-                                        <div className='d-flex justify-content-md-between'>
+                                        <div className='d-flex justify-content-between'>
                                             <Link to="/register2" className="back-btn">Back</Link>
                                             <button type="submit" className="outline-btn">Save & exit</button>
                                             <button type="submit" className="primary-btn">Next</button>

@@ -16,7 +16,7 @@ export function AuthProvider({ children }) {
   }, [email]);
 
   return (
-    <EmailContext.Provider value={{ email, setEmail }}>
+    <EmailContext.Provider value={{ email, setEmail}}>
       {children}
     </EmailContext.Provider>
   );

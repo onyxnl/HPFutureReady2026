@@ -11,9 +11,8 @@ import moment from 'moment';
 import {useDropzone} from 'react-dropzone'
 import 'react-date-picker/dist/DatePicker.css';
 import 'react-calendar/dist/Calendar.css';
-// import Countrylist from '../assets/json/country.json';
 import calendarIcon from '../assets/images/calendar.svg';
-//import RegisterData from '../assets/json/register2.json';
+import { getUrl } from "../utils";
 
 
 function Register2() {
@@ -163,15 +162,16 @@ function Register2() {
        }
     });
 
+    // anchor link function
     useEffect(() => {
-        if (hash) {
-        const section = document.querySelector(hash);
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
-        }
-        }
-    }, [hash]);
-    const url = `${import.meta.env.BASE_URL}assets/json/country.json`;
+            if (hash) {
+                const section = document.querySelector(hash);
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+            }
+    }}, [hash]);
+    // end anchor link function
+     const url = getUrl("assets/json/country.json");
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -335,27 +335,27 @@ function Register2() {
                                     defaultValue={null}
                                     render={({ field: { onChange, value } }) => (
                                         <>
-                                        <div {...getRootProps()} className="dropzone">
-                                            <input {...getInputProps()} />
-                                            <p>Drag & drop a PNG or PDF file here, or click to select</p>
-                                        </div>
-
-                                        {files.map((file, index) => (
-                                            <div key={index} className="dropzone-file-row">
-                                            <span>{file.name}</span>
-                                            <button
-                                                type="button"
-                                                className="delete-btn"
-                                                onClick={() => {
-                                                    setFiles([]); // Clear UI file
-                                                    onChange(null); // Set null value to pass required validation
-                                                }}
-                                            >
-                                                <img src="src/assets/images/delete.svg" className="img-fluid" alt="delete" />
-                                            </button>
+                                            <div {...getRootProps()} className="dropzone">
+                                                <input {...getInputProps()} />
+                                                <p>Drag & drop a PNG or PDF file here, or click to select</p>
                                             </div>
-                                        ))}
-                                        {errors.passportphoto && <p className="error">{errors.passportphoto?.message}</p>}
+
+                                            {files.map((file, index) => (
+                                                <div key={index} className="dropzone-file-row">
+                                                <span>{file.name}</span>
+                                                <button
+                                                    type="button"
+                                                    className="delete-btn"
+                                                    onClick={() => {
+                                                        setFiles([]); // Clear UI file
+                                                        onChange(null); // Set null value to pass required validation
+                                                    }}
+                                                >
+                                                    <img src="src/assets/images/delete.svg" className="img-fluid" alt="delete" />
+                                                </button>
+                                                </div>
+                                            ))}
+                                            {errors.passportphoto && <p className="error">{errors.passportphoto?.message}</p>}
                                         </>
                                     )}
                                     />
@@ -865,7 +865,7 @@ function Register2() {
                            
                         <Row className='field mt-5'>
                             <Col md={12}>
-                                <div className='d-flex justify-content-md-between'>
+                                <div className='d-flex justify-content-between'>
                                     <Link to="/register1" className="back-btn">Back</Link>
                                     <button type="submit" className="outline-btn">Save & exit</button>
                                     <button type="submit" className="primary-btn">Next</button>

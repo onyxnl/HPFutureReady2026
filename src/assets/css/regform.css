@@ -848,9 +848,6 @@ float: right;
 .KV{
   height: 400px;
 }
-.register-form .loginform{
- max-width: 90%!important;
-}
 .faq_container button.accordion:after{
   top: 25px;
 }
@@ -859,39 +856,39 @@ float: right;
 }
 }
 @media (max-width: 992px) {
-.KV{
-  height: 370px;
-}
-.partner-container {
-  padding: 30px 15px;
-}
-.register-form label{
-  transform: translateY(0px)!important;
-}
-.clock-canvas{
-  width: 50%;
-    margin: 0px auto;
-    padding-bottom: 65%;
-}
-.text{
-    top: 43%;
-    left: 10%;
-}
-.clock-item .inner {
-    height: 0px;
-    padding-bottom: 70%;
-}
-.type-time {
-    width: 100%;
-    text-align: center;
-    color: #1A1A1A;
-}
-.w_902_second{
-  margin-left: 0;
-}
-.event{
-  width: 80%;
-}
+  .KV{
+    height: 370px;
+  }
+  .partner-container {
+    padding: 30px 15px;
+  }
+  .register-form label{
+    transform: translateY(0px)!important;
+  }
+  .clock-canvas{
+    width: 50%;
+      margin: 0px auto;
+      padding-bottom: 65%;
+  }
+  .text{
+      top: 43%;
+      left: 10%;
+  }
+  .clock-item .inner {
+      height: 0px;
+      padding-bottom: 70%;
+  }
+  .type-time {
+      width: 100%;
+      text-align: center;
+      color: #1A1A1A;
+  }
+  .w_902_second{
+    margin-left: 0;
+  }
+  .event{
+    width: 80%;
+  }
 }
 .partner-container .centerit {
   width: 100%;
@@ -899,268 +896,275 @@ float: right;
   margin: 50px 0;
 }
 @media (max-width: 800px){
-.event,.agenda-left,.agenda_wapper {
-    width: 87%;
-}
+  .event,.agenda-left,.agenda_wapper {
+      width: 87%;
+  }
 }
 @media (max-width: 768px){
-.event,.agenda-left,.agenda_wapper {
-    width: 90%;
-}
-.KV{
-  height: 340px;
-}
-.menu-button-container{
-  right: 40px;
-}
-.home-register .submit-btn{
-  float: none;
-  margin-top: 0px;
-  margin-bottom: 20px;
-}
+  .event,.agenda-left,.agenda_wapper {
+      width: 90%;
+  }
+  .KV{
+    height: 340px;
+  }
+  .menu-button-container{
+    right: 40px;
+  }
+  .home-register .submit-btn{
+    float: none;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
 
-.assistance_wapper {
-    background-size: 100% 45%;
-    clear: both;
-}
-.footer{
-    margin-top: 0px!important;
-}
-.event .header{
-  margin-top: 20px!important;
-}
-.header-container .logo-holder {
-    margin: 30px 0;
-    z-index: 999;
-}
-.masthead-holder {
-  background-size: cover;
-  height: 280px;
-  background-position: 19% 50%;
-  padding-bottom: 30px;
-}
-.partner-container .centerit {
-  margin: 25px 0;
-}
-.register-form h2 {
-  margin: 10px 0;
-}
+  .assistance_wapper {
+      background-size: 100% 45%;
+      clear: both;
+  }
+  .footer{
+      margin-top: 0px!important;
+  }
+  .event .header{
+    margin-top: 20px!important;
+  }
+  .header-container .logo-holder {
+      margin: 30px 0;
+      z-index: 999;
+  }
+  .masthead-holder {
+    background-size: cover;
+    height: 280px;
+    background-position: 19% 50%;
+    padding-bottom: 30px;
+  }
+  .partner-container .centerit {
+    margin: 25px 0;
+  }
+  .register-form h2 {
+    margin: 20px 0 10px;
+  }
 }
 @media (max-width: 767px){
-.event,.agenda-left,.agenda_wapper {
-    width: 68%;
-}
-.menu-button-container{
-    right: 100px;
-}
-.clock-item {
-  margin: 0px 0px 30px 0px;
-}
-.clock-canvas{
-  width: 168px;
-  margin: 0px auto;
-}
-.clock-item .inner {
-    padding-bottom: 100%;
-}
-.clock-canvas {
-    padding-bottom: 85%;
-}
-.text {
-    left: 8%;
-}
-.type-time {
-    width: 100%;
-}
+  .event,.agenda-left,.agenda_wapper {
+      width: 68%;
+  }
+  .menu-button-container{
+      right: 100px;
+  }
+  .clock-item {
+    margin: 0px 0px 30px 0px;
+  }
+  .clock-canvas{
+    width: 168px;
+    margin: 0px auto;
+  }
+  .clock-item .inner {
+      padding-bottom: 100%;
+  }
+  .clock-canvas {
+      padding-bottom: 85%;
+  }
+  .text {
+      left: 8%;
+  }
+  .type-time {
+      width: 100%;
+  }
 }
 @media (max-width: 700px){
-.event,.agenda-left,.agenda_wapper {
-    width: 68%;
-}
+  .event,.agenda-left,.agenda_wapper {
+      width: 68%;
+  }
 }
 @media (max-width: 600px){
-.pt-right{
-  text-align: right;
-  padding-top: 0px;
-  float: none;
-}
-.menu-button-container{
-  right: 35px;
-}
-.res_title{
-  padding: 30px 0px 0px 25px;
-  font-size: 35px;
-}
-.register-form label{
-  font-size: 15px!important;
-}
-.clock-canvas {
-    padding-bottom: 100%;
-}
-.event, .agenda-left, .agenda_wapper {
-    width: 88%;
-}
-.hm-agenda .w_902{
-  background: url(../images/regform/agenda_bg_mobile.png)no-repeat;
-  background-size: 100% 100%;
-}
-.hm-agenda .inner-wrap-border {
-    width: 100%;
-    max-width: 85%;
-    margin: 0px 40px 0px auto;
-}
-.hm-agenda .hm-save {
-    left: 33%;
-    margin-top: 40px;
-}
-.mb-agendatitle{
-  display: block;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  text-align: center;
-}
-.agendapills li a{
-  padding: 15px 10px 10px 0px;
-  font-size: 16px;
-}
-.KV {
-    height: 280px;
-}
+  .pt-right{
+    text-align: right;
+    padding-top: 0px;
+    float: none;
+  }
+  .menu-button-container{
+    right: 35px;
+  }
+  .res_title{
+    padding: 30px 0px 0px 25px;
+    font-size: 35px;
+  }
+  .register-form label{
+    font-size: 15px!important;
+  }
+  .clock-canvas {
+      padding-bottom: 100%;
+  }
+  .event, .agenda-left, .agenda_wapper {
+      width: 88%;
+  }
+  .hm-agenda .w_902{
+    background: url(../images/regform/agenda_bg_mobile.png)no-repeat;
+    background-size: 100% 100%;
+  }
+  .hm-agenda .inner-wrap-border {
+      width: 100%;
+      max-width: 85%;
+      margin: 0px 40px 0px auto;
+  }
+  .hm-agenda .hm-save {
+      left: 33%;
+      margin-top: 40px;
+  }
+  .mb-agendatitle{
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  .agendapills li a{
+    padding: 15px 10px 10px 0px;
+    font-size: 16px;
+  }
+  .KV {
+      height: 280px;
+  }
 }
 @media (max-width: 560px) {
-.event, .agenda-left, .agenda_wapper {
-    width: 90%;
-}
-.KV {
-    height: 245px;
-}
-.register-form h2 {
-  font-size: 30px;
-  line-height: 26px;
-}
-.mobile-container{
-  right: 0px;
-}
-.header{
-  font-size: 30px;
-}
-.operation_time{
-  margin-bottom: 0px;
-}
-.assistance_wapper {
-    background-size: 100% 35%;
-    clear: both;
-}
+  .event, .agenda-left, .agenda_wapper {
+      width: 90%;
+  }
+  .KV {
+      height: 245px;
+  }
+  .register-form h2 {
+    font-size: 30px;
+    line-height: 26px;
+  }
+  .mobile-container{
+    right: 0px;
+  }
+  .header{
+    font-size: 30px;
+  }
+  .operation_time{
+    margin-bottom: 0px;
+  }
+  .assistance_wapper {
+      background-size: 100% 35%;
+      clear: both;
+  }
 }
 @media only screen and (max-width: 450px){
-.menu-button-container {
-    right: 20px!important;
-}
-.res_subtitle{
-  font-size: 22px;
-}
-.KV {
-    height: 200px;
-}
-.text {
-    left: 5%;
-    top: 55%;
-}
-.type-time {
-    width: 100%;
-    margin-top: -9px;
-}
-.hm-agenda .hm-save {
-    left: 28%;
-    margin-top: 38px;
-}
-.hm-agenda .subheader {
+  .menu-button-container {
+      right: 20px!important;
+  }
+  .res_subtitle{
     font-size: 22px;
-}
-.event{
-  margin-top: 20px;
-}
-.hm-agenda,.countdown-container{
-  margin-top: 30px;
-}
-.hm-agenda .borderless td.sec-col {
-    padding-left: 20px;
-}
-.hm-agenda .borderless td{
-    font-size: 17px;
-}
-.header {
-    font-size: 27px;
-}
-.agendatab-content table td:first-child{
-  width: 30%;
-}
-.speaker-wrap{
-  min-height: auto;
-}
-.speaker-detail-right p,.speaker-detail-right .speaker_backlink{
-  padding-left: 10px;
-}
-.faq_container button.accordion:after {
-    top: 13px!important;
-}
+  }
+  .KV {
+      height: 200px;
+  }
+  .text {
+      left: 5%;
+      top: 55%;
+  }
+  .type-time {
+      width: 100%;
+      margin-top: -9px;
+  }
+  .hm-agenda .hm-save {
+      left: 28%;
+      margin-top: 38px;
+  }
+  .hm-agenda .subheader {
+      font-size: 22px;
+  }
+  .event{
+    margin-top: 20px;
+  }
+  .hm-agenda,.countdown-container{
+    margin-top: 30px;
+  }
+  .hm-agenda .borderless td.sec-col {
+      padding-left: 20px;
+  }
+  .hm-agenda .borderless td{
+      font-size: 17px;
+  }
+  .header {
+      font-size: 27px;
+  }
+  .agendatab-content table td:first-child{
+    width: 30%;
+  }
+  .speaker-wrap{
+    min-height: auto;
+  }
+  .speaker-detail-right p,.speaker-detail-right .speaker_backlink{
+    padding-left: 10px;
+  }
+  .faq_container button.accordion:after {
+      top: 13px!important;
+  }
 }
 @media only screen and (max-width: 400px){
-.submit-btn{
-  float: none!important;
-}
-.res_title{
-  padding: 30px 0px 0px 18px;
-}
-.link_text{
-  word-break: break-word;
-}
-.countdown-container{
-  margin-top: 30px!important;
-}
-.text {
-  left: 9%;
-  top: 65%;
-}
-.type-time {
-    width: 100%;
-    margin-top: 5px;
-}
-.KV {
-    height: 170px;
-}
-.clock-canvas {
-    padding-bottom: 107%;
-    width: 150px;
-    background-size: 100%;
-}
-#canvas-days .kineticjs-content, #canvas-days canvas, 
-#canvas-hours .kineticjs-content, #canvas-hours canvas, 
-#canvas-minutes .kineticjs-content, #canvas-minutes canvas, 
-#canvas-seconds .kineticjs-content, #canvas-seconds canvas{
-    width: 150px!important;
-    height: 150px!important;
-}
-.clock-item {
-    margin: 0px 0px 55px 0px;
-}
+  .submit-btn{
+    float: none!important;
+  }
+  .res_title{
+    padding: 30px 0px 0px 18px;
+  }
+  .link_text{
+    word-break: break-word;
+  }
+  .countdown-container{
+    margin-top: 30px!important;
+  }
+  .text {
+    left: 9%;
+    top: 65%;
+  }
+  .type-time {
+      width: 100%;
+      margin-top: 5px;
+  }
+  .KV {
+      height: 170px;
+  }
+  .clock-canvas {
+      padding-bottom: 107%;
+      width: 150px;
+      background-size: 100%;
+  }
+  #canvas-days .kineticjs-content, #canvas-days canvas, 
+  #canvas-hours .kineticjs-content, #canvas-hours canvas, 
+  #canvas-minutes .kineticjs-content, #canvas-minutes canvas, 
+  #canvas-seconds .kineticjs-content, #canvas-seconds canvas{
+      width: 150px!important;
+      height: 150px!important;
+  }
+  .clock-item {
+      margin: 0px 0px 55px 0px;
+  }
 }
 @media only screen and (max-width: 345px){
-.KV {
-    height: 150px;
-} 
-.clock-canvas {
-    padding-bottom: 107%;
-    width: 140px;
-    background-size: 100%;
-} 
-#canvas-days .kineticjs-content, #canvas-days canvas, 
-#canvas-hours .kineticjs-content, #canvas-hours canvas, 
-#canvas-minutes .kineticjs-content, #canvas-minutes canvas, 
-#canvas-seconds .kineticjs-content, #canvas-seconds canvas{
-    width: 140px!important;
-    height: 140px!important;
-}
+  .KV {
+      height: 150px;
+  } 
+  .modifydatestyle{
+    margin-left:0 !important; display: block;
+  }
+  .flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header{
+        column-gap: 12px !important;    flex-wrap: wrap;   row-gap: 5px !important;
+  }
+  .flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox{column-gap: 18px !important;}
+  .clock-canvas {
+      padding-bottom: 107%;
+      width: 140px;
+      background-size: 100%;
+  } 
+  #canvas-days .kineticjs-content, #canvas-days canvas, 
+  #canvas-hours .kineticjs-content, #canvas-hours canvas, 
+  #canvas-minutes .kineticjs-content, #canvas-minutes canvas, 
+  #canvas-seconds .kineticjs-content, #canvas-seconds canvas{
+      width: 140px!important;
+      height: 140px!important;
+  }
 }
 
 .register-form .moveUp {
@@ -1188,7 +1192,6 @@ float: right;
 .register-form select {
   text-transform: none;
 }
-.register-form button,
 .register-form input,
 .register-form optgroup,
 .register-form select,
@@ -1333,11 +1336,12 @@ float: right;
   overflow: hidden;
 }
 .edit-btn,.back-btn{
-  width: 100px!important;
+  width: 100px;
 }
+.back-btn{margin-right: 10px;}
 .register-form .submit-btn, .regsummary .submit-btn, .regsummary .edit-btn,.back-btn
-{ background:#024AD8; border: 1px solid #024AD8; color: #ffffff; 
-transition: color .2s linear, background-color .2s linear, border-color .2s linear, box-shadow .1s linear;}
+{ background-color:#024AD8; border: 1px solid #024AD8; color: #ffffff; }
+
 .regsummary .edit-btn,.back-btn{
   text-align: center;
   text-decoration: none;
@@ -1346,45 +1350,50 @@ transition: color .2s linear, background-color .2s linear, border-color .2s line
   font-weight: bold;
   line-height: 38px;
 }
+.regsummary .edit-btn{ padding-top: 8px;padding-bottom: 8px; }
 .primary-btn{
-  background: #024AD8;
+  background-color: #024AD8;
   border: 1px solid #024AD8;
   color: #ffffff;
-  padding: 2px 32px !important;
-  font-size: 16px !important;
-  font-weight: bold !important;
-  font-family: inherit !important;
-  border-radius: 0 !important;display: inline-block !important;
-  line-height: 38px !important;
+  padding: 2px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: inherit;
+  border-radius: 0;display: inline-block;
+  line-height: 38px;
   text-align: center;
   text-decoration: none;
-  transition: color .2s linear, background-color .2s linear, border-color .2s linear, box-shadow .1s linear;
 }
 
 .outline-btn {
-  background: transparent;
+  background-color: transparent;
   border: 1px solid #024AD8;
-  padding: 2px 32px !important;
-  font-size: 16px !important;
-  color: #024AD8 !important;
-  font-weight: bold !important;
-  font-family: inherit !important;
-  border-radius: 0 !important;
-  margin-right: 20px !important;
- /* width: 160px;
-  height: 40px;*/
-  display: inline-block !important;
-  line-height: 38px !important;
+  padding: 2px 32px;
+  font-size: 16px;
+  color: #024AD8;
+  font-weight: bold;
+  font-family: inherit;
+  border-radius: 0;
+  margin-right: 10px;
+  display: inline-block;
+  line-height: 38px;
   text-align: center;
   text-decoration: none;
-  transition: color .2s linear, background-color .2s linear, border-color .2s linear, box-shadow .1s linear;
 }
 .outline-btn:hover,.back-btn:hover {
   color: #FFF !important;
   text-decoration: none;
 }
 .primary-btn:hover,.outline-btn:hover,.regsummary .edit-btn:hover,.back-btn:hover{
-  background: #013bac;
+  background-color: #013bac;
+}
+
+.regsummary .edit-btn,.back-btn,.primary-btn,
+.register-form .submit-btn, .regsummary .submit-btn, .regsummary .edit-btn,.back-btn{
+   transition:background-color .25s ease-out;
+}
+.outline-btn{
+      transition: background-color .25s ease-out, border-color .25s ease-out, color .25s ease-out;
 }
 @media only screen and (max-width: 576px) {
   .button-holder {
@@ -1392,9 +1401,17 @@ transition: color .2s linear, background-color .2s linear, border-color .2s line
   }
   .outline-btn {
     margin-left: 0px;
-    margin-bottom: 20px !important;
-    margin-right: 0;
+    margin-right: 10px;
   }
+  .primary-btn,.regsummary .edit-btn, .back-btn,.outline-btn{
+    padding: 2px 12px;
+  }
+  .edit-btn, .back-btn{ width: auto;}
+  .flight-content .register-form{ padding-left: 15px !important; padding-right: 15px !important;}
+  .flight-content .arrival-flight-group{ width: 100% !important;}
+  .flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox{width: 100% !important;margin-left: 0px !important;column-gap: 24px !important;}
+  .flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-header,
+  .flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment{ padding: 10px 12px !important;}
 }
 .apex_intro {
   border-top: 8px solid #67899A;
@@ -1445,19 +1462,15 @@ transition: color .2s linear, background-color .2s linear, border-color .2s line
   color:#000000;
   font-size: 16px;
   line-height: 21px;
-  /*padding: 22px;
-  margin-top: 100px;*/
 }
-/* faq */
-/*.faq_page{
-  padding-top: 55px;
-}*/
 .infotext{
   font-size: 22px !important;
   line-height: 32px !important;
   padding-top: 15px !important;
   margin-bottom: 0;
 }
+
+/* faq code =========================================================*/
 .faq_container h1 {
   text-align: center;
   font-size: 48px;
@@ -1531,7 +1544,6 @@ transition: color .2s linear, background-color .2s linear, border-color .2s line
   line-height: 35px;
   border: none;
   outline: none;
-/*  border-bottom: 1px solid #1A1A1A;*/
   text-align: left;
   padding: 15px 30px 0px 0px;
   cursor: pointer;
@@ -1542,9 +1554,6 @@ transition: color .2s linear, background-color .2s linear, border-color .2s line
   font-family: FontAwesome;
    content: "\f078";
    color: #024AD8;
-/*  font-family: Font Awesome; */
-  /*background: url('../images/regform/down_arrow.svg') no-repeat;
-  background-size: contain;*/
   width: 12px;
   height: 18px;
   position: absolute;
@@ -1637,10 +1646,330 @@ transition: color .2s linear, background-color .2s linear, border-color .2s line
     min-width: 700px;
   }
 }
-/* Home */
-/*.home_page{
-  margin-top:60px;
-}*/
+/* faq code end ===================================================== */
+/* display flight info ========================================= */
+.flight-content .arrival-flight-group {
+  width: 80%;
+}
+.flight-content .arrival-flight-group .group {
+  position: relative;
+  margin: 10px 0;
+}
+.flight-content .arrival-flight-group .group input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.flight-content .arrival-flight-group .group input[type=radio]:checked ~ .flightinfo_wrapper {
+  border: 2px solid #549ef7;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper {
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  color: #121212;
+  cursor: pointer;
+  border: 2px solid #dadada;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo {
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+  line-height: 22px;
+  flex-direction: column;
+  border-bottom: 1px solid #dadada !important;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo:nth-child(odd) {
+  border-bottom: none;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card {
+  border-radius: 0;
+  border: 0;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-header {
+  padding: 5px 20px;
+  border-bottom: 1px solid #dadada;
+  display: flex;
+  justify-content: space-between;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-header .direction-status {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-header .direction-status span {
+  margin-left: 12px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment {
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  width: 100%;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header {
+  display: flex;
+  align-items: center;
+  gap: 12px;line-height: inherit;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .airline-logo {
+  width: 40px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .flight-no {
+  font-size: 16px;
+  padding: 0px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .flight-name, .flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .flight-no {
+  font-size: 16px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .aircraft {
+  padding: 1px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  border: 1px solid #707070;
+  color: #333;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox {
+  margin-left: 50px;
+  display: flex;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  width: calc(100% - 50px);
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .time {
+  font-size: 20px;
+  line-height: 26px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .flyfrom {
+  width: 160px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .duration {
+  width: 150px;
+  text-align: center;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .duration .line {
+  margin: 0.2rem 0;
+  background: #121212;
+  height: 1px;
+  width: 90%;
+  position: relative;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .duration .line:after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: -15%;
+  width: 12px;
+  height: 12px;
+  background: url(../images/airline/flight.svg) no-repeat;
+  background-size: contain;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .flyto {
+  padding-left: 10px;
+  width: auto;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .addition-message {
+  color: red;
+  font-weight: bold;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 12px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper.show {
+  max-height: 900px;
+  padding-bottom: 15px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .departure {
+  margin: 0 0px 10px 0;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card {
+  z-index: -1;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-header {
+  padding: 5px 20px;
+  border-bottom: 1px solid #dadada;
+  display: flex;
+  justify-content: space-between;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-header .direction-status {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-header .direction-status span {
+  margin-left: 12px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header .airline-logo {
+  width: 28px;
+  height: 28px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header .flight-number {
+  font-size: 16px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header .aircraft {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  border: 1px solid #707070;
+  color: #333;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content {
+  display: flex;
+  gap: 16px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 24px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline .dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #888;
+  border-radius: 50%;
+  background: #fff;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline .line {
+  flex: 1;
+  width: 2px;
+  background: #cfd3d8;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline .plane-icon {
+  width: 22px;
+  transform: rotate(318deg);
+  margin: 6px 0;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule {
+  flex: 1;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .direction {
+  display: flex;
+  gap: 16px;
+  flex-direction: row;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .time {
+  font-size: 20px;
+  width: 140px;
+  font-weight: bold;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .location {
+  font-size: 16px;
+  color: #2a2a2a;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .location .addition-message {
+  color: red;
+  font-weight: bold;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .duration {
+  display: flex;
+  gap: 16px;
+  flex-direction: row;
+  margin: 12px 0;
+  font-size: 14px;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .duration-time {
+  font-size: 14px;
+  width: 140px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+}
+.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .overnight-message {
+  font-weight: bold;
+  background: #F5F5F5;
+  padding: 0px 7px;
+  border-radius: 5px;
+}
+.modifydatestyle{
+  font-size: 16px;
+  color: #212121;
+  margin-left: 40px;
+}
+.modifydatestyle:hover{
+  color: #212121;
+}
+ /* end display flight info ===============================================*/
+ /* Otp Page ===========================================================*/
+.authen-content { padding-top: 60px;padding-bottom: 80px;}
+.authen-content h2 {
+    margin-bottom: 20px;
+}
+.authen-content .resend-otp {
+  text-align: right;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.authen-content .group {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.authen-content .group input:first-child:focus {
+  caret-color: #549ef7;
+}
+.authen-content .group .otp-digit {
+  text-align: center;
+}
+.authen-content .primary-btn{
+  border-radius: 0;
+  margin-top: 40px;
+}
+/* // register form new code =======================================================================*/
+.registerform-wrapper .main{
+  padding-top: 0px;
+}
+.react-date-picker__wrapper{ border: none;}
+.react-datepicker__close-icon {
+  display: none !important;
+}
+.react-date-picker__calendar {
+  max-height: 300px;height: 100%;
+}
+.react-date-picker input {
+ padding-left: 0 !important;
+}
+
+.dropzone-file-row{
+  position: relative;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  background: #f7f7f7;
+  color: inherit;
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+.dropzone-file-row .delete-btn{
+  width: 24px;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  border: 0;
+}
+.dropzone-file-row .delete-btn svg{ fill: red;}
+
+/* end new form code ======================================================*/
 .bg-gray{
   background:#23274C;
   padding: 40px 0px;
@@ -1684,11 +2013,6 @@ transition: color .2s linear, background-color .2s linear, border-color .2s line
 .join_text{
   padding: 22px 0px 0;
 }
-/*.event_location{
-  margin:48px 0px 54px;
-  border:1px solid #080808;
-  
-}*/
 .event_location .header{
   padding-bottom:16px;
   padding: 17px 0px 17px 22px;
@@ -1731,10 +2055,6 @@ transition: color .2s linear, background-color .2s linear, border-color .2s line
         background: #ccc;
         pointer-events: none;
     }
-/*.btn-chat
-{ background:white; border-radius:36px;}
-.btn-chat-popup,.dilogue-btn-end-chat
-{ background:#024AD8; color:white; border-radius:36px;}*/
 .regtitle
 { position:relative; display:table; width:100%; }
 .regtitle .regtitleleft
@@ -1900,9 +2220,7 @@ svg.squiggle path {
 { color: #000; }
 .kvsectiontitle p
 { margin-bottom:0px; }
-/*.bodymain::before
-{ content:""; background: url('../images/regform/bodypath.png') no-repeat; position: absolute; }*/
-.kvsection::before
+.kvsection::after
 { content:""; background: url('../images/regform/bodypath.png') no-repeat; position: absolute; }
 .body-content #form
 { position:relative; }
@@ -1987,7 +2305,7 @@ span.optionalkey
   .kvsection {
     padding-bottom: 60px;
   }
-  .kvsection::before
+  .kvsection::after
   { display:none; }
   .kvsection.Register::before,
   .kvsection.Register2::before,
@@ -2064,18 +2382,6 @@ span.optionalkey
   { margin-top: 20%; }
   .kvsection .kvsectioninfo
   { top: 8%; left: 20px; }
-  .kvsection::before
-  { top: 86%; width: 215px; height: 639px; left: 0%; background-size: 25%;}
-  /*.bodymain::before
-  { top: 4.8%; width: 215px; height: 639px; left: 0%; background-size: 22%;}
-  .bodymain.regpage1::before
-  { top: 4.8%; left: -3%;}
-  .bodymain.regpage2::before
-  { top: 3.5%; left: -3%;}
-  .bodymain.regsummarypage::before
-  { top: 3.2%; left: -3%;}
-  .bodymain.typage::before
-  { top: 3.3%; left: -3%;}*/
   .kvbanner img.img-fluid
   { height:175px; }
   .loginright.RegAssistancediv .paratext
@@ -2141,18 +2447,8 @@ span.optionalkey
   { margin-top: 19%; }
   .kvsection .kvsectioninfo
   { top: 8%; left: 20px; }
-  .kvsection::before
+  .kvsection::after
   { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 28%;}
-  /*.bodymain::before
-  { top: 5.8%; width: 215px; height: 639px; left: 0%; background-size: 28%;}  
-  .bodymain.regpage1::before
-  { top: 4.8%; left: -3%;}
-  .bodymain.regpage2::before
-  { top: 4.3%; left: -3%;}
-  .bodymain.regsummarypage::before
-  { top: 4.3%; left: -3%;}
-  .bodymain.typage::before
-  { top: 4.3%; left: -3%;}*/
   .kvbanner img.img-fluid
   { height:200px; }
 }
@@ -2173,22 +2469,12 @@ span.optionalkey
     font-size: 16px !important;
     line-height: 24px !important;
   }
- 
+
 }
 @media screen and (min-width: 430px) 
 {
-  .kvsection::before
+  .kvsection::after
   { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 30%;}
-  /*.bodymain::before
-  { top: 6%; width: 215px; height: 639px; left: -3%; background-size: 28%;}
-  .bodymain.regpage1::before
-  { top: 4.8%; left: -3%;}
-  .bodymain.regpage2::before
-  { top: 4.5%; left: -3%;}
-  .bodymain.regsummarypage::before
-  { top: 4.5%; left: -3%;}
-  .bodymain.typage::before
-  { top: 4.5%; left: -3%;}*/
 }
 @media screen and (min-width: 667px) 
 {
@@ -2235,7 +2521,7 @@ span.optionalkey
   { margin-top: 18%; }
   .kvsection .kvsectioninfo
   { top: 5%; left: 20px; }
-  .kvsection::before
+  .kvsection::after
   { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 50%;}
   /*.bodymain::before
   { top: 13.5%; width: 215px; height: 639px; left: -5%; background-size: 50%;}
@@ -2267,18 +2553,8 @@ span.optionalkey
   { margin-top: 8%; }
   .hpamdlogo .kvsectiontitle
   { margin-top: 8%; }
-  .kvsection::before
+  .kvsection::after
   { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 50%;}
-  /*.bodymain::before
-  { top: 14.5%; width: 215px; height: 639px; left: -5%; background-size: 50%;}
-  .bodymain.regpage1::before
-  { top: 13.5%; left: -5%;}
-  .bodymain.regpage2::before
-  { top: 7.5%; left: -5%;}
-  .bodymain.regsummarypage::before
-  { top: 7.5%; left: -5%;}
-  .bodymain.typage::before
-  { top: 7%; left: -5%;}*/
 }
 @media screen and (min-width: 768px) 
 {
@@ -2329,7 +2605,7 @@ span.optionalkey
   { margin-top: 16%; }
   .kvsection .kvsectioninfo
   { top: 5%; left: 60px; }
-  .kvsection::before
+  .kvsection::after
   { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 55%;}
   /*.bodymain::before
   { top: 14%; width: 215px; height: 639px; left: -2%; background-size: 55%;}
@@ -2431,18 +2707,8 @@ span.optionalkey
   { margin-top: 18%; }
   .kvsection .kvsectioninfo
   { top: 5%; left: 90px; }
-  .kvsection::before
+  .kvsection::after
   { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 70%;}
-  /*.bodymain::before
-  { top: 19%; width: 215px; height: 639px; left: 0%; background-size: 70%;}
-  .bodymain.regpage1::before
-  { top: 13.5%; left: 0%;}
-  .bodymain.regpage2::before
-  { top: 12.2%; left: 0%;}
-  .bodymain.regsummarypage::before
-  { top: 12%; left: 0%;}
-  .bodymain.typage::before
-  { top: 12.7%; left: 0%;}*/
   .kvbanner img.img-fluid
   { height:480px; }
   .loginright.RegAssistancediv .paratext
@@ -2490,7 +2756,7 @@ span.optionalkey
   { margin-top: 60px; }
   .searickyhpsg .kvagendablock2 .kvagendacol .agendablock.agendablock2
   { width: 200px; }
-  .kvsection::before
+  .kvsection::after
   { display:block; }
   .amdkvsec .kvagendablock2 .kvagendacol .agendablock 
   { width: 240px; }
@@ -2591,8 +2857,13 @@ span.optionalkey
   { margin-top: 18%; }
   .kvsection .kvsectioninfo
   { top: 5%; left: 135px; }
-  .kvsection::before
-  { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 90%;}
+  .kvsection::after
+  {bottom: 0;
+        width: 200px;
+        height: 639px;
+        left: 0%;
+        background-size: 90%;
+        margin-top: 60px;}
   /*.bodymain::before
   { top: 21%; width: 215px; height: 639px; left: 0%; background-size: 100%;}
   .bodymain.regpage1::before
@@ -2686,18 +2957,8 @@ span.optionalkey
   { margin-top: 23%; }
   .hpamdlogo .kvsectiontitle
   { margin-top: 23%; }
-  .kvsection::before
+  .kvsection::after
   { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 100%;}
-  /*.bodymain::before
-  { top: 23%; width: 215px; height: 639px; left: 0%; background-size: 100%;}
-  .bodymain.regpage1::before
-  { top: 29%; left: 0%;}
-  .bodymain.regpage2::before
-  { top: 17.3%; left: 0%;}
-  .bodymain.regsummarypage::before
-  { top: 17.3%; left: 0%;}
-  .bodymain.typage::before
-  { top: 25.7%; left: 0%;}*/
   .kvbanner img.img-fluid
   { height:690px; }
   .welcomecontent p.paratext
@@ -2715,7 +2976,7 @@ span.optionalkey
   { width: 65%; margin-left: -5%;}
   .kvsection .kvsectioninfo
   { top: 5%; left: 135px; }
-  .kvsection::before
+  .kvsection::after
   { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 100%;}
   .welcomecontent p.paratext
   { padding-right: 25%; }
@@ -2732,7 +2993,7 @@ span.optionalkey
   { width: 65%; margin-left: -5%;}
   .kvsection .kvsectioninfo
   { top: 5%; left: 135px; }
-  .kvsection::before
+  .kvsection::after
   { top: 83%; width: 215px; height: 639px; left: 0%; background-size: 100%;}
   .kvsectiontitle
   { margin-top: 23%; } 
@@ -2782,7 +3043,7 @@ span.optionalkey
   .row.aboutusrow, .row.loginrow, .row.locationrow, .row.speakersrow, .row.sponsorsrow
   { --bs-gutter-x: 1.5rem; }
 }
-/*QRAgenda*/
+/*QRAgenda ===========================================================================================================*/
 .kvsection.QRAgendakv.mobile .kvsectioninfo .kvlogo
 { position:absolute; bottom: 2%;}
 .kvsection.QRAgendakv.mobile .kvsectioninfo::before
@@ -2913,69 +3174,11 @@ span.optionalkey
   { margin-bottom: 10.5rem}
   
 }
-/*End QRAgenda*/
+/*End QRAgenda ===================================================================*/
 
-/* Otp Page */
-.authen-content { padding-top: 60px;padding-bottom: 80px;}
-.authen-content h2 {
-    margin-bottom: 20px;
-}
-.authen-content .resend-otp {
-  text-align: right;
-  text-decoration: underline;
-  cursor: pointer;
-}
-.authen-content .group {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-.authen-content .group input:first-child:focus {
-  caret-color: #549ef7;
-}
-.authen-content .group .otp-digit {
-  text-align: center;
-}
-.authen-content .primary-btn{
-  border-radius: 0;
-  margin-top: 40px;
-}
-/* // register form new code */
-.registerform-wrapper .main{
-  padding-top: 0px;
-}
-.react-date-picker__wrapper{ border: none;}
-.react-datepicker__close-icon {
-  display: none !important;
-}
-.react-date-picker__calendar {
-  max-height: 300px;height: 100%;
-}
-.react-date-picker input {
- padding-left: 0 !important;
-}
 
-.dropzone-file-row{
-  position: relative;
-  padding: 10px 16px;
-  margin-bottom: 16px;
-  background: #f7f7f7;
-  color: inherit;
-  display: flex;
-  margin-top: 10px;
-  justify-content: space-between;
-}
-.dropzone-file-row .delete-btn{
-  width: 24px;
-  padding: 0;
-  margin: 0;
-  outline: 0;
-  border: 0;
-}
-.dropzone-file-row .delete-btn svg{ fill: red;}
 /* flight css */
-.flight-content .register-form{ padding-left: 40px; padding-right: 40px; padding-top: 40px;}
+/* .flight-content .register-form{ padding-left: 40px; padding-right: 40px; padding-top: 40px;}
 .flight-content .subtitle {
   font-size: 24px;
 }
@@ -3496,268 +3699,6 @@ span.optionalkey
   background: #F5F5F5;
   padding: 0px 7px;
   border-radius: 5px;
-}
+} */
 /* end flight css */
 
-/* display flight info */
-.flight-content .arrival-flight-group {
-  width: 80%;
-}
-.flight-content .arrival-flight-group .group {
-  position: relative;
-  margin: 10px 0;
-}
-.flight-content .arrival-flight-group .group input[type=radio] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-.flight-content .arrival-flight-group .group input[type=radio]:checked ~ .flightinfo_wrapper {
-  border: 2px solid #549ef7;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper {
-  width: 100%;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 18px;
-  color: #121212;
-  cursor: pointer;
-  border: 2px solid #dadada;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo {
-  display: flex;
-  width: 100%;
-  font-size: 14px;
-  line-height: 22px;
-  flex-direction: column;
-  border-bottom: 1px solid #dadada !important;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo:nth-child(odd) {
-  border-bottom: none;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card {
-  border-radius: 0;
-  border: 0;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-header {
-  padding: 5px 20px;
-  border-bottom: 1px solid #dadada;
-  display: flex;
-  justify-content: space-between;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-header .direction-status {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 24px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-header .direction-status span {
-  margin-left: 12px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment {
-  background: #fff;
-  padding: 10px 20px;
-  border-radius: 12px;
-  width: 100%;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header {
-  display: flex;
-  align-items: center;
-  gap: 12px;line-height: inherit;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .airline-logo {
-  width: 40px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .flight-no {
-  font-size: 16px;
-  padding: 0px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .flight-name, .flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .flight-no {
-  font-size: 16px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .aircraft {
-  padding: 1px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-  border: 1px solid #707070;
-  color: #333;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox {
-  margin-left: 50px;
-  display: flex;
-  -moz-column-gap: 50px;
-       column-gap: 50px;
-  width: calc(100% - 50px);
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .time {
-  font-size: 20px;
-  line-height: 26px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .flyfrom {
-  width: 160px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .duration {
-  width: 150px;
-  text-align: center;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .duration .line {
-  margin: 0.2rem 0;
-  background: #121212;
-  height: 1px;
-  width: 90%;
-  position: relative;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .duration .line:after {
-  content: "";
-  position: absolute;
-  top: -6px;
-  right: -15%;
-  width: 12px;
-  height: 12px;
-  background: url(../images/airline/flight.svg) no-repeat;
-  background-size: contain;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .flyto {
-  padding-left: 10px;
-  width: auto;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .addition-message {
-  color: red;
-  font-weight: bold;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  padding: 0 12px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper.show {
-  max-height: 900px;
-  padding-bottom: 15px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .departure {
-  margin: 0 0px 10px 0;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card {
-  z-index: -1;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-header {
-  padding: 5px 20px;
-  border-bottom: 1px solid #dadada;
-  display: flex;
-  justify-content: space-between;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-header .direction-status {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 24px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-header .direction-status span {
-  margin-left: 12px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment {
-  background: #fff;
-  padding: 15px 20px;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 600px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header .airline-logo {
-  width: 28px;
-  height: 28px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header .flight-number {
-  font-size: 16px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header .aircraft {
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-  border: 1px solid #707070;
-  color: #333;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content {
-  display: flex;
-  gap: 16px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 24px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline .dot {
-  width: 10px;
-  height: 10px;
-  border: 2px solid #888;
-  border-radius: 50%;
-  background: #fff;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline .line {
-  flex: 1;
-  width: 2px;
-  background: #cfd3d8;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline .plane-icon {
-  width: 22px;
-  transform: rotate(318deg);
-  margin: 6px 0;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule {
-  flex: 1;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .direction {
-  display: flex;
-  gap: 16px;
-  flex-direction: row;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .time {
-  font-size: 20px;
-  width: 140px;
-  font-weight: bold;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .location {
-  font-size: 16px;
-  color: #2a2a2a;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .location .addition-message {
-  color: red;
-  font-weight: bold;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .duration {
-  display: flex;
-  gap: 16px;
-  flex-direction: row;
-  margin: 12px 0;
-  font-size: 14px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .duration-time {
-  font-size: 14px;
-  width: 140px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .overnight-message {
-  font-weight: bold;
-  background: #F5F5F5;
-  padding: 0px 7px;
-  border-radius: 5px;
-}
-.modifydatestyle{
-  font-size: 16px;
-  color: #212121;
-  margin-left: 40px;
-}
-.modifydatestyle:hover{
-  color: #212121;
-}
- /* end display flight info */

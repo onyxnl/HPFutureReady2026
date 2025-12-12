@@ -153,8 +153,7 @@ function Loginauthentication() {
                         </Col>
                     </Row>
                 </Container>
-                </section>
-
+            </section>
             
             <Footer/>
         </div>

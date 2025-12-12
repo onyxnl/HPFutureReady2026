@@ -38,11 +38,9 @@ function Summary() {
                     </Col>
                 </Row>
                 <Row className='heading'>
-                    <Col md={6}>
+                    <Col md={12} className='d-flex justify-content-between'>
                         <h3 className="res_subtitle p-0">Registrant Details</h3>
-                    </Col>
-                    <Col md={6}>
-                        <div className='d-flex justify-content-end'><Link to="/register1" className="edit-btn">Edit</Link></div>
+                        <div><Link to="/register1" className="edit-btn">Edit</Link></div>
                     </Col>
                 </Row>
                 <Row>
@@ -184,11 +182,9 @@ function Summary() {
                     </Col>
                 </Row> 
                 <Row className='heading'>
-                    <Col md={6}>
+                    <Col md={12} className='d-flex justify-content-between'>
                         <h3 className="res_subtitle p-0">Passport details</h3>
-                    </Col>
-                    <Col md={6}>
-                        <div className='d-flex justify-content-end'><Link to="/register2" className="edit-btn">Edit</Link></div>
+                        <div><Link to="/register2" className="edit-btn">Edit</Link></div>
                     </Col>
                 </Row>
                 <Row>
@@ -354,11 +350,9 @@ function Summary() {
                     </Col>
                 </Row> 
                 <Row className='heading'>
-                    <Col md={6}>
+                    <Col md={12} className='d-flex justify-content-between'>
                         <h3 className="res_subtitle p-0">Visa</h3>
-                    </Col>
-                    <Col md={6}>
-                        <div className='d-flex justify-content-end'><Link to="/register4" className="edit-btn">Edit</Link></div>
+                        <div><Link to="/register4" className="edit-btn">Edit</Link></div>
                     </Col>
                 </Row>
                 <Row>
@@ -431,7 +425,7 @@ function Summary() {
                 <Row className='field mt-5'>
                     <Col md={12}>
                         <div className='d-flex justify-content-between'>
-                            <Link to="/register4" className="edit-btn">Back</Link>
+                            <Link to="/register4" className="outline-btn">Back</Link>
                             <button type="submit" className="primary-btn">Submit</button>
                         </div>
                     </Col>

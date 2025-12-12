@@ -11,7 +11,7 @@ import moment from 'moment';
 import 'react-date-picker/dist/DatePicker.css';
 import 'react-calendar/dist/Calendar.css';
 import calendarIcon from '../assets/images/calendar.svg';
-
+import { getUrl } from "../utils";
 
 function Visa() {
    const { email } = useOutletContext(); // automatically gets email from Home.jsx
@@ -141,7 +141,7 @@ function Visa() {
        }
   });
   
-    const url = `${import.meta.env.BASE_URL}assets/json/country.json`;
+    const url = getUrl("assets/json/country.json");
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -433,7 +433,7 @@ function Visa() {
                         )}
                             <Row className='field mt-5'>
                                 <Col md={12}>
-                                    <div className='d-flex justify-content-md-between'>
+                                    <div className='d-flex justify-content-between'>
                                         <Link to="/register3" className="back-btn">Back</Link>
                                         <button type="submit" className="outline-btn">Save & exit</button>
                                         <button type="submit" className="primary-btn">Submit</button>

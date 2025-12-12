@@ -1,6 +1,6 @@
 
     import axios from "axios";
-    import {Container ,Button, Col, Form,InputGroup,Row} from 'react-bootstrap';
+    import {Container, Col, Form,InputGroup,Row} from 'react-bootstrap';
     import { useNavigate,useLocation} from 'react-router-dom';
     import { useEmail } from "../context/AuthContext";
 
@@ -10,7 +10,9 @@
     const LoginForm = () => {
 
         const navigate = useNavigate();
+
         const { setEmail } = useEmail();
+        
         const schema = yup.object().shape({
             email: yup.string().email('Invalid email').required('Required field'),
         });

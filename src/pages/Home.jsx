@@ -12,7 +12,7 @@ function Home() {
     <div className='registerform-wrapper'>
         
       <MasterKV />
-      <div className="main"><Outlet context={{email}}/></div> {/* passes email to all nested routes */}
+        <div className="main"><Outlet context={{email}}/></div> {/* passes email to all nested routes */}
       <Footer/>
     </div>
   )

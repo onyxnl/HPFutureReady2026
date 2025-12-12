@@ -13,26 +13,16 @@ import Summary from './pages/Summary.jsx';
 import Thankyou from './pages/Thankyou.jsx';
 import './assets/css/regform.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 function App() {
   
   return (
      <AuthProvider>
-      {/* /HP/2026/HP_FutureReady */}
-      <Router basename="/HP/2026/HP_FutureReady/">
+      {/* /HP/2026/HP_FutureReady/ */}
+      <Router basename="">
         <Routes>
           {/* Login route */}
           <Route path="/" element={<Landing />} />
           <Route path="loginauthentication" element={<Loginauthentication />} />
-          
-          <Route
-              path="loginauthentication"
-              element={
-                <ProtectedRoute>
-                  <Loginauthentication />
-                </ProtectedRoute>
-              }
-            />
           
           {/* Home route with nested protected routes */}
           <Route element={<Home />}>
