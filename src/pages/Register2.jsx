@@ -26,19 +26,27 @@ function Register2() {
     const MAX_FILE_SIZE = 2 * 1024 * 1024;
     const MAX_TOTAL_SIZE = 10 * 1024 * 1024;
 
+    const [isEdit,setIsedit] = useState(false);
+
     const schema = yup.object({
          passportphoto: yup.mixed()
             .required("Required field")
             .test("is-file", "File is required", (value) => {
-                return value && value instanceof File && value.size > 0;
+                // Allow existing filename strings when loading edit data and require actual File objects for new uploads
+                if (!value) return false;
+                if (typeof value === "string") return true;
+                return value instanceof File && value.size > 0;
             })
-            .test("fileSize", "File is too large (max 5MB)", (value) => {
-                // Check the file size
-                return value && value.size <= MAX_FILE_SIZE;
+            .test("fileSize", `File is too large (max ${MAX_FILE_SIZE / 1024 / 1024}MB)`, (value) => {
+                // Allow existing filename strings to pass size validation when editing (no File object present)
+                if (!value) return false;
+                if (typeof value === "string") return true;
+                return value.size <= MAX_FILE_SIZE;
             })
             .test("fileType", "Invalid file type. Only PNG and PDF allowed", (value) => {
-                // Check the file type
-                return value && (value.type === "image/png" || value.type === "application/pdf");
+                if (!value) return true;
+                if (typeof value === "string") return true;
+                return value.type === "image/png" || value.type === "application/pdf";
             }),
         country:yup.string().required("Required field"),
         nationality: yup.string().required("Required field"),
@@ -134,11 +142,11 @@ function Register2() {
             passportphoto: "",
             country:"",
             nationality: "",
-            dob: "",
+            dob: null,
             passportno:"",
             placeofissue:"",
-            dateofissue: "",
-            expirydate: "",
+            dateofissue: null,
+            expirydate: null,
             hotel:"INSPIRE Entertainment Resort",
             checkindate:moment("20/04/2026", "dd/MM/yyyy").toDate(),
             checkoutdate:moment("23/04/2026", "dd/MM/yyyy").toDate(),
@@ -149,77 +157,89 @@ function Register2() {
             destinationcountry:"",
             destinationcity:"",
             destinationairport:"",
-            prefer_departuredate:"",
-            prefer_returndate:"",
+            prefer_departuredate:null,
+            prefer_returndate:null,
             airline:"",
             flyerno:"",
             specialrequest:"",
-            returndate:"",
-            departuredate:"",
-            prefer_checkindate:"",
-            prefer_checkoutdate:"",
+            returndate:null,
+            departuredate:null,
+            prefer_checkindate:null,
+            prefer_checkoutdate:null,
             flightmodifydate:""
        }
     });
 
     // anchor link function
     useEffect(() => {
-            if (hash) {
-                const section = document.querySelector(hash);
-            if (section) {
-                section.scrollIntoView({ behavior: "smooth" });
-            }
+        if (hash) {
+            const section = document.querySelector(hash);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
     }}, [hash]);
     // end anchor link function
-     const url = getUrl("assets/json/country.json");
-    useEffect(() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setCountry(data));
-        }, []);
+
+    const checkDateField = (value) => {
+        if (value != null && value !== "") {
+            const m = moment(value, "DD/MM/YYYY", true); // strict parsing
+            return m.isValid() ? m.toDate() : null;
+        }
+        return null;
+    };
 
     const extendval = watch("extend");
     const flightmodifydateval = watch("flightmodifydate");
 
-    // useEffect(() => {
-    //     console.log(RegisterData);
-    //    // if (!RegisterData || RegisterData.length === 0) return;
-
-    //     if (flightmodifydateval !== "Yes") {  // reset form
-    //         setValue("prefer_departuredate", null); 
-    //         setValue("prefer_returndate", null); 
-    //     }
-    //     if(RegisterData.length > 0){
-    //         const data = RegisterData?.[0];
-    //         setValue("passportphoto",data.passportphoto);
-    //         setValue("country",data.country);
-    //         setValue("nationality",data.nationality);
-    //         setValue("dob",moment(data.dob, "dd/MM/yyyy").toDate());
-    //         setValue("passportno",data.passportno);
-    //         setValue("placeofissue",data.placeofissue);
-    //         setValue("dateofissue",moment(data.dateofissue, "dd/MM/yyyy").toDate());
-    //         setValue("expirydate",moment(data.expirydate, "dd/MM/yyyy").toDate());
-    //         setValue("extend",data.extend);
-    //         setValue("homecountry",data.homecountry);
-    //         setValue("homecity",data.homecity);
-    //         setValue("homeairport",data.homeairport);
-    //         setValue("destinationcountry",data.destinationcountry);
-    //         setValue("destinationcity",data.destinationcity);
-    //         setValue("destinationairport",data.destinationairport);
-    //         setValue("prefer_departuredate",moment(data.prefer_departuredate, "DD/MM/YYYY").toDate());
-    //        // setValue("prefer_returndate",moment(data.prefer_returndate, "dd/MM/yyyy").toDate());
-    //         setValue("airline",data.airline || "");
-    //         setValue("flyerno",data.flyerno);
-    //         setValue("flightmodifydate",data.flightmodifydate);
-    //         setValue("specialrequest",data.specialrequest);
-    //         setValue("returndate",moment(data.returndate, "dd/MM/yyyy").toDate());
-    //         setValue("departuredate",moment(data.departuredate, "dd/MM/yyyy").toDate());
-    //         setValue("prefer_checkindate",moment(data.prefer_checkindate, "dd/MM/yyyy").toDate());
-    //         setValue("prefer_checkoutdate",moment(data.prefer_checkoutdate, "dd/MM/yyyy").toDate());
-    //     }
-    //  }, [flightmodifydateval,RegisterData, setValue])
+    const url = getUrl("assets/json/country.json");
+    const regurl = getUrl("assets/json/register2.json");
 
     useEffect(() => {
+        Promise.all([
+            fetch(url).then(res => res.json()),
+            fetch(regurl).then(res => res.json())
+        ]).then(([countryData,regData]) => {
+            setCountry(countryData);
+            // if(regData.length>0){
+            //     setIsedit(true);
+            //     const data = regData[0];
+            //     // dropzone data binding
+            //     setFiles([{ name: data.passportphoto }]);
+            //     setValue("passportphoto", data.passportphoto, { shouldDirty: false, shouldValidate: true });
+            //     // end dropzone data binding
+
+            //     setValue("country",data.country);
+            //     setValue("nationality",data.nationality);
+            //     setValue("dob",checkDateField(data.dob));
+            //     setValue("passportno",data.passportno);
+            //     setValue("placeofissue",data.placeofissue);
+            //     setValue("dateofissue",checkDateField(data.dateofissue));
+            //     setValue("expirydate",checkDateField(data.expirydate));
+            //     setValue("extend",data.extend);
+            //     setValue("homecountry",data.homecountry);
+            //     setValue("homecity",data.homecity);
+            //     setValue("homeairport",data.homeairport);
+            //     setValue("destinationcountry",data.destinationcountry);
+            //     setValue("destinationcity",data.destinationcity);
+            //     setValue("destinationairport",data.destinationairport);
+            //     setValue("prefer_departuredate",checkDateField(data.prefer_departuredate));
+            //     setValue("prefer_returndate",checkDateField(data.prefer_returndate));
+            //     setValue("airline",data.airline || "");
+            //     setValue("flyerno",data.flyerno);
+            //     setValue("flightmodifydate",data.flightmodifydate);
+            //     setValue("specialrequest",data.specialrequest);
+            //     setValue("returndate",checkDateField(data.returndate));
+            //     setValue("departuredate",checkDateField(data.departuredate));
+            //     setValue("prefer_checkindate",checkDateField(data.prefer_checkindate));
+            //     setValue("prefer_checkoutdate",checkDateField(data.prefer_checkoutdate));
+            //  }
+        });
+        }, []);
+
+    
+
+    useEffect(() => {
+        if (isEdit) return;
         if (flightmodifydateval !== "Yes") {  // reset form
             setValue("prefer_departuredate", null); 
             setValue("prefer_returndate", null); 
@@ -254,25 +274,17 @@ function Register2() {
 
     const onSubmit = async (data) => {
 
-        const formatDate = (date) => {
-            if (!date) return null;
-            const m = moment(date); 
-            
-            return m.isValid() ? m.format('dd/MM/yyyy') : null;
-        };
-        const checkindate = formatDate(data.checkindate);
-        const checkoutdate = formatDate(data.checkoutdate); 
-        const departuredate = formatDate(data.departuredate);  
-        const dateofissue = formatDate(data.dateofissue);
-        const dob = formatDate(data.dob);
-        const expirydate = formatDate(data.expirydate);
-        const returndate = formatDate(data.returndate);
-        const prefer_checkindate = formatDate(data.prefer_checkindate);
-        const prefer_checkoutdate = formatDate(data.prefer_checkoutdate);
-        const prefer_departuredate = formatDate(data.prefer_departuredate);
-        const prefer_returndate = formatDate(data.prefer_returndate);
-
-        
+        const checkindate = checkDateField(data.checkindate);
+        const checkoutdate = checkDateField(data.checkoutdate); 
+        const departuredate = checkDateField(data.departuredate);  
+        const dateofissue = checkDateField(data.dateofissue);
+        const dob = checkDateField(data.dob);
+        const expirydate = checkDateField(data.expirydate);
+        const returndate = checkDateField(data.returndate);
+        const prefer_checkindate = checkDateField(data.prefer_checkindate);
+        const prefer_checkoutdate = checkDateField(data.prefer_checkoutdate);
+        const prefer_departuredate = checkDateField(data.prefer_departuredate);
+        const prefer_returndate = checkDateField(data.prefer_returndate);
 
         const registerinfo = {
             ...data,
@@ -302,10 +314,10 @@ function Register2() {
             <Form onSubmit={handleSubmit(onSubmit)}>
                 <div className="register-form bg-periwinkle registerpage1">
                     <Row className='regtitle'>
-                      <Col xs={12} md={6} className="regtitleleft">                      
+                      <Col xs={6} className="regtitleleft">                      
                           <h2 className="res_title">Registration</h2>
                       </Col>
-                      <Col xs={12} md={6} className="regtitleright">                      
+                      <Col xs={6} className="regtitleright">                      
                           <p className="steptitle">STEP 2 / 3</p>
                       </Col>  
                     </Row>
@@ -358,7 +370,7 @@ function Register2() {
                                             {errors.passportphoto && <p className="error">{errors.passportphoto?.message}</p>}
                                         </>
                                     )}
-                                    />
+                                />
                             </Col>
                         </Row>
 
@@ -406,7 +418,7 @@ function Register2() {
                                     render={({ field }) => (
                                         <DatePicker
                                             onChange={field.onChange}
-                                            value={field.value}
+                                            value={field.value || null}
                                             format="dd/MM/yyyy"
                                             className="form-control"
                                             clearIcon={null}
@@ -445,7 +457,7 @@ function Register2() {
                                     render={({ field }) => (
                                         <DatePicker
                                             onChange={field.onChange}
-                                            value={field.value}
+                                            value={field.value || null}
                                             format="dd/MM/yyyy"
                                             className="form-control"
                                             clearIcon={null}
@@ -467,7 +479,7 @@ function Register2() {
                                     render={({ field }) => (
                                         <DatePicker
                                             onChange={field.onChange}
-                                            value={field.value}
+                                            value={field.value || null}
                                             format="dd/MM/yyyy"
                                             className="form-control"
                                             clearIcon={null}
@@ -513,7 +525,7 @@ function Register2() {
                                     render={({ field }) => (
                                         <DatePicker
                                             onChange={field.onChange}
-                                            value={field.value}
+                                            value={field.value || null}
                                             format="dd/MM/yyyy"
                                             className="form-control"
                                             clearIcon={null}
@@ -536,7 +548,7 @@ function Register2() {
                                     render={({ field }) => (
                                         <DatePicker
                                             onChange={field.onChange}
-                                            value={field.value}
+                                            value={field.value || null}
                                             format="dd/MM/yyyy"
                                             className="form-control"
                                             clearIcon={null}
@@ -572,7 +584,7 @@ function Register2() {
                                             render={({ field }) => (
                                                 <DatePicker
                                                     onChange={field.onChange}
-                                                    value={field.value}
+                                                    value={field.value || null}
                                                     format="dd/MM/yyyy"
                                                     className="form-control"
                                                     clearIcon={null}
@@ -594,7 +606,7 @@ function Register2() {
                                             render={({ field }) => (
                                                 <DatePicker
                                                     onChange={field.onChange}
-                                                    value={field.value}
+                                                    value={field.value || null}
                                                     format="dd/MM/yyyy"
                                                     className="form-control"
                                                     clearIcon={null}
@@ -683,7 +695,7 @@ function Register2() {
                                     render={({ field }) => (
                                         <DatePicker
                                             onChange={field.onChange}
-                                            value={field.value}
+                                            value={field.value || null}
                                             format="dd/MM/yyyy"
                                             className="form-control"
                                             clearIcon={null}
@@ -765,7 +777,7 @@ function Register2() {
                                     render={({ field }) => (
                                         <DatePicker
                                             onChange={field.onChange}
-                                            value={field.value}
+                                            value={field.value || null}
                                             format="dd/MM/yyyy"
                                             className="form-control"
                                             clearIcon={null}
@@ -800,7 +812,7 @@ function Register2() {
                                             render={({ field }) => (
                                                 <DatePicker
                                                     onChange={field.onChange}
-                                                    value={field.value}
+                                                    value={field.value || null}
                                                     format="dd/MM/yyyy"
                                                     className="form-control"
                                                     clearIcon={null}
@@ -822,7 +834,7 @@ function Register2() {
                                             render={({ field }) => (
                                                 <DatePicker
                                                     onChange={field.onChange}
-                                                    value={field.value}
+                                                    value={field.value || null}
                                                     format="dd/MM/yyyy"
                                                     className="form-control"
                                                     clearIcon={null}

@@ -1,0 +1,18 @@
+[
+    {
+        "userId": 1,
+        "id": 1,
+        "visa": "Yes",
+        "country":"Albania",
+        "nationality":"Myanmar",
+        "dob":"03/11/1988",
+        "passportno":"MD1234",
+        "placeofissue":"Yangon",
+        "dateofissue":null,
+        "expirydate":"11/12/2025",
+        "arrivaldate":"01/01/2026",
+        "departuredate":"11/01/2026",
+        "visacountry":"Singapore",
+        "visacity":"Singapore"
+    }
+]

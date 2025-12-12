@@ -222,12 +222,12 @@ function Register1() {
             <Form onSubmit={handleSubmit(onSubmit)}>
                 <div className="register-form bg-periwinkle registerpage1">
                     <Row className='regtitle'>
-                      <Col xs={12} md={6} className="regtitleleft">                      
-                          <h2 className="res_title">Registration</h2>
-                      </Col>
-                      <Col xs={12} md={6} className="regtitleright">                      
-                          <p className="steptitle">STEP 1 / 3</p>
-                      </Col>  
+                        <Col xs={6} className="regtitleleft">                      
+                            <h2 className="res_title">Registration</h2>
+                        </Col>
+                        <Col xs={6} className="regtitleright">                      
+                            <p className="steptitle">STEP 1 / 3</p>
+                        </Col>  
                     </Row>
                     <hr className="title-divider" />
                     <div className="loginform">

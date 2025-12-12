@@ -105,7 +105,6 @@ a:hover {
   line-height: 42px;
   font-weight: 500;
   color: #121212;
-  padding: 40px 0px 0px 40px;
 }
 .res_subtitle{
   color: #024AD8;
@@ -939,9 +938,6 @@ float: right;
   .partner-container .centerit {
     margin: 25px 0;
   }
-  .register-form h2 {
-    margin: 20px 0 10px;
-  }
 }
 @media (max-width: 767px){
   .event,.agenda-left,.agenda_wapper {
@@ -985,7 +981,6 @@ float: right;
     right: 35px;
   }
   .res_title{
-    padding: 30px 0px 0px 25px;
     font-size: 35px;
   }
   .register-form label{
@@ -1106,9 +1101,6 @@ float: right;
   .submit-btn{
     float: none!important;
   }
-  .res_title{
-    padding: 30px 0px 0px 18px;
-  }
   .link_text{
     word-break: break-word;
   }
@@ -1177,7 +1169,7 @@ float: right;
   margin-right: auto !important;
 }
 .register-form .loginform {
-  padding: 0px 0 30px;
+  padding: 0px 15px 30px;
   margin-bottom: 30px;
   width: 100%;
   max-width: 820px;
@@ -1185,6 +1177,7 @@ float: right;
   margin-right: auto !important;
   display: block;
 }
+.flight-content .register-form .loginform{    max-width: max-content;}
 .register-form select {
   word-wrap: normal;
 }
@@ -1407,8 +1400,7 @@ float: right;
     padding: 2px 12px;
   }
   .edit-btn, .back-btn{ width: auto;}
-  .flight-content .register-form{ padding-left: 15px !important; padding-right: 15px !important;}
-  .flight-content .arrival-flight-group{ width: 100% !important;}
+ 
   .flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox{width: 100% !important;margin-left: 0px !important;column-gap: 24px !important;}
   .flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-header,
   .flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment{ padding: 10px 12px !important;}
@@ -1648,9 +1640,7 @@ float: right;
 }
 /* faq code end ===================================================== */
 /* display flight info ========================================= */
-.flight-content .arrival-flight-group {
-  width: 80%;
-}
+
 .flight-content .arrival-flight-group .group {
   position: relative;
   margin: 10px 0;
@@ -2057,12 +2047,8 @@ float: right;
     }
 .regtitle
 { position:relative; display:table; width:100%; }
-.regtitle .regtitleleft
-{ float:left; }
-.regtitle .regtitleright
-{ float:right; text-align:right;}
 .regtitle .regtitleright .steptitle
-{ color:#707070; font-size:20px; line-height:24px; padding-top: 10px; margin-bottom: 0px;}
+{ color:#707070; font-size:20px; line-height:24px; margin-bottom: 0px;text-align: right;}
 .footertitle, .operation_time
 { text-align:center; }
 .copyrightsection {
@@ -2206,6 +2192,9 @@ svg.squiggle path {
 { display:flex; }
 .register-form.bg-periwinkle.registerpage1
 { margin-bottom:40px; }
+.register-form .regtitle {
+  padding: 40px 0px 0;margin: 0 auto; display: flex; justify-content: space-between;align-items: center;
+}
 .row.agendarow3
 { position:relative; display:table; text-align:center; margin-top: 40px; width: 100%;}
 .row.agendarow3 a
@@ -2296,8 +2285,6 @@ span.optionalkey
   { padding-right: 0px; }
   p.accommonote.accommonotelong
   { padding-right: 0%; }
-  .regtitle .regtitleright
-  { padding: 40px 10px 0px 0px; }
   .body-content 
   { margin-top: 30px; }
   .mobile p.kvagendanote
@@ -2421,8 +2408,6 @@ span.optionalkey
 }
 @media screen and (min-width: 374px) 
 {
-  .regtitle .regtitleright
-  { padding: 40px 20px 0px 0px; }
   .agendainfocol.left.secblock .paratext
   { padding-top: 45%; }
   .agendainfocol.left .paratext
@@ -2478,8 +2463,6 @@ span.optionalkey
 }
 @media screen and (min-width: 667px) 
 {
-  .regtitle .regtitleright
-  { padding: 40px 40px 0px 0px; }
   .kvsection.mobile .kvsectioninfo .kvlogo
   { padding-left: 36px; }
   .kvsection.mobile .kvagendacol.kvagendacol1
@@ -2558,8 +2541,6 @@ span.optionalkey
 }
 @media screen and (min-width: 768px) 
 {
-  .regtitle .regtitleright
-  { padding: 40px 40px 0px 0px; }
   .mobile p.kvagendanote
   { font-size: 14px; line-height: 22px; padding: 10px 10px 0px 25px;}
   .kvsection.mobile .kvsectioninfo .kvlogo
@@ -2745,6 +2726,11 @@ span.optionalkey
   { float:right; width:50%; padding:30px 0px 30px 0px;}
   .row.aboutusrow, .row.loginrow, .row.locationrow, .row.speakersrow, .row.sponsorsrow
   { --bs-gutter-x: 1.5rem; }
+  .register-form .loginform {
+    padding: 0px 0px 30px;}
+  .register-form .regtitle{
+    padding: 40px 30px 0;
+  }
 }
 @media screen and (min-width: 1280px) 
 {
@@ -2864,16 +2850,6 @@ span.optionalkey
         left: 0%;
         background-size: 90%;
         margin-top: 60px;}
-  /*.bodymain::before
-  { top: 21%; width: 215px; height: 639px; left: 0%; background-size: 100%;}
-  .bodymain.regpage1::before
-  { top: 27%; left: 0%;}
-  .bodymain.regpage2::before
-  { top: 15.5%; left: 0%;}
-  .bodymain.regsummarypage::before
-  { top: 15.5%; left: 0%;}
-  .bodymain.typage::before
-  { top: 24%; left: 0%;}*/
   .kvbanner img.img-fluid
   { height:610px; }
   .loginright.RegAssistancediv .paratext
@@ -2910,6 +2886,9 @@ span.optionalkey
   { float:right; width:50%; padding:30px 0px 30px 0px;}
   .row.aboutusrow, .row.loginrow, .row.locationrow, .row.speakersrow, .row.sponsorsrow
   { --bs-gutter-x: 1.5rem; }
+  .flight-content .arrival-flight-group {
+    width: 80%;
+  }
 }
 @media screen and (min-width: 1366px) 
 {

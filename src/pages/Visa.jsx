@@ -1,5 +1,4 @@
 import React, { useState,useEffect } from 'react';
-import axios from "axios";
 import {Container ,Button, Col, Form,InputGroup,Row} from 'react-bootstrap';
 import Select, { components } from "react-select";
 import { useNavigate,useLocation,useOutletContext,Link} from 'react-router-dom';
@@ -17,9 +16,8 @@ function Visa() {
    const { email } = useOutletContext(); // automatically gets email from Home.jsx
    //console.log("Register1 email:", email);
     const navigate = useNavigate();
-     const [country,setCountry] = useState([]);
-
-
+    const [country,setCountry] = useState([]);
+   
     const schema = yup.object({
         visa:yup.string().required("Required field"),
         country:yup.string()
@@ -38,14 +36,17 @@ function Visa() {
                         .required("Required field"),
                         otherwise: (schema) => schema.nullable(),
                     }),
-        dob: yup.date()
+        dob:yup.date()
                 .nullable()
-                .typeError('Date is required')
+                .transform((value, originalValue) => {
+                    return originalValue === '' ? null : value;
+                })
                 .when('visa', {
-                is: 'Yes', 
-                then: (schema) => schema
-                    .required("Required field"),
-                    otherwise: (schema) => schema.nullable(),
+                    is: 'Yes', 
+                    then: (schema) => schema
+                        .typeError('Date is required')
+                        .required("Required field"),
+                        otherwise: (schema) => schema.nullable(),
                 }),
         passportno:yup.string()
                     .nullable()
@@ -63,39 +64,51 @@ function Visa() {
                         .required("Required field"),
                         otherwise: (schema) => schema.nullable(),
                     }),
-        dateofissue: yup.date()
+        dateofissue:yup.date()
                 .nullable()
-                .typeError('Date is required')
+                .transform((value, originalValue) => {
+                    return originalValue === '' ? null : value;
+                })
                 .when('visa', {
                     is: 'Yes', 
                     then: (schema) => schema
+                        .typeError('Date is required')
                         .required("Required field"),
                         otherwise: (schema) => schema.nullable(),
                 }),
-        expirydate: yup.date()
+        expirydate:yup.date()
                 .nullable()
-                .typeError('Date is required')
+                .transform((value, originalValue) => {
+                    return originalValue === '' ? null : value;
+                })
                 .when('visa', {
                     is: 'Yes', 
                     then: (schema) => schema
+                        .typeError('Date is required')
                         .required("Required field"),
                         otherwise: (schema) => schema.nullable(),
                 }),
-        arrivaldate: yup.date()
+        arrivaldate:yup.date()
                 .nullable()
-                .typeError('Date is required')
+                .transform((value, originalValue) => {
+                    return originalValue === '' ? null : value;
+                })
                 .when('visa', {
                     is: 'Yes', 
                     then: (schema) => schema
+                        .typeError('Date is required')
                         .required("Required field"),
                         otherwise: (schema) => schema.nullable(),
                 }),
-        departuredate: yup.date()
+        departuredate:yup.date()
                 .nullable()
-                .typeError('Date is required')
+                .transform((value, originalValue) => {
+                    return originalValue === '' ? null : value;
+                })
                 .when('visa', {
                     is: 'Yes', 
                     then: (schema) => schema
+                        .typeError('Date is required')
                         .required("Required field"),
                         otherwise: (schema) => schema.nullable(),
                 }),
@@ -116,43 +129,72 @@ function Visa() {
                         otherwise: (schema) => schema.nullable(),
                     })
     })
-  const {
-    register,
-    handleSubmit,
-    control,
-    setValue, // to reset value - setValue(name, newValue)
-    watch,
-    formState: { errors },
-    } = useForm({
-        resolver: yupResolver(schema),
-        defaultValues:{
-            visa: "",
-            country: "",
-            nationality: "",
-            dob:"",
-            passportno:"",
-            placeofissue:"",
-            dateofissue:"",
-            expirydate:"",
-            arrivaldate:"",
-            departuredate:"",
-            visacountry:"",
-            visacity:"",
-       }
-  });
-  
+    const {
+        register,
+        handleSubmit,
+        control,
+        setValue, // to reset value - setValue(name, newValue)
+        watch,
+        formState: { errors },
+        } = useForm({
+            resolver: yupResolver(schema),
+            defaultValues:{
+                visa: "",
+                country: "",
+                nationality: "",
+                dob:null,
+                passportno:"",
+                placeofissue:"",
+                dateofissue:null,
+                expirydate:null,
+                arrivaldate:null,
+                departuredate:null,
+                visacountry:"",
+                visacity:"",
+        }
+    });
+    const checkDateField = (value) => {
+        if (value != null && value !== "") {
+            const m = moment(value, "DD/MM/YYYY", true); // strict parsing
+            return m.isValid() ? m.toDate() : null;
+        }
+        return null;
+    };
+
     const url = getUrl("assets/json/country.json");
+    const regurl = getUrl("assets/json/register4.json");
     useEffect(() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setCountry(data));
-        }, []);
+        Promise.all([
+            fetch(url).then(res => res.json()),
+            fetch(regurl).then(res => res.json())
+        ]).then(([countryData,regData]) => {
+            setCountry(countryData);
+            // if(regData.length>0){
+                
+            //     const data = regData[0];
+                
+            //     setValue("visa",data.visa);
+            //     setValue("country",data.country);
+            //     setValue("nationality",data.nationality);
+            //     setValue("dob",checkDateField(data.dob));
+            //     setValue("passportno",data.passportno);
+            //     setValue("placeofissue",data.placeofissue);
+            //     setValue("dateofissue", checkDateField(data.dateofissue));
+            //     setValue("expirydate",checkDateField(data.expirydate));
+            //     setValue("arrivaldate",checkDateField(data.arrivaldate));
+            //     setValue("departuredate",checkDateField(data.departuredate));
+            //     setValue("visacountry",data.visacountry);
+            //     setValue("visacity",data.visacity);
+            // }
+        });
+    }, []);
 
     const visaVal =  watch("visa");
     const visachecked = visaVal === 'Yes';
 
     useEffect(() => {
-       if (visaVal !== "Yes") {  // reset form
+       
+        if (visaVal !== "Yes") {  // reset form
             setValue("country", null); 
             setValue("nationality", null); 
             setValue("dob", null); 
@@ -164,21 +206,16 @@ function Visa() {
             setValue("departuredate", null); 
             setValue("visacountry", null); 
             setValue("visacity", null); 
-
         }
     }, [visaVal, setValue]);  
 
     const onSubmit = (data) => {
-        const formatDate = (date) => {
-            return date && moment(date, moment.ISO_8601, true).isValid()
-                ? moment(date).format('DD/MM/yyyy')
-                : null;
-        };
-        const dob = formatDate(data.dob); 
-        const dateofissue = formatDate(data.dob); 
-        const expirydate = formatDate(data.expirydate); 
-        const arrivaldate = formatDate(data.arrivaldate); 
-        const departuredate = formatDate(data.departuredate); 
+
+        const dob = checkDateField(data.dob); 
+        const dateofissue = checkDateField(data.dob); 
+        const expirydate = checkDateField(data.expirydate); 
+        const arrivaldate = checkDateField(data.arrivaldate); 
+        const departuredate = checkDateField(data.departuredate); 
 
         const registerinfo = {
             ...data,
@@ -202,12 +239,12 @@ function Visa() {
             <Form onSubmit={handleSubmit(onSubmit)}>
                 <div className="register-form bg-periwinkle registerpage1">
                     <Row className='regtitle'>
-                      <Col xs={12} md={6} className="regtitleleft">                      
-                          <h2 className="res_title">Registration</h2>
-                      </Col>
-                      <Col xs={12} md={6} className="regtitleright">                      
-                          <p className="steptitle">STEP 3 / 3</p>
-                      </Col>  
+                        <Col xs={6} className="regtitleleft">                      
+                            <h2 className="res_title">Registration</h2>
+                        </Col>
+                        <Col xs={6} className="regtitleright">                      
+                            <p className="steptitle">STEP 3 / 3</p>
+                        </Col>  
                     </Row>
                     <hr className="title-divider" />
                     <div className="loginform">
@@ -275,7 +312,7 @@ function Visa() {
                                             render={({ field }) => (
                                                 <DatePicker
                                                     onChange={field.onChange}
-                                                    value={field.value}
+                                                    value={field.value || null}
                                                     format="dd/MM/yyyy"
                                                     className="form-control"
                                                     clearIcon={null}
@@ -315,7 +352,7 @@ function Visa() {
                                             render={({ field }) => (
                                                 <DatePicker
                                                     onChange={field.onChange}
-                                                    value={field.value}
+                                                    value={field.value || null}
                                                     format="dd/MM/yyyy"
                                                     className="form-control"
                                                     clearIcon={null}
@@ -337,7 +374,7 @@ function Visa() {
                                             render={({ field }) => (
                                                 <DatePicker
                                                     onChange={field.onChange}
-                                                    value={field.value}
+                                                    value={field.value || null}
                                                     format="dd/MM/yyyy"
                                                     className="form-control"
                                                     clearIcon={null}
@@ -359,7 +396,7 @@ function Visa() {
                                             render={({ field }) => (
                                                 <DatePicker
                                                     onChange={field.onChange}
-                                                    value={field.value}
+                                                    value={field.value || null}
                                                     format="dd/MM/yyyy"
                                                     className="form-control"
                                                     clearIcon={null}
@@ -381,7 +418,7 @@ function Visa() {
                                             render={({ field }) => (
                                                 <DatePicker
                                                     onChange={field.onChange}
-                                                    value={field.value}
+                                                    value={field.value || null}
                                                     format="dd/MM/yyyy"
                                                     className="form-control"
                                                     clearIcon={null}
