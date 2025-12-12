@@ -1135,9 +1135,7 @@ float: right;
   }
 }
 @media only screen and (max-width: 345px){
-  .KV {
-      height: 150px;
-  } 
+  
   .modifydatestyle{
     margin-left:0 !important; display: block;
   }
@@ -1145,18 +1143,7 @@ float: right;
         column-gap: 12px !important;    flex-wrap: wrap;   row-gap: 5px !important;
   }
   .flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox{column-gap: 18px !important;}
-  .clock-canvas {
-      padding-bottom: 107%;
-      width: 140px;
-      background-size: 100%;
-  } 
-  #canvas-days .kineticjs-content, #canvas-days canvas, 
-  #canvas-hours .kineticjs-content, #canvas-hours canvas, 
-  #canvas-minutes .kineticjs-content, #canvas-minutes canvas, 
-  #canvas-seconds .kineticjs-content, #canvas-seconds canvas{
-      width: 140px!important;
-      height: 140px!important;
-  }
+ 
 }
 
 .register-form .moveUp {
