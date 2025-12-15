@@ -90,6 +90,11 @@ a:hover {
   max-width: 902px;
   margin: 0px auto; 
 }
+.w-902{
+  width: 100%;
+  max-width: 902px;
+  margin: 0px auto; 
+}
 .assist-title{
   font-size: 24px;
   line-height: 30px;
@@ -109,7 +114,7 @@ a:hover {
 .res_subtitle{
   color: #024AD8;
   font-size: 24px;
-  line-height: 26px;
+  line-height: 32px;
   padding-bottom: 20px;
   padding-top: 10px;
 }
@@ -221,9 +226,9 @@ ul.download li a i{
   margin: 0px auto;
 }
 @media (max-width: 768px){
-.row-center{
-  width: 100%;
-}
+  .row-center{
+    width: 100%;
+  }
 }
 .download{
   margin-bottom: 40px;
@@ -279,12 +284,6 @@ ul.download li a i{
 .col5{
   width: 20%;
   float: left;
-}
-@media (max-width: 768px){
-.col5{
-  width: 33%;
-  float: left;
-}
 }
 .loading {
   position: absolute;
@@ -617,14 +616,19 @@ color: #024AD8;
   color: #1A1A1A;
 }
  @media (min-width: 768px) and (max-width: 991px) {
-.clock-item {
-margin-bottom: 30px;
-}
+  .clock-item {
+  margin-bottom: 30px;
+  }
 }
  @media (max-width: 767px) {
-.clock-item {
-margin: 0px 30px 30px 30px;
-}
+  .clock-item {
+    margin: 0px 30px 30px 30px;
+  }
+  .flight-content .flight_details ul{    flex-wrap: wrap; border-bottom: 0 !important;}
+  .flight-content .flight_details ul li{ width: 50%;  border-bottom: 1px solid #707070;}
+  .flight-content .flight_details ul li:nth-child(even){ border-right: 0 !important;}
+  .tripinfo{    flex-wrap: wrap;}
+
 }
 
 /*Humburger Menu*/
@@ -1143,7 +1147,7 @@ float: right;
         column-gap: 12px !important;    flex-wrap: wrap;   row-gap: 5px !important;
   }
   .flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox{column-gap: 18px !important;}
- 
+  .hide320{ display: none;}
 }
 
 .register-form .moveUp {
@@ -1322,7 +1326,7 @@ float: right;
 .register-form .submit-btn, .regsummary .submit-btn, .regsummary .edit-btn,.back-btn
 { background-color:#024AD8; border: 1px solid #024AD8; color: #ffffff; }
 
-.regsummary .edit-btn,.back-btn{
+.regsummary .edit-btn{
   text-align: center;
   text-decoration: none;
   padding: 2px 32px;
@@ -1345,7 +1349,7 @@ float: right;
   text-decoration: none;
 }
 
-.outline-btn {
+.outline-btn,.back-btn {
   background-color: transparent;
   border: 1px solid #024AD8;
   padding: 2px 32px;
@@ -1630,18 +1634,47 @@ float: right;
 
 .flight-content .arrival-flight-group .group {
   position: relative;
-  margin: 10px 0;
+  margin: 43px 0 60px;
 }
+.flight-content .flight_details {
+  font-size: 16px;
+  line-height: 19px;
+  padding-top: 10px;
+  color: #000000;
+} 
+.flight-content .flight_details ul{ padding: 0; margin: 0; list-style: none; display: flex; border: 1px solid #707070;}
+.flight-content .flight_details ul li{
+  padding: 12px 20px;
+  border-right: 1px solid #707070; text-align: center;
+}
+.flight-content .flight_details ul li:last-child{
+  border-right: none;}
 .flight-content .arrival-flight-group .group input[type=radio] {
   position: absolute;
   opacity: 0;
   cursor: pointer;
-  width: 100%;
-  height: 100%;
   z-index: 1;
+  width: 94px;top: -20px; right: 0px;
+  height: 38px; display: flex;
 }
-.flight-content .arrival-flight-group .group input[type=radio]:checked ~ .flightinfo_wrapper {
-  border: 2px solid #549ef7;
+.flight-content .customradio{
+position: absolute;
+  top: -20px;
+  right: 0px;
+  border:1px solid #007bff;
+  color: #007bff;
+  padding:8px 27px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;}
+  .flight-content .arrival-flight-group .group input[type="radio"]:checked ~ .customradio {
+    background-color: #007bff;
+    color: #fff;
+
+  }
+.flight-content .arrival-flight-group .group input[type="radio"]:checked ~ .flightinfo_wrapper {
+  border: 2px solid #549ef7 !important;
 }
 .flight-content .arrival-flight-group .group .flightinfo_wrapper {
   width: 100%;
@@ -1877,13 +1910,17 @@ float: right;
   padding: 0px 7px;
   border-radius: 5px;
 }
+.triplocation{
+  font-size: 24px;
+  line-height: 30px;
+}
 .modifydatestyle{
-  font-size: 16px;
-  color: #212121;
+  font-size: 14px;
+  color: #024AD8;
   margin-left: 40px;
 }
 .modifydatestyle:hover{
-  color: #212121;
+  color: #024AD8;
 }
  /* end display flight info ===============================================*/
  /* Otp Page ===========================================================*/
@@ -1930,7 +1967,6 @@ float: right;
 .dropzone-file-row{
   position: relative;
   padding: 10px 16px;
-  margin-bottom: 16px;
   background: #f7f7f7;
   color: inherit;
   display: flex;
@@ -2107,7 +2143,7 @@ float: right;
 h2.h2title
 { color: #000000;}
 p.paratext
-{ color: #000000; font-size: 20px; line-height:32px; }
+{ color: #000000; font-size: 20px; line-height:28px; }
 section.section1
 { background: #FFF; padding: 60px 0px 20px 0px; position: relative;}
 section.section2
@@ -2155,13 +2191,12 @@ section.kvsection
   padding: 40px 0;
 }
 /*path animation css*/
-svg.squiggle {
+/* svg.squiggle {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 200vw;
-/*  z-index: 1;*/
 z-index: -9;
 }
 svg.squiggle path {
@@ -2171,7 +2206,7 @@ svg.squiggle path {
   font-size: 18px;
 }
 .home-register .row
-{ --bs-gutter-x: 0px; }
+{ --bs-gutter-x: 0px; } */
 /*path animation css*/
 .group_checkbox input.control.error
 { outline: 1px solid red; }
@@ -2621,6 +2656,7 @@ span.optionalkey
   { float:right; width:50%; padding:30px 0px 30px 0px;}
   .row.aboutusrow, .row.loginrow, .row.locationrow, .row.speakersrow, .row.sponsorsrow
   { --bs-gutter-x: 1.5rem; }
+
 }
 @media screen and (min-width: 1024px) 
 {
@@ -3143,528 +3179,4 @@ span.optionalkey
 /*End QRAgenda ===================================================================*/
 
 
-/* flight css */
-/* .flight-content .register-form{ padding-left: 40px; padding-right: 40px; padding-top: 40px;}
-.flight-content .subtitle {
-  font-size: 24px;
-}
-.flight-content .intro {
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-.flight-content .flightdate {
-  font-size: 16px;
-}
-.flight-content .flight_details {
-  font-size: 14px;
-  line-height: 22px;
-  padding-top: 10px;
-}
-.flight-content .flight_details ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 10px;
-}
-.flight-content .flight_details ul li {
-  padding: 0;
-  margin: 0;
-}
-.flight-content .arrival-flight-group-accordion {
-  width: 90%;
-}
-.flight-content .arrival-flight-group-accordion .group {
-  position: relative;
-  margin: 10px 0;
-}
-.flight-content .arrival-flight-group-accordion .group input[type=radio] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-}
-.flight-content .arrival-flight-group-accordion .group input[type=radio]:checked ~ .flightinfo_wrapper {
-  border: 2px solid #549ef7;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper {
-  width: 100%;
-  padding: 12px 22px 0px 16px;
-  box-sizing: border-box;
-  font-size: 18px;
-  color: #121212;
-  cursor: pointer;
-  border: 2px solid #dadada;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo {
-  display: flex;
-  width: 100%;
-  font-size: 14px;
-  line-height: 22px;
-  padding-bottom: 10px;
-  flex-direction: column;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo .upper {
-  width: 100%;
-  -moz-column-gap: 40px;
-       column-gap: 40px;
-  display: flex;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo .upper .airlinelogo {
-  width: 46px;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo .upper .flybox {
-  display: flex;
-  gap: 10px;
-  justify-content: space-between;
-  width: 65%;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo .upper .flybox .time {
-  font-size: 20px;
-  line-height: 26px;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo .upper .flybox .flyfrom {
-  width: 80px;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo .upper .flybox .duration {
-  width: 150px;
-  text-align: center;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo .upper .flybox .duration .line {
-  margin: 0.2rem 0;
-  background: #121212;
-  height: 1px;
-  width: 90%;
-  position: relative;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo .upper .flybox .duration .line:after {
-  content: "";
-  position: absolute;
-  top: -6px;
-  right: -15%;
-  width: 12px;
-  height: 12px;
-  background: url(../images/airline/flight.svg) no-repeat;
-  background-size: contain;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .flightinfo .upper .flybox .flyto {
-  padding-left: 10px;
-  width: 100px;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .arrow {
-  margin-left: auto;
-  width: 60px;
-  height: 60px;
-  background: transparent;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  right: 20px;
-  top: 35px;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .arrow:hover {
-  background: #F5F5F5;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .arrow::before {
-  content: "";
-  background: url(../images/down.svg) no-repeat;
-  width: 36px;
-  height: 36px;
-  display: inline-block;
-  transform: rotate(0deg);
-  transition: 0.3s;
-  background-size: cover;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .arrow.open::before {
-  transform: rotate(-180deg);
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  padding: 0 12px;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper.show {
-  max-height: 900px;
-  padding-bottom: 15px;
-  position: relative;
-  z-index: 1;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .departure {
-  margin: 0 0px 10px 0;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card {
-  z-index: -1;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-header {
-  padding: 5px 20px;
-  border-bottom: 1px solid #707070;
-  display: flex;
-  justify-content: space-between;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-header .direction-status {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 24px;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-header .direction-status span {
-  margin-left: 12px;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment {
-  background: #fff;
-  padding: 0px 20px 15px;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 600px;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header .airline-logo {
-  width: 28px;
-  height: 28px;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header .flight-number {
-  font-size: 16px;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header .aircraft {
-  padding: 0px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-  border: 1px solid #707070;
-  color: #333;
-  line-height: 25px;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content {
-  display: flex;
-  gap: 16px;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 24px;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline .dot {
-  width: 10px;
-  height: 10px;
-  border: 2px solid #dadada;
-  border-radius: 50%;
-  background: #fff;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline .line {
-  flex: 1;
-  width: 2px;
-  background: #dadada;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline .plane-icon {
-  width: 18px;
-  transform: rotate(325deg);
-  margin: 6px 0;
-  display: flex;
-  height: 18px;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule {
-  flex: 1;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .direction {
-  display: flex;
-  gap: 16px;
-  flex-direction: row;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .time {
-  font-size: 19px;
-  width: 140px;
-  font-weight: normal;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .location {
-  font-size: 16px;
-  color: #121212;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .duration {
-  display: flex;
-  flex-direction: row;
-  margin: 8px 0;
-  font-size: 14px;
-  gap: 16px;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .duration-time {
-  font-size: 14px;
-  width: 140px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .overnight-message {
-  font-weight: bold;
-  background: #F5F5F5;
-  padding: 0px 7px;
-  border-radius: 5px;
-}
-.flight-content .arrival-flight-group-accordion .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .addition-message {
-  color: red;
-  font-weight: bold;
-  margin-left: 194px;
-  font-size: 16px;
-}
-.flight-content .arrival-flight-group {
-  width: 80%;
-}
-.flight-content .arrival-flight-group .group {
-  position: relative;
-  margin: 10px 0;
-}
-.flight-content .arrival-flight-group .group input[type=radio] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-.flight-content .arrival-flight-group .group input[type=radio]:checked ~ .flightinfo_wrapper {
-  border: 2px solid #549ef7;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper {
-  width: 100%;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 18px;
-  color: #121212;
-  cursor: pointer;
-  border: 2px solid #dadada;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo {
-  display: flex;
-  width: 100%;
-  font-size: 14px;
-  line-height: 22px;
-  flex-direction: column;
-  border-bottom: 1px solid #dadada !important;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo:nth-child(odd) {
-  border-bottom: none;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card {
-  border-radius: 0;
-  border: 0;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-header {
-  padding: 5px 20px;
-  border-bottom: 1px solid #dadada;
-  display: flex;
-  justify-content: space-between;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-header .direction-status {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 24px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-header .direction-status span {
-  margin-left: 12px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment {
-  background: #fff;
-  padding: 10px 20px;
-  border-radius: 12px;
-  width: 100%;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .airline-logo {
-  width: 40px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .flight-no {
-  font-size: 16px;
-  padding: 0px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .flight-name, .flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .flight-no {
-  font-size: 16px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .header .aircraft {
-  padding: 1px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-  border: 1px solid #707070;
-  color: #333;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox {
-  margin-left: 50px;
-  display: flex;
-  -moz-column-gap: 50px;
-       column-gap: 50px;
-  width: calc(100% - 50px);
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .time {
-  font-size: 20px;
-  line-height: 26px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .flyfrom {
-  width: 160px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .duration {
-  width: 150px;
-  text-align: center;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .duration .line {
-  margin: 0.2rem 0;
-  background: #121212;
-  height: 1px;
-  width: 90%;
-  position: relative;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .duration .line:after {
-  content: "";
-  position: absolute;
-  top: -6px;
-  right: -15%;
-  width: 12px;
-  height: 12px;
-  background: url(../images/airline/flight.svg) no-repeat;
-  background-size: contain;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .flyto {
-  padding-left: 10px;
-  width: auto;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .flightinfo .card .flight-segment .flybox .addition-message {
-  color: red;
-  font-weight: bold;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  padding: 0 12px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper.show {
-  max-height: 900px;
-  padding-bottom: 15px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .departure {
-  margin: 0 0px 10px 0;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card {
-  z-index: -1;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-header {
-  padding: 5px 20px;
-  border-bottom: 1px solid #dadada;
-  display: flex;
-  justify-content: space-between;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-header .direction-status {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 24px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-header .direction-status span {
-  margin-left: 12px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment {
-  background: #fff;
-  padding: 15px 20px;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 600px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header .airline-logo {
-  width: 28px;
-  height: 28px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header .flight-number {
-  font-size: 16px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .header .aircraft {
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-  border: 1px solid #707070;
-  color: #333;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content {
-  display: flex;
-  gap: 16px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 24px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline .dot {
-  width: 10px;
-  height: 10px;
-  border: 2px solid #888;
-  border-radius: 50%;
-  background: #fff;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline .line {
-  flex: 1;
-  width: 2px;
-  background: #cfd3d8;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .timeline .plane-icon {
-  width: 22px;
-  transform: rotate(318deg);
-  margin: 6px 0;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule {
-  flex: 1;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .direction {
-  display: flex;
-  gap: 16px;
-  flex-direction: row;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .time {
-  font-size: 20px;
-  width: 140px;
-  font-weight: bold;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .location {
-  font-size: 16px;
-  color: #2a2a2a;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .location .addition-message {
-  color: red;
-  font-weight: bold;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .duration {
-  display: flex;
-  gap: 16px;
-  flex-direction: row;
-  margin: 12px 0;
-  font-size: 14px;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .duration-time {
-  font-size: 14px;
-  width: 140px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-}
-.flight-content .arrival-flight-group .group .flightinfo_wrapper .expandable-wrapper .card .flight-segment .flight-content .schedule .overnight-message {
-  font-weight: bold;
-  background: #F5F5F5;
-  padding: 0px 7px;
-  border-radius: 5px;
-} */
-/* end flight css */
 

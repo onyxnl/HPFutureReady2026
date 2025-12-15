@@ -12,6 +12,7 @@ import {useDropzone} from 'react-dropzone'
 import 'react-date-picker/dist/DatePicker.css';
 import 'react-calendar/dist/Calendar.css';
 import calendarIcon from '../assets/images/calendar.svg';
+import delIcon from '../assets/images/delete.svg';
 import { getUrl } from "../utils";
 
 
@@ -23,7 +24,7 @@ function Register2() {
     const [files, setFiles] = useState([]);
     const [country,setCountry] = useState([]);
     
-    const MAX_FILE_SIZE = 2 * 1024 * 1024;
+    const MAX_FILE_SIZE = 10 * 1024 * 1024;
     const MAX_TOTAL_SIZE = 10 * 1024 * 1024;
 
     const [isEdit,setIsedit] = useState(false);
@@ -31,38 +32,39 @@ function Register2() {
     const schema = yup.object({
          passportphoto: yup.mixed()
             .required("Required field")
-            .test("is-file", "File is required", (value) => {
+            .test("is-file", "File required", (value) => {
                 // Allow existing filename strings when loading edit data and require actual File objects for new uploads
                 if (!value) return false;
                 if (typeof value === "string") return true;
                 return value instanceof File && value.size > 0;
             })
-            .test("fileSize", `File is too large (max ${MAX_FILE_SIZE / 1024 / 1024}MB)`, (value) => {
+            .test("fileSize", `File too large (max ${MAX_FILE_SIZE / 1024 / 1024}MB)`, (value) => {
                 // Allow existing filename strings to pass size validation when editing (no File object present)
                 if (!value) return false;
                 if (typeof value === "string") return true;
                 return value.size <= MAX_FILE_SIZE;
             })
-            .test("fileType", "Invalid file type. Only PNG and PDF allowed", (value) => {
+            .test("fileType", "Invalid file type. Only PDF/JPG allowed.", (value) => {
+                console.log("Validating file type:", value);
                 if (!value) return true;
                 if (typeof value === "string") return true;
-                return value.type === "image/png" || value.type === "application/pdf";
+                return value.type === "image/jpg" || value.type === "application/pdf" || value.type === "image/jpeg";
             }),
         country:yup.string().required("Required field"),
         nationality: yup.string().required("Required field"),
         dob: yup.date()
             .nullable()
-            .typeError('Date is required')
+            .typeError('Required field')
             .required("Required field"),
         passportno:yup.string().required("Required field"),
         placeofissue:yup.string().required("Required field"),
         dateofissue: yup.date()
             .nullable()
-            .typeError('Date is required')
+            .typeError('Required field')
             .required("Required field"),
         expirydate: yup.date()
             .nullable()
-            .typeError('Date is required')
+            .typeError('Required field')
             .required("Required field"),
         extend:yup.string().required("Required field"),
         prefer_checkindate:yup.date()
@@ -74,7 +76,7 @@ function Register2() {
             .when('extend', {
                 is: 'Yes', 
                 then: (schema) => schema
-                    .typeError('Date is required')
+                    .typeError('Required field')
                     .required("Required field"),
                     otherwise: (schema) => schema.nullable(),
             }),
@@ -87,7 +89,7 @@ function Register2() {
             .when('extend', {
                 is: 'Yes', 
                 then: (schema) => schema
-                    .typeError('Date is required')
+                    .typeError('Required field')
                     .required("Required field"),
                     otherwise: (schema) => schema.nullable(),
             }),
@@ -97,8 +99,18 @@ function Register2() {
         destinationcountry:yup.string().required("Required field"),
         destinationcity:yup.string().required("Required field"),
         destinationairport:yup.string().required("Required field"),
-        departuredate:yup.string().required("Required field"),
-        flightmodifydate:yup.string().required("Required field"),
+        departuredate: yup.date()
+            .nullable()
+            .typeError('Required field')
+            .required("Required field"),
+        returndate: yup.date()
+            .nullable()
+            .typeError('Required field')
+            .required("Required field"),
+        flightmodifydate: yup.date()
+            .nullable()
+            .typeError('Required field')
+            .required("Required field"),
         prefer_departuredate: yup.date()
             .nullable()
             .transform((value, originalValue) => {
@@ -108,7 +120,7 @@ function Register2() {
             .when('flightmodifydate', {
             is: 'Yes', 
             then: (schema) => schema
-                .typeError('Date is required')
+                .typeError('Required field')
                 .required("Required field"),
                 otherwise: (schema) => schema.nullable(),
             }),
@@ -121,7 +133,7 @@ function Register2() {
             .when('flightmodifydate', {
             is: 'Yes', 
             then: (schema) => schema
-                .typeError('Date is required')
+                .typeError('Required field')
                 .required("Required field"),
                 otherwise: (schema) => schema.nullable(),
             }),
@@ -148,8 +160,10 @@ function Register2() {
             dateofissue: null,
             expirydate: null,
             hotel:"INSPIRE Entertainment Resort",
-            checkindate:moment("20/04/2026", "dd/MM/yyyy").toDate(),
-            checkoutdate:moment("23/04/2026", "dd/MM/yyyy").toDate(),
+            checkindate:moment("20/04/2026", "DD/MM/YYYY").toDate(),
+            checkoutdate:moment("23/04/2026", "DD/MM/YYYY").toDate(),
+            // checkindate:"20 apr",
+            // checkoutdate:"23 apr",
             extend:"",
             homecountry:"",
             homecity:"",
@@ -162,8 +176,8 @@ function Register2() {
             airline:"",
             flyerno:"",
             specialrequest:"",
-            returndate:null,
-            departuredate:null,
+            returndate:moment("23/04/2026", "DD/MM/YYYY").toDate(),
+            departuredate: moment("20/04/2026", "DD/MM/YYYY").toDate(),
             prefer_checkindate:null,
             prefer_checkoutdate:null,
             flightmodifydate:""
@@ -247,7 +261,7 @@ function Register2() {
     }, [flightmodifydateval, setValue]);  
     // start react-dropzone
         const { getRootProps, getInputProps } = useDropzone({
-            accept: {'image/png': [], 'application/pdf': []},
+            accept: {'image/jpg': [], 'application/pdf': [],'image/jpeg': []},
             multiple: false, // Only allow one file
             maxSize: MAX_FILE_SIZE, // File size limit
             onDrop: (acceptedFiles, fileRejections) => {
@@ -257,10 +271,10 @@ function Register2() {
                     fileRejections.forEach(({ file, errors }) => {
                         errors.forEach((error) => {
                             if (error.code === "file-too-large") {
-                                setError("passportphoto", { type: "manual", message: `File is too large (max ${MAX_FILE_SIZE / 1024 / 1024} MB)` });
+                                setError("passportphoto", { type: "manual", message: `File too large (max ${MAX_FILE_SIZE / 1024 / 1024} MB)` });
                             }
                             if (error.code === "file-invalid-type") {
-                                setError("passportphoto", { type: "manual", message: "Invalid file type. Only PNG and PDF allowed." });
+                                setError("passportphoto", { type: "manual", message: "Invalid file type. Only PDF/JPG allowed." });
                             }
                         });
                     });
@@ -349,25 +363,30 @@ function Register2() {
                                         <>
                                             <div {...getRootProps()} className="dropzone">
                                                 <input {...getInputProps()} />
-                                                <p>Drag & drop a PNG or PDF file here, or click to select</p>
+                                                <p>Drag and drop or click to select a file</p>
                                             </div>
 
                                             {files.map((file, index) => (
                                                 <div key={index} className="dropzone-file-row">
-                                                <span>{file.name}</span>
-                                                <button
-                                                    type="button"
-                                                    className="delete-btn"
-                                                    onClick={() => {
-                                                        setFiles([]); // Clear UI file
-                                                        onChange(null); // Set null value to pass required validation
-                                                    }}
-                                                >
-                                                    <img src="src/assets/images/delete.svg" className="img-fluid" alt="delete" />
-                                                </button>
+                                                    <span>{file.name}</span>
+                                                    <button
+                                                        type="button"
+                                                        className="delete-btn"
+                                                        onClick={() => {
+                                                            setFiles([]); // Clear UI file
+                                                            onChange(null); // Set null value to pass required validation
+                                                        }}
+                                                    >
+                                                        <img src={delIcon} className="img-fluid" alt="delete" />
+                                                    </button>
                                                 </div>
                                             ))}
-                                            {errors.passportphoto && <p className="error">{errors.passportphoto?.message}</p>}
+                                            <div className={`d-flex justify-content-${
+                                                    errors.passportphoto ? "between" : "end"
+                                                }`}
+                                            >{errors.passportphoto && <span className="error">{errors.passportphoto?.message}</span>}
+                                                <small>PDF/JPG only (max. 10MB)</small>
+                                            </div>
                                         </>
                                     )}
                                 />
@@ -519,6 +538,7 @@ function Register2() {
                                 <label>Check-in date</label>
                             </Col>
                             <Col md={8}>
+                                {/* <input type="text" className="form-input" {...register("checkindate")} readOnly /> */}
                                 <Controller
                                     control={control}
                                     name="checkindate"
@@ -534,7 +554,6 @@ function Register2() {
                                         />
                                     )}
                                 />
-                                <p className='error'>{errors.checkindate?.message}</p>
                             </Col>  
                         </Row>
                         <Row className="field">
@@ -542,6 +561,7 @@ function Register2() {
                                 <label>Check-out date</label>
                             </Col>
                             <Col md={8}>
+                                {/* <input type="text" className="form-input" {...register("checkoutdate")} readOnly /> */}
                                 <Controller
                                     control={control}
                                     name="checkoutdate"
@@ -557,7 +577,6 @@ function Register2() {
                                         />
                                     )}
                                 />
-                                <p className='error'>{errors.checkoutdate?.message}</p>
                             </Col>  
                         </Row>
                         <Row className="row field">
@@ -790,7 +809,7 @@ function Register2() {
                         </Row>
                         <Row className="row field" id='modifydate'>
                             <Col md={4}>
-                                <label>I would like to modify the flight dates<br/><small className='red'>Need to add something like EV sec will contact you….</small></label>
+                                <label>I would like to modify the flight dates<br/></label>
                             </Col>
                             <Col md={8} className="genderradio">
                                 <input type="radio" {...register("flightmodifydate")} value="Yes" className="radiobtn" id="flightmodifydate_Yes" /><label htmlFor="flightmodifydate_Yes">Yes <span style={{width: '10px', display: "inline-block"}}></span></label>
@@ -801,6 +820,9 @@ function Register2() {
                         </Row>
                         {flightmodifydateval == 'Yes' && (
                             <>
+                                <Row>
+                                    <Col md={{ span: 8, offset: 4 }}><label className='pt-2 pb-2'>HP Future Ready 2026 Secretariat will contact you on your <br className='hide320'/>modified flight dates.</label></Col>
+                                </Row>
                                 <Row className="field">
                                     <Col md={4}>
                                         <label>Preferred departure date</label>
@@ -878,9 +900,9 @@ function Register2() {
                         <Row className='field mt-5'>
                             <Col md={12}>
                                 <div className='d-flex justify-content-between'>
-                                    <Link to="/register1" className="back-btn">Back</Link>
                                     <button type="submit" className="outline-btn">Save & exit</button>
-                                    <button type="submit" className="primary-btn">Next</button>
+                                    <div><Link to="/register1" className="back-btn">Back</Link>
+                                    <button type="submit" className="primary-btn">Next</button></div>
                                 </div>
                             </Col>
                         </Row>

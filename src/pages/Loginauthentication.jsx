@@ -8,6 +8,7 @@ import { useForm} from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEmail } from "../context/AuthContext";
 //import { useAuth } from "../context/AuthContext";
+import Assistance from '../components/Assistance';
 import * as yup from "yup";
 
 function Loginauthentication() {
@@ -154,7 +155,7 @@ function Loginauthentication() {
                     </Row>
                 </Container>
             </section>
-            
+            <Assistance/>
             <Footer/>
         </div>
     );

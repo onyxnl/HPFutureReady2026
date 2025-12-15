@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import {Container ,Button, Col, Form,InputGroup,Row} from 'react-bootstrap';
 import Select, { components } from "react-select";
 import { useNavigate,useLocation,useOutletContext,Link} from 'react-router-dom';
-import { useForm,Controller} from "react-hook-form";
+import { useForm,Controller, set} from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import DatePicker from 'react-date-picker';
@@ -20,6 +20,7 @@ function Visa() {
    
     const schema = yup.object({
         visa:yup.string().required("Required field"),
+        
         country:yup.string()
                     .nullable()
                     .when('visa', {
@@ -127,6 +128,14 @@ function Visa() {
                     then: (schema) => schema
                         .required("Required field"),
                         otherwise: (schema) => schema.nullable(),
+                    }),
+        address:yup.string()
+                    .nullable()
+                    .when('visa', {
+                    is: 'Yes', 
+                    then: (schema) => schema
+                        .required("Required field"),
+                        otherwise: (schema) => schema.nullable(),
                     })
     })
     const {
@@ -139,18 +148,19 @@ function Visa() {
         } = useForm({
             resolver: yupResolver(schema),
             defaultValues:{
-                visa: "",
-                country: "",
-                nationality: "",
-                dob:null,
-                passportno:"",
-                placeofissue:"",
-                dateofissue:null,
-                expirydate:null,
+                visa: "Yes",
+                country: "Singapore",
+                nationality: "Myanmar",
+                dob:moment("23/04/2000", "DD/MM/YYYY").toDate(),
+                passportno:"ABC123456",
+                placeofissue:"Yangon",
+                dateofissue:moment("23/04/2021", "DD/MM/YYYY").toDate(),
+                expirydate:moment("22/04/2026", "DD/MM/YYYY").toDate(),
                 arrivaldate:null,
                 departuredate:null,
                 visacountry:"",
                 visacity:"",
+                address:""
         }
     });
     const checkDateField = (value) => {
@@ -185,6 +195,7 @@ function Visa() {
             //     setValue("departuredate",checkDateField(data.departuredate));
             //     setValue("visacountry",data.visacountry);
             //     setValue("visacity",data.visacity);
+            //     setValue("address",data.address);
             // }
         });
     }, []);
@@ -206,6 +217,7 @@ function Visa() {
             setValue("departuredate", null); 
             setValue("visacountry", null); 
             setValue("visacity", null); 
+            setValue("address", null);
         }
     }, [visaVal, setValue]);  
 
@@ -430,8 +442,12 @@ function Visa() {
                                     </Col>  
                                 </Row>
                                 <Row className="field">
-                                    <Col md={12}>
-                                        <label>Address where you’ll be staying (if you are not staying at the conference hotel)</label>
+                                    <Col md={4}>
+                                        <label>Address where you’ll be staying <br/>(if you are not staying at the conference hotel)</label>
+                                    </Col>
+                                    <Col md={8}>
+                                        <textarea className="form-input" {...register("address")}></textarea>
+                                        <p className='error'>{errors.address?.message}</p>
                                     </Col>
                                 </Row>
                                 <Row className="field">
@@ -471,9 +487,9 @@ function Visa() {
                             <Row className='field mt-5'>
                                 <Col md={12}>
                                     <div className='d-flex justify-content-between'>
-                                        <Link to="/register3" className="back-btn">Back</Link>
                                         <button type="submit" className="outline-btn">Save & exit</button>
-                                        <button type="submit" className="primary-btn">Submit</button>
+                                        <div><Link to="/register3" className="back-btn">Back</Link>
+                                        <button type="submit" className="primary-btn">Submit</button></div>
                                     </div>
                                 </Col>
                             </Row>

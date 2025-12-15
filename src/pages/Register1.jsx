@@ -39,7 +39,7 @@ function Register1() {
         dietary_other:yup.string()
                     .nullable()
                     .when('dietary', {
-                    is: 'Others', 
+                    is: 'Other', 
                     then: (schema) => schema
                         .required("Required field"),
                         otherwise: (schema) => schema.nullable(),
@@ -57,7 +57,7 @@ function Register1() {
         businesscategory_other:yup.string()
                     .nullable()
                     .when('businesscategory', {
-                    is: 'Others', 
+                    is: 'Other', 
                     then: (schema) => schema
                         .required("Required field"),
                         otherwise: (schema) => schema.nullable(),
@@ -121,7 +121,7 @@ function Register1() {
          {label : 'No pork no lard', value:'No pork no lard'},
          {label : 'Indian Vegetarian', value:'Indian Vegetarian'},
          {label : 'Vegetarian', value:'Vegetarian'},
-         {label : 'Others (please specify)', value:'Others'}
+         {label : 'Other (Please specify)', value:'Other'}
     ]
 
     const companysizeOption = [
@@ -150,7 +150,7 @@ function Register1() {
         {label : 'Travel / Hospitality / Entertainment', value:'Travel / Hospitality / Entertainment'},
         {label : 'Distribution', value:'Distribution'},
         {label : 'Marketing', value:'Marketing'},
-        {label : 'Others (please specify)', value:'Others'},
+        {label : 'Other (Please specify)', value:'Other'},
     ]
     
 
@@ -224,6 +224,7 @@ function Register1() {
                     <Row className='regtitle'>
                         <Col xs={6} className="regtitleleft">                      
                             <h2 className="res_title">Registration</h2>
+                            <p>Please complete in English.<br />All fields are mandatory unless otherwise specified.</p>
                         </Col>
                         <Col xs={6} className="regtitleright">                      
                             <p className="steptitle">STEP 1 / 3</p>
@@ -388,13 +389,13 @@ function Register1() {
                                             value={dietaryOption.find(option => option.value === field.value)}
                                             onChange={(selectedOption) => {
                                                 field.onChange(selectedOption?.value);
-                                                if(selectedOption?.value !='Others'){ setValue('dietary_other',"")}
+                                                if(selectedOption?.value !='Other'){ setValue('dietary_other',"")}
                                             }}
                                         />
                                     )}
                                 />
                                 <p className='error'>{errors.dietary?.message}</p>
-                                {dietaryval == 'Others' && (<div><input type="text" className="form-input mt-3" {...register("dietary_other")} placeholder='Please Specify' /> <p className='error'>{errors.dietary_other?.message}</p> </div>)}
+                                {dietaryval == 'Other' && (<div><input type="text" className="form-input mt-3" {...register("dietary_other")} placeholder='Please specify' /> <p className='error'>{errors.dietary_other?.message}</p> </div>)}
                             </Col>
                         </Row>
                         <Row className="field">
@@ -528,7 +529,7 @@ function Register1() {
                                             value={businessCategoryOption.find(option => option.value === field.value)}
                                             onChange={(selectedOption) =>{
                                                 field.onChange(selectedOption?.value);
-                                                if(selectedOption?.value !="Others"){
+                                                if(selectedOption?.value !="Other"){
                                                     setValue("businesscategory_other", "");
                                                 }
                                             }}
@@ -536,7 +537,7 @@ function Register1() {
                                     )}
                                 />
                                 <p className='error'>{errors.businesscategory?.message}</p>
-                                {businesscategoryval == 'Others' && ( <><input type="text" className="form-input mt-3" {...register("businesscategory_other")} /> <p className='error'>{errors.businesscategory_other?.message}</p> </>)}
+                                {businesscategoryval == 'Other' && ( <><input type="text" className="form-input mt-3" placeholder='Please specify' {...register("businesscategory_other")} /> <p className='error'>{errors.businesscategory_other?.message}</p> </>)}
                             </Col>  
                         </Row>
                         <Row className="field">
@@ -544,7 +545,7 @@ function Register1() {
                                 <label>Business description</label>
                             </Col>
                             <Col md={8}>
-                                <input type="text" className="form-input" {...register("business_description")} />
+                                <textarea className="form-input" {...register("business_description")}></textarea>
                                 <p className='error'>{errors.business_description?.message}</p>
                             </Col>  
                         </Row>
@@ -576,7 +577,7 @@ function Register1() {
                                 <label>Please describe the business development opportunity you are looking for </label>
                             </Col>
                             <Col md={8}>
-                                <input type="text" className="form-input" {...register("development_opportunity")} />
+                                <textarea className="form-input" {...register("development_opportunity")} />
                                 <p className='error'>{errors.development_opportunity?.message}</p>
                             </Col>  
                         </Row>

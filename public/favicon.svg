@@ -1,18 +1,11 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
- "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="16.000000pt" height="16.000000pt" viewBox="0 0 16.000000 16.000000"
- preserveAspectRatio="xMidYMid meet">
-
-<g transform="translate(0.000000,16.000000) scale(0.100000,-0.100000)"
-fill="#000000" stroke="none">
-<path d="M68 143 c-2 -10 0 -25 5 -33 5 -9 4 -27 -3 -45 -7 -16 -14 -25 -17
--18 -2 7 1 21 7 32 6 12 7 21 3 21 -5 0 -14 -14 -21 -32 -6 -17 -14 -29 -18
--25 -3 3 2 26 11 52 21 53 16 66 -14 34 -29 -31 -27 -74 5 -106 29 -29 34 -26
-58 40 13 34 23 47 37 47 22 0 23 -8 9 -44 -5 -14 -16 -26 -24 -26 -12 0 -26
--20 -26 -36 0 -13 34 0 55 21 40 40 30 96 -22 123 -30 16 -41 15 -45 -5z"/>
-<path d="M106 84 c-4 -9 -4 -19 -1 -22 2 -3 7 3 11 12 4 9 4 19 1 22 -2 3 -7
--3 -11 -12z"/>
-</g>
+<svg id="hp_logo" data-name="hp logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="57" height="57" viewBox="0 0 57 57">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_15592" data-name="Rectangle 15592" width="57" height="57" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_15409" data-name="Group 15409" transform="translate(0 0)" clip-path="url(#clip-path)">
+    <path id="Path_2568" data-name="Path 2568" d="M28.837,0A28.837,28.837,0,1,0,57.673,28.837,28.837,28.837,0,0,0,28.837,0" transform="translate(0 -0.25)" fill="#fff"/>
+    <path id="Path_2569" data-name="Path 2569" d="M56.238,82.946c-.266,0-.532,0-.794-.012l5.458-15h7.511a3.682,3.682,0,0,0,3.216-2.252l5.922-16.267c.968-2.661-.557-4.842-3.391-4.842H63.743L55,68.6h0l-4.96,13.619A26.716,26.716,0,0,1,29.53,56.238a26.4,26.4,0,0,1,19.5-25.722L43.911,44.573h0l-8.5,23.358h5.658L48.3,48.085H52.55L45.323,67.932h5.658l6.736-18.518c.97-2.661-.557-4.842-3.387-4.842H49.573l5.464-15.014c.4-.017.8-.028,1.2-.028a26.708,26.708,0,1,1,0,53.416M72.394,48.07H68.145L62.189,64.41h4.254L72.4,48.069Z" transform="translate(-27.4 -27.651)" fill="#024ad8"/>
+  </g>
 </svg>

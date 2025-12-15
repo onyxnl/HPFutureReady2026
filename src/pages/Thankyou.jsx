@@ -32,8 +32,9 @@ function Thankyou() {
         <Container>
             <Row>
                 <Col md={12} className='thankyou-title header center'>
-                    <h1>Thank you for your registration!</h1>
-                    <p>A confirmation email will be sent out.</p>
+                    <h1>Thank you for your submission.</h1>
+                    <p className='mb-0 pt-3'>A confirmation email will be sent out.</p>
+                    <p className="paratext">For enquiries or assistance, please email <a href="mailto:futureready@pmgasia.com" target="_blank" className="hyperlink">HP Future Ready 2026 Secretariat</a><br/> or contact us at : <a href="tel:+6560133395" target="_blank" className="hyperlink">+65 6013 3395</a>.</p>
                     <hr/>
                 </Col>
             </Row>
