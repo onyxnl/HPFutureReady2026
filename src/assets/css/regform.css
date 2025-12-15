@@ -1663,7 +1663,7 @@ position: absolute;
   right: 0px;
   border:1px solid #007bff;
   color: #007bff;
-  padding:8px 27px;
+  padding:4px 24px;
   border-radius: 16px;
   cursor: pointer;
   font-size: 14px;
@@ -2909,9 +2909,6 @@ span.optionalkey
   { float:right; width:50%; padding:30px 0px 30px 0px;}
   .row.aboutusrow, .row.loginrow, .row.locationrow, .row.speakersrow, .row.sponsorsrow
   { --bs-gutter-x: 1.5rem; }
-  .flight-content .arrival-flight-group {
-    width: 80%;
-  }
 }
 @media screen and (min-width: 1366px) 
 {

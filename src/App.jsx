@@ -18,7 +18,7 @@ function App() {
   return (
      <AuthProvider>
       {/* /HP/2026/HP_FutureReady/ */}
-      <Router basename="">
+      <Router basename="/HP/2026/HP_FutureReady/">
         <Routes>
           {/* Login route */}
           <Route path="/" element={<Landing />} />

@@ -408,6 +408,10 @@ function Thankyou() {
                     <h4 className="res_label">Departure date</h4>
                      <p>xxxxxx</p>
                 </Col>
+                <Col md={6}>
+                    <h4 className="res_label">Address where you’ll be staying</h4>
+                     <p>xxxxxx</p>
+                </Col>
             </Row>
             <Row>
                 <Col md={6}>
